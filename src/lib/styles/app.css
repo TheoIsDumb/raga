@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #131313;
+    color: white;
+}
+
+main {
+    min-height: calc(100dvh - 7rem);
+    width: 96%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-jc {
+    justify-content: center;
+}
+
+.flex-ac {
+    align-items: center;
+}
+
+.flex-dirc {
+    flex-direction: column;
+}
+
+.inner {
+    margin: 3rem 0;
+}

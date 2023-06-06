@@ -1,0 +1,26 @@
+<script>
+  import { goto } from "$app/navigation";
+
+  const goHome = () => {
+    goto("/");
+  };
+</script>
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<svg
+  on:click={goHome}
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 12 12"
+  ><path
+    fill="currentColor"
+    d="M1.459 6.786a.903.903 0 0 1 0-1.572l7.169-4.092C9.238.774 10 1.211 10 1.91v8.182c0 .698-.762 1.135-1.372.787l-7.17-4.092ZM2.119 6l6.864 3.917V2.083L2.119 6Z"
+  /></svg
+>
+
+<style>
+  svg {
+    cursor: pointer;
+  }
+</style>

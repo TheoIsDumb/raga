@@ -1,0 +1,20 @@
+{
+	"name": "jiosaavn",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev --host --open",
+		"build": "vite build",
+		"preview": "vite previe --host --open"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.5.0",
+		"svelte": "^3.54.0",
+		"vite": "^4.3.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"node-forge": "^1.3.1"
+	}
+}
