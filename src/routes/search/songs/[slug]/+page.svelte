@@ -1,12 +1,12 @@
 <script>
   export let data;
   import { fly } from "svelte/transition";
-  import Card from "$lib/components/Card.svelte";
+  import SongCard from "$lib/components/SongCard.svelte";
 </script>
 
 <div class="inner flex flex-dirc" transition:fly>
   {#each data.searchDetails as datum}
-    <Card
+    <SongCard
       title={datum.title}
       subtitle={datum.subtitle}
       image={datum.image}

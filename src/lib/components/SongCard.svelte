@@ -1,5 +1,5 @@
 <script>
-  import { decrypt } from "$lib/decrypt";
+  import { decrypt, truncate } from "$lib/utils";
   import { active } from "$lib/store";
   export let image;
   export let title;
@@ -7,20 +7,13 @@
   export let enc;
   export let kbps320;
 
-  function truncate(input, limit) {
-    if (input.length > limit) {
-      return input.substring(0, limit) + "...";
-    }
-    return input;
-  }
-
   function play(enc, title, subtitle, image, kbps320) {
     let dec_url = decrypt(enc, kbps320);
 
     $active = {
       name: truncate(title, 30),
       artist: truncate(subtitle, 30),
-      cover: image,
+      image: image,
       url: dec_url,
     };
   }
@@ -33,7 +26,7 @@
     play(enc, title, subtitle, image, kbps320);
   }}
 >
-  <img src={image} alt={title} />
+  <img src={image} alt={title} loading="lazy" />
 
   <div class="info flex flex-jc flex-dirc">
     <div id="title">{@html truncate(title, 50)}</div>
@@ -44,16 +37,17 @@
 <style>
   div.song {
     width: 100%;
-    height: 5rem;
     gap: 1rem;
-    border: 1px solid rgb(77, 77, 77);
-    border-radius: 0.5rem;
-    padding: 0.7rem;
     cursor: pointer;
+    transition: all 0.3s;
+  }
+  div.song:hover {
+    background-color: #2a2929;
   }
   div.song img {
     border-radius: 0.2rem;
     border: 1px solid gray;
+    height: 3.5rem;
   }
   div#title {
     font-weight: bold;

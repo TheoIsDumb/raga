@@ -1,4 +1,9 @@
+<script>
+  import { slide } from "svelte/transition";
+</script>
+
 <svg
+  transition:slide
   xmlns="http://www.w3.org/2000/svg"
   width="24"
   height="24"

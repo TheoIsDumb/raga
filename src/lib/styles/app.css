@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: "Inter Tight", sans-serif;
 }
 
 body {
@@ -32,5 +33,7 @@ main {
 }
 
 .inner {
-    margin: 3rem 0;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    gap: 1rem;
 }

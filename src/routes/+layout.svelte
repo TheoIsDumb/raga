@@ -3,6 +3,9 @@
   import Player from "$lib/components/Player.svelte";
   import "$lib/styles/app.css";
   import { active } from "$lib/store";
+
+  import "@fontsource/inter-tight";
+  import "@fontsource/inter-tight/400.css";
 </script>
 
 <main>
@@ -11,5 +14,5 @@
 </main>
 
 {#if Object.keys($active).length !== 0}
-  <Player {...$active} />
+  <Player />
 {/if}

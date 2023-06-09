@@ -1,17 +1,17 @@
 <script>
-  import Clear from "$lib/icons/Clear.svelte";
-  import LeftArrow from "$lib/icons/LeftArrow.svelte";
+  import Clear from "$lib/icons/header/Clear.svelte";
+  import LeftArrow from "$lib/icons/header/LeftArrow.svelte";
   import Spinner from "$lib/icons/Spinner.svelte";
+  import Search from "$lib/icons/header/Search.svelte";
 
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
   import { navigating } from "$app/stores";
-
-  let query = "";
+  import { query } from "$lib/store";
 
   const handleInput = (e) => {
-    if (e.key === "Enter") {
-      goto(`/results/${query}`);
+    if (e.key === "Enter" && $query !== "") {
+      goto(`/search/songs/${$query}`);
     }
   };
 </script>
@@ -23,17 +23,20 @@
 
   <input
     type="text"
-    bind:value={query}
+    bind:value={$query}
     placeholder="Search..."
     on:keypress={handleInput}
     autocomplete="off"
   />
-  {#if query !== ""}
-    <Clear bind:query />
+
+  {#if $query !== ""}
+    <Clear />
   {/if}
 
   {#if $navigating}
     <Spinner />
+  {:else if $query !== ""}
+    <Search />
   {/if}
 </div>
 
@@ -53,6 +56,7 @@
     top: 0;
     left: 50%;
     transform: translate(-50%);
+    z-index: 100;
   }
   div.header:focus-within {
     background-color: rgb(61, 61, 61);
@@ -62,5 +66,8 @@
     flex-grow: 2;
     width: 100%;
     transition: all 0.6s;
+  }
+  :global(.header svg) {
+    cursor: pointer;
   }
 </style>
