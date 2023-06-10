@@ -26,7 +26,7 @@
     play(enc, title, subtitle, image, kbps320);
   }}
 >
-  <img src={image} alt={title} loading="lazy" />
+  <img loading="lazy" src={image} alt={title} />
 
   <div class="info flex flex-jc flex-dirc">
     <div id="title">{@html truncate(title, 50)}</div>

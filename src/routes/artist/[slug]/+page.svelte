@@ -9,7 +9,7 @@
 
 <div class="inner flex flex-dirc" transition:fly>
   <div class="header flex flex-ac">
-    <img src={data.artist.image} alt={data.artist.name} />
+    <img loading="lazy" src={data.artist.image} alt={data.artist.name} />
     <div class="artistinfo flex flex-dirc">
       <span style:font-weight="bold">{data.artist.name}</span>
       <span style:font-size="0.8rem">{data.artist.subtitle}</span>

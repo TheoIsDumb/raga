@@ -11,7 +11,7 @@
 
 <div class="inner flex flex-dirc" transition:fly>
   <div class="albumheader flex flex-ac">
-    <img src={data.album.image} alt={data.album.title} />
+    <img loading="lazy" src={data.album.image} alt={data.album.title} />
     <div class="albuminfo flex flex-dirc">
       <span style:font-weight="bold">{data.album.title}</span>
       <span style:font-size="0.8rem">{data.album.subtitle}</span>

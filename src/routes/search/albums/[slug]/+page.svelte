@@ -19,7 +19,7 @@
       on:click={gotoalbum(album.id)}
       on:keypress={gotoalbum(album.id)}
     >
-      <img src={album.image.replace("150x150", "500x500")} alt={album.title} />
+      <img loading="lazy" src={album.image.replace("150x150", "500x500")} alt={album.title} />
 
       <div class="info flex flex-dirc">
         <span style:font-weight="bold">{@html album.title}</span>

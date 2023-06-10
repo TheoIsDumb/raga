@@ -29,7 +29,7 @@
   }}
 >
   <div class="iteminner flex flex-dirc">
-    <img src={image.replace("150x150", "500x500")} alt={title} />
+    <img loading="lazy" src={image.replace("150x150", "500x500")} alt={title} />
     <span style:font-size="0.7rem" style:font-weight="bold">
       {truncate(title, 20)}
     </span>

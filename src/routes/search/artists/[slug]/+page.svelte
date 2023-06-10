@@ -17,7 +17,7 @@
       on:click={gotoartist(artist.id)}
       on:keypress={gotoartist(artist.id)}
     >
-      <img src={artist.image.replace("50x50", "500x500")} alt={artist.name} />
+      <img loading="lazy" src={artist.image.replace("50x50", "500x500")} alt={artist.name} />
 
       <span style:text-align="center" style:font-weight="bold"
         >{artist.name}</span

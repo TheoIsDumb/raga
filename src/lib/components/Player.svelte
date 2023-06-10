@@ -18,7 +18,7 @@
       <Play bind:paused />
     {/if}
 
-    <img src={$active.image} alt={$active.name} />
+    <img loading="lazy" src={$active.image} alt={$active.name} />
     <audio
       src={$active.url}
       bind:currentTime
