@@ -37,3 +37,11 @@ main {
     margin-bottom: 4rem;
     gap: 1rem;
 }
+
+.hscroll {
+    overflow: auto;
+    white-space: nowrap;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: gray transparent;
+}

@@ -9,5 +9,6 @@ export const sub = Object.freeze({
       playlists: 'search.getPlaylistResults',
     },
     songDetails: "song.getDetails&pids=",
-    albumDetails: "content.getAlbumDetails&albumid="
+    albumDetails: "content.getAlbumDetails&albumid=",
+    artistDetails: "artist.getArtistPageDetails&artistId="
 });
