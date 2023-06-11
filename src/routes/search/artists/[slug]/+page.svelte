@@ -35,6 +35,11 @@
     border-radius: 0.3rem;
     cursor: pointer;
     gap: 0.5rem;
+    transition: all 0.3s;
+  }
+  div.artist:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 1rem black;
   }
   img {
     width: 100%;

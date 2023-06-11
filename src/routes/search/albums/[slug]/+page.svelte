@@ -37,6 +37,11 @@
     background-color: var(--base-dark);
     border-radius: 0.3rem;
     cursor: pointer;
+    transition: all 0.3s;
+  }
+  div.album:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 1rem black;
   }
   img {
     width: 100%;
