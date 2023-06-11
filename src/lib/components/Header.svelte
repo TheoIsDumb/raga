@@ -44,7 +44,8 @@
   div.header {
     width: 96%;
     max-width: 900px;
-    background-color: rgb(42, 41, 41);
+    color: var(--fg);
+    background-color: var(--base-dark);
     font-size: 1rem;
     border-radius: 0 0 0.4rem 0.4rem;
     padding: 0.3rem 0.8rem;
@@ -57,9 +58,11 @@
     left: 50%;
     transform: translate(-50%);
     z-index: 100;
+    border: 1px solid var(--fg);
+    border-top: 0;
   }
   div.header:focus-within {
-    background-color: rgb(61, 61, 61);
+    background-color: var(--base);
   }
   input {
     all: unset;

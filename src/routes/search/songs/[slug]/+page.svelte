@@ -1,10 +1,10 @@
 <script>
   export let data;
-  import { fly } from "svelte/transition";
+  import { slide } from "svelte/transition";
   import SongCard from "$lib/components/SongCard.svelte";
 </script>
 
-<div class="inner flex flex-dirc" transition:fly>
+<div class="inner flex flex-dirc" in:slide>
   {#each data.searchDetails as datum}
     <SongCard
       title={datum.title}

@@ -1,47 +1,58 @@
+:root {
+    --bg: #11111b;
+    --fg: #89dceb;
+    --base: #313244;
+    --base-dark: #1e1e2e;
+}
 * {
     box-sizing: border-box;
     font-family: "Inter Tight", sans-serif;
 }
-
 body {
     margin: 0;
-    background-color: #131313;
-    color: white;
+    background-color: var(--bg);
+    color: var(--fg);
 }
-
 main {
     min-height: calc(100dvh - 7rem);
     width: 96%;
     max-width: 900px;
     margin: 0 auto;
 }
-
 .flex {
     display: flex;
 }
-
 .flex-jc {
     justify-content: center;
 }
-
 .flex-ac {
     align-items: center;
 }
-
 .flex-dirc {
     flex-direction: column;
 }
-
 .inner {
     margin-top: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     gap: 1rem;
 }
-
 .hscroll {
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
     padding-bottom: 1rem;
     scrollbar-width: thin;
-    scrollbar-color: gray transparent;
+    scrollbar-color: var(--fg) transparent;
+    height: 10rem;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+pre {
+	height: 30rem;
+	overflow: scroll;
+	border: 2px solid var(--fg);
+	padding: 0.3rem;
 }

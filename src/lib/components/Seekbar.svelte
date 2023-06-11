@@ -53,21 +53,21 @@
 
 <style>
   .slider {
-    width: 10rem;
-    border: 1px solid gainsboro;
+    width: 100%;
+    border: 1px solid var(--fg);
     border-radius: 1rem;
-    height: 0.4rem;
+    height: 0.5rem;
   }
   .progessbar {
     width: calc(100 * var(--progress));
     height: inherit;
     border-radius: inherit;
-    background-color: gainsboro;
+    background-color: var(--fg);
     cursor: pointer;
   }
   div.progresstime {
     gap: 0.3rem;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
   .flex {
     display: flex;

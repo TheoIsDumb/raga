@@ -1,15 +1,12 @@
 <script>
   export let data;
-  import { fly } from "svelte/transition";
+  import { slide } from "svelte/transition";
   import SongCard from "$lib/components/SongCard.svelte";
-
   // albumheader: title, subtitle, header_desc, image
   // list: title, subtitle, image, encrypted_media_url, 320kbps
 </script>
 
-<!-- <pre>{JSON.stringify(data, null, 2)}</pre> -->
-
-<div class="inner flex flex-dirc" transition:fly>
+<div class="inner flex flex-dirc" in:slide>
   <div class="albumheader flex flex-ac">
     <img loading="lazy" src={data.album.image} alt={data.album.title} />
     <div class="albuminfo flex flex-dirc">
@@ -34,7 +31,6 @@
   .albumheader {
     gap: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid gray;
     justify-content: space-between;
   }
   .albuminfo {

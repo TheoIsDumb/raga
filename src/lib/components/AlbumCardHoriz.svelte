@@ -4,7 +4,6 @@
 
   export let id;
   export let title;
-  export let subtitle;
   export let image;
 </script>
 
@@ -18,9 +17,8 @@
   <div class="iteminner flex flex-dirc">
     <img loading="lazy" src={image.replace("150x150", "500x500")} alt={title} />
     <span style:font-size="0.7rem" style:font-weight="bold">
-      {truncate(title, 20)}
+      {@html truncate(title, 20)}
     </span>
-    <span style:font-size="0.7rem">{truncate(subtitle, 20)} </span>
   </div>
 </div>
 

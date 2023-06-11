@@ -12,7 +12,7 @@
 
     $active = {
       name: truncate(title, 30),
-      artist: truncate(subtitle, 30),
+      artist: truncate(subtitle, 50),
       image: image,
       url: dec_url,
     };
@@ -40,13 +40,13 @@
     gap: 1rem;
     cursor: pointer;
     transition: all 0.3s;
+    border-radius: 0.3rem;
   }
   div.song:hover {
-    background-color: #2a2929;
+    background-color: var(--base);
   }
   div.song img {
     border-radius: 0.2rem;
-    border: 1px solid gray;
     height: 3.5rem;
   }
   div#title {

@@ -1,13 +1,13 @@
 <script>
   export let data;
-  import { fly } from "svelte/transition";
+  import { slide } from "svelte/transition";
   import SongCardHoriz from "$lib/components/SongCardHoriz.svelte";
   import AlbumCardHoriz from "$lib/components/AlbumCardHoriz.svelte";
 </script>
 
 <pre>{JSON.stringify(data, null, 2)}</pre>
 
-<div class="inner flex flex-dirc" transition:fly>
+<div class="inner flex flex-dirc" in:slide>
   <div class="header flex flex-ac">
     <img loading="lazy" src={data.artist.image} alt={data.artist.name} />
     <div class="artistinfo flex flex-dirc">
@@ -48,12 +48,7 @@
   <h1>Albums</h1>
   <div class="hscroll">
     {#each data.artist.topAlbums as item}
-      <AlbumCardHoriz
-        id={item.id}
-        title={item.title}
-        subtitle={item.subtitle}
-        image={item.image}
-      />
+      <AlbumCardHoriz id={item.id} title={item.title} image={item.image} />
     {/each}
   </div>
 </div>
@@ -61,7 +56,6 @@
 <style>
   .header {
     gap: 1rem;
-    border-bottom: 1px solid gray;
     justify-content: space-between;
   }
   .artistinfo {
