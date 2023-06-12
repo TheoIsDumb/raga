@@ -9,9 +9,7 @@
   $topPlaylists = data.modules.top_playlists;
 </script>
 
-<!-- <pre>{JSON.stringify(data, null, 2)}</pre> -->
-
-<div class="inner flex flex-dirc" in:fade>
+<div class="inner flex flex-dirc" transition:fade>
   <div class="flex flex-jc flex-ac">
     <Logo />
   </div>
