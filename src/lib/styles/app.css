@@ -65,3 +65,11 @@ pre {
 	border: 2px solid var(--fg);
 	padding: 0.3rem;
 }
+h1.play {
+    margin: 0;
+    text-transform: lowercase;
+    margin-bottom: -1rem;
+}
+h1.play:nth-of-type(even) {
+    text-align: right;
+}

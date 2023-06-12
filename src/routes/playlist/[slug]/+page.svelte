@@ -1,10 +1,10 @@
 <script>
   export let data;
-  import { slide } from "svelte/transition";
+  import { fade } from "svelte/transition";
   import SongCard from "$lib/components/SongCard.svelte";
 </script>
 
-<div class="inner flex flex-dirc" in:slide>
+<div class="inner flex flex-dirc" in:fade>
   <div class="playlistheader flex flex-ac">
     <img loading="lazy" src={data.playlist.image} alt={data.playlist.title} />
     <div class="playlistinfo flex flex-dirc">
@@ -34,6 +34,7 @@
   }
   .playlistheader img {
     height: 100%;
+    border-radius: 0.3rem;
   }
   .playlistinfo {
     text-align: right;

@@ -1,12 +1,10 @@
 <script>
   export let data;
-  import { slide } from "svelte/transition";
+  import { fade } from "svelte/transition";
   import SongCard from "$lib/components/SongCard.svelte";
-  // albumheader: title, subtitle, header_desc, image
-  // list: title, subtitle, image, encrypted_media_url, 320kbps
 </script>
 
-<div class="inner flex flex-dirc" in:slide>
+<div class="inner flex flex-dirc" transition:fade>
   <div class="albumheader flex flex-ac">
     <img loading="lazy" src={data.album.image} alt={data.album.title} />
     <div class="albuminfo flex flex-dirc">

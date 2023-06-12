@@ -3,9 +3,11 @@
   import Albums from "$lib/icons/sidebar/Albums.svelte";
   import Artists from "$lib/icons/sidebar/Artists.svelte";
   import Playlists from "$lib/icons/sidebar/Playlists.svelte";
+
+  import { fade } from "svelte/transition";
 </script>
 
-<div class="menu flex">
+<div class="menu flex" transition:fade>
   <Songs />
   <Albums />
   <Artists />

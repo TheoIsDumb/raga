@@ -8,6 +8,7 @@ export const sub = Object.freeze({
       artists: 'search.getArtistResults&q=',
       playlists: 'search.getPlaylistResults&q=',
     },
+    modules: "content.getBrowseModules",
     songDetails: "song.getDetails&pids=",
     albumDetails: "content.getAlbumDetails&albumid=",
     artistDetails: "artist.getArtistPageDetails&artistId=",
