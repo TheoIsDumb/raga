@@ -58,6 +58,7 @@
     border-radius: 0.4rem;
     justify-content: space-between;
     gap: 0.5rem;
+    box-shadow: 0 0 0.7rem var(--fg);
   }
   div#title {
     font-weight: bold;
