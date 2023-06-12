@@ -6,7 +6,7 @@ export const sub = Object.freeze({
       songs: 'search.getResults&q=',
       albums: 'search.getAlbumResults&q=',
       artists: 'search.getArtistResults&q=',
-      playlists: 'search.getPlaylistResults',
+      playlists: 'search.getPlaylistResults&q=',
     },
     songDetails: "song.getDetails&pids=",
     albumDetails: "content.getAlbumDetails&albumid=",
