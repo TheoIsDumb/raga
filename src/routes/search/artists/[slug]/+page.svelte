@@ -1,14 +1,14 @@
 <script>
   import { goto } from "$app/navigation";
   export let data;
-  import { slide } from "svelte/transition";
+  import { fade } from "svelte/transition";
 
   function gotoartist(artistId) {
     goto(`/artist/${artistId}`);
   }
 </script>
 
-<div class="inner grid" in:slide>
+<div class="inner grid" transition:fade>
   {#each data.artists.results as artist}
     <div
       class="artist flex flex-dirc"

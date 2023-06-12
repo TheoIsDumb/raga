@@ -6,7 +6,9 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <svg
   on:click={() => {
-    goto(`/search/songs/${$query}`);
+    if ($query != "") {
+      goto(`/search/songs/${$query}`);
+    }
   }}
   xmlns="http://www.w3.org/2000/svg"
   width="24"

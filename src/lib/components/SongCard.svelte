@@ -22,6 +22,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
   class="song flex"
+  title={enc}
   on:click={() => {
     play(enc, title, subtitle, image, kbps320);
   }}
