@@ -32,9 +32,18 @@ main {
     flex-direction: column;
 }
 .inner {
-    margin-top: 3rem;
     margin-bottom: 6rem;
     gap: 1rem;
+}
+@media (min-width: 1200px) {
+    .inner {
+        margin-top: 3rem;
+    }
+}
+@media (max-width: 1200px) {
+    .inner {
+        margin-top: 1rem;
+    }
 }
 .hscroll {
     overflow-x: auto;

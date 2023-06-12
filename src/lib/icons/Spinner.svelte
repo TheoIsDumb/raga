@@ -1,9 +1,9 @@
 <script>
-  import { slide } from "svelte/transition";
+  import { fade } from "svelte/transition";
 </script>
 
 <svg
-  transition:slide
+  transition:fade
   xmlns="http://www.w3.org/2000/svg"
   width="24"
   height="24"
@@ -24,3 +24,12 @@
     />
   </path>
 </svg>
+
+<style>
+  svg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>

@@ -6,7 +6,7 @@
 </script>
 
 <div class="container">
-  <div class="menu flex flex-dirc">
+  <div class="menu flex">
     <Songs />
     <Albums />
     <Artists />
@@ -17,13 +17,24 @@
 </div>
 
 <style>
-  div.container {
-    position: relative;
+  @media (min-width: 1200px) {
+    div.container {
+      position: relative;
+    }
+    div.menu {
+      position: absolute;
+      left: -4rem;
+      gap: 0.5rem;
+      flex-direction: column;
+    }
   }
-  div.menu {
-    position: absolute;
-    left: -4rem;
-    gap: 0.5rem;
+  @media (max-width: 1200px) {
+    div.menu {
+      margin-top: 3rem;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
   }
   :global(div.menu svg) {
     width: 3rem;

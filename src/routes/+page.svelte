@@ -1,4 +1,8 @@
-<div class="inner flex flex-jc flex-ac flex-dirc">
+<script>
+  import { fade } from "svelte/transition";
+</script>
+
+<div class="inner flex flex-jc flex-ac flex-dirc" transition:fade>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="256"

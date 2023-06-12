@@ -1,12 +1,10 @@
 <script>
   import Clear from "$lib/icons/header/Clear.svelte";
   import LeftArrow from "$lib/icons/header/LeftArrow.svelte";
-  import Spinner from "$lib/icons/Spinner.svelte";
   import Search from "$lib/icons/header/Search.svelte";
 
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
-  import { navigating } from "$app/stores";
   import { query } from "$lib/store";
 
   const handleInput = (e) => {
@@ -31,11 +29,6 @@
 
   {#if $query !== ""}
     <Clear />
-  {/if}
-
-  {#if $navigating}
-    <Spinner />
-  {:else if $query !== ""}
     <Search />
   {/if}
 </div>
