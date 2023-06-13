@@ -9,7 +9,7 @@
   $topPlaylists = data.modules.top_playlists;
 </script>
 
-<div class="inner flex flex-dirc" transition:fade>
+<div class="inner flex flex-dirc" in:fade>
   <div class="flex flex-jc flex-ac">
     <Logo />
   </div>

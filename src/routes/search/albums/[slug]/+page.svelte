@@ -6,10 +6,9 @@
   function gotoalbum(albumid) {
     goto(`/album/${albumid}`);
   }
-  // id, title, subtitle, image, year
 </script>
 
-<div class="inner grid" transition:fade>
+<div class="inner grid" in:fade>
   {#each data.albums.results as album}
     <div
       class="album flex flex-dirc"

@@ -9,7 +9,7 @@
 
   const handleInput = (e) => {
     if (e.key === "Enter" && $query !== "") {
-      goto(`/search/songs/${$query}`);
+      goto(`/search/songs/${$query}?index=1`);
     }
   };
 </script>

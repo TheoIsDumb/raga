@@ -7,7 +7,7 @@
 
 <pre>{JSON.stringify(data, null, 2)}</pre>
 
-<div class="inner flex flex-dirc" transition:fade>
+<div class="inner flex flex-dirc" in:fade>
   <div class="header flex flex-ac">
     <img loading="lazy" src={data.artist.image} alt={data.artist.name} />
     <div class="artistinfo flex flex-dirc">
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <h1>Top Songs</h1>
+  <h1 class="play">Top Songs</h1>
   <div class="hscroll">
     {#each data.artist.topSongs as item}
       <SongCardHoriz
@@ -32,7 +32,7 @@
     {/each}
   </div>
 
-  <h1>Singles</h1>
+  <h1 class="play">Singles</h1>
   <div class="hscroll">
     {#each data.artist.singles as item}
       <SongCardHoriz
@@ -45,7 +45,7 @@
     {/each}
   </div>
 
-  <h1>Albums</h1>
+  <h1 class="play">Albums</h1>
   <div class="hscroll">
     {#each data.artist.topAlbums as item}
       <AlbumCardHoriz id={item.id} title={item.title} image={item.image} />
@@ -62,14 +62,6 @@
     border-radius: 0.3rem;
   }
   .artistinfo {
-    text-align: right;
-  }
-  h1 {
-    margin: 0;
-    text-transform: lowercase;
-    margin-bottom: -1rem;
-  }
-  h1:nth-of-type(even) {
     text-align: right;
   }
 </style>

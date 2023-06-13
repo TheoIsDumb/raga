@@ -1,16 +1,17 @@
-export const baseURL = "https://www.jiosaavn.com/api.php?_format=json&_marker=0&api_version=4&ctx=web6dot0&n=50&__call="
+export const baseURL = "https://www.jiosaavn.com/api.php?_format=json&_marker=0&api_version=4&ctx=web6dot0&"
 
 export const sub = Object.freeze({ 
   search: {
-      all: 'autocomplete.get',
-      songs: 'search.getResults&q=',
-      albums: 'search.getAlbumResults&q=',
-      artists: 'search.getArtistResults&q=',
-      playlists: 'search.getPlaylistResults&q=',
-    },
-    modules: "content.getBrowseModules",
-    songDetails: "song.getDetails&pids=",
-    albumDetails: "content.getAlbumDetails&albumid=",
-    artistDetails: "artist.getArtistPageDetails&artistId=",
-    playlistDetails: "playlist.getDetails&listid="
+    all: '__call=autocomplete.get',
+    songs: '&__call=search.getResults&q=',
+    albums: '__call=search.getAlbumResults&q=',
+    artists: '__call=search.getArtistResults&q=',
+    playlists: '__call=search.getPlaylistResults&q=',
+  },
+  modules: "__call=content.getBrowseModules",
+  songDetails: "__call=song.getDetails&pids=",
+  albumDetails: "__call=content.getAlbumDetails&albumid=",
+  artistDetails: "__call=artist.getArtistPageDetails&artistId=",
+  playlistDetails: "__call=playlist.getDetails&listid=",
+  index: "p="
 });

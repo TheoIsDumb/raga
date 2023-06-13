@@ -4,7 +4,7 @@
   import SongCard from "$lib/components/SongCard.svelte";
 </script>
 
-<div class="inner flex flex-dirc" transition:fade>
+<div class="inner flex flex-dirc" in:fade>
   <div class="albumheader flex flex-ac">
     <img loading="lazy" src={data.album.image} alt={data.album.title} />
     <div class="albuminfo flex flex-dirc">

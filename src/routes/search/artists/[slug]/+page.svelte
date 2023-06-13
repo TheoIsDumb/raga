@@ -8,7 +8,7 @@
   }
 </script>
 
-<div class="inner grid" transition:fade>
+<div class="inner grid" in:fade>
   {#each data.artists.results as artist}
     <div
       class="artist flex flex-dirc"
