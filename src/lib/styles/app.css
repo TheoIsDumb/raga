@@ -73,3 +73,25 @@ h1.play {
 h1.play:nth-of-type(even) {
     text-align: right;
 }
+.pop, .hover {
+    transition: all 0.3s;
+}
+.pop:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 1rem black;
+}
+.hover:hover {
+    background-color: var(--base);
+}
+.pagination a {
+    color: var(--fg);
+    text-decoration: none;
+    padding: 0.2rem 0.8rem;
+    border: 1px solid var(--fg);
+    border-radius: 0.3rem;
+    transition: all 0.3s;
+}
+.pagination a:hover {
+    background-color: var(--fg);
+    color: var(--bg);
+}

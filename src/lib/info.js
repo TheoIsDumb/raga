@@ -2,11 +2,11 @@ export const baseURL = "https://www.jiosaavn.com/api.php?_format=json&_marker=0&
 
 export const sub = Object.freeze({ 
   search: {
-    all: '__call=autocomplete.get',
+    all: '&__call=autocomplete.get',
     songs: '&__call=search.getResults&q=',
-    albums: '__call=search.getAlbumResults&q=',
-    artists: '__call=search.getArtistResults&q=',
-    playlists: '__call=search.getPlaylistResults&q=',
+    albums: '&__call=search.getAlbumResults&q=',
+    artists: '&__call=search.getArtistResults&q=',
+    playlists: '&__call=search.getPlaylistResults&q=',
   },
   modules: "__call=content.getBrowseModules",
   songDetails: "__call=song.getDetails&pids=",

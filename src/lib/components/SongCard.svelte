@@ -21,7 +21,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-  class="song flex"
+  class="song flex hover"
   on:click={() => {
     play(enc, title, subtitle, image, kbps320);
   }}
@@ -39,11 +39,7 @@
     width: 100%;
     gap: 1rem;
     cursor: pointer;
-    transition: all 0.3s;
     border-radius: 0.3rem;
-  }
-  div.song:hover {
-    background-color: var(--base);
   }
   div.song img {
     border-radius: 0.2rem;

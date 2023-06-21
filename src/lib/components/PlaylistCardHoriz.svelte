@@ -15,7 +15,7 @@
     goto(`/playlist/${id}`);
   }}
 >
-  <div class="iteminner flex flex-dirc">
+  <div class="iteminner flex flex-dirc hover">
     <img loading="lazy" src={image.replace("150x150", "500x500")} alt={title} />
     <span style:font-size="0.7rem" style:font-weight="bold">
       {@html truncate(title, 20)}
@@ -30,6 +30,7 @@
     height: 9rem;
     width: 8rem;
     margin-left: 0.2rem;
+    cursor: pointer;
   }
   .item img {
     width: 100%;

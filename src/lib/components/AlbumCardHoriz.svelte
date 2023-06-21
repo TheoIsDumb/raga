@@ -29,6 +29,7 @@
     height: 9rem;
     width: 8rem;
     margin-left: 0.2rem;
+    cursor: pointer;
   }
   .item img {
     width: 100%;

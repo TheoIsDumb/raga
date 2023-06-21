@@ -1,6 +1,7 @@
 <script>
   import { goto } from "$app/navigation";
   export let data;
+  import { query } from "$lib/store";
   import { fade } from "svelte/transition";
 
   function gotoalbum(albumid) {
@@ -8,26 +9,38 @@
   }
 </script>
 
-<div class="inner grid" in:fade>
-  {#each data.albums.results as album}
-    <div
-      class="album flex flex-dirc"
-      on:click={gotoalbum(album.id)}
-      on:keypress={gotoalbum(album.id)}
-    >
-      <img
-        loading="lazy"
-        src={album.image.replace("150x150", "500x500")}
-        alt={album.title}
-      />
+<div class="inner" in:fade>
+  <div class="grid">
+    {#each data.albums.results as album}
+      <div
+        class="album flex flex-dirc pop"
+        on:click={gotoalbum(album.id)}
+        on:keypress={gotoalbum(album.id)}
+      >
+        <img
+          loading="lazy"
+          src={album.image.replace("150x150", "500x500")}
+          alt={album.title}
+        />
 
-      <div class="info flex flex-dirc">
-        <span style:font-weight="bold">{@html album.title}</span>
-        <span style:font-size="0.8rem">{@html album.subtitle}</span>
-        <span style:font-size="0.8rem">{album.year}</span>
+        <div class="info flex flex-dirc">
+          <span style:font-weight="bold">{@html album.title}</span>
+          <span style:font-size="0.8rem">{@html album.subtitle}</span>
+          <span style:font-size="0.8rem">{album.year}</span>
+        </div>
       </div>
-    </div>
-  {/each}
+    {/each}
+  </div>
+
+  <span class="pagination">
+    {#if data.index > 1}
+      <a href="/search/albums/{$query}&index={Number(data.index) - 1}">
+        previous
+      </a>
+    {/if}
+
+    <a href="/search/albums/{$query}&index={Number(data.index) + 1}">next</a>
+  </span>
 </div>
 
 <style>
@@ -36,11 +49,6 @@
     background-color: var(--base-dark);
     border-radius: 0.3rem;
     cursor: pointer;
-    transition: all 0.3s;
-  }
-  div.album:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 1rem black;
   }
   img {
     width: 100%;

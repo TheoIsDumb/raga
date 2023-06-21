@@ -31,16 +31,4 @@
   div.inner {
     gap: 1rem;
   }
-  .pagination a {
-    color: var(--fg);
-    text-decoration: none;
-    padding: 0.2rem 0.8rem;
-    border: 1px solid var(--fg);
-    border-radius: 0.3rem;
-    transition: all 0.3s;
-  }
-  .pagination a:hover {
-    background-color: var(--fg);
-    color: var(--bg);
-  }
 </style>
