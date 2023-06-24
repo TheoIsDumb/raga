@@ -176,14 +176,12 @@
 
 <style>
   @keyframes zoom {
-    0% {
-      transform: scale(1);
+    0%,
+    100% {
+      filter: drop-shadow(0 0 0.1rem gray);
     }
     50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
+      filter: drop-shadow(0 0 0.2rem gray);
     }
   }
 
