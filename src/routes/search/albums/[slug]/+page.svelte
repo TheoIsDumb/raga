@@ -2,14 +2,13 @@
   import { goto } from "$app/navigation";
   export let data;
   import { query } from "$lib/store";
-  import { fade } from "svelte/transition";
 
   function gotoalbum(albumid) {
     goto(`/album/${albumid}`);
   }
 </script>
 
-<div class="inner" in:fade>
+<div class="inner">
   <div class="grid">
     {#each data.albums.results as album}
       <div

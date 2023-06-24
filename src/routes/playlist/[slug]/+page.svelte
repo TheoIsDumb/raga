@@ -1,10 +1,9 @@
 <script>
   export let data;
-  import { fade } from "svelte/transition";
   import SongCard from "$lib/components/SongCard.svelte";
 </script>
 
-<div class="inner flex flex-dirc" in:fade>
+<div class="inner flex flex-dirc">
   <div class="playlistheader flex flex-ac">
     <img loading="lazy" src={data.playlist.image} alt={data.playlist.title} />
     <div class="playlistinfo flex flex-dirc">

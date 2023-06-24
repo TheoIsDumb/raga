@@ -1,13 +1,12 @@
 <script>
   export let data;
-  import { fade } from "svelte/transition";
   import SongCardHoriz from "$lib/components/SongCardHoriz.svelte";
   import AlbumCardHoriz from "$lib/components/AlbumCardHoriz.svelte";
 </script>
 
 <pre>{JSON.stringify(data, null, 2)}</pre>
 
-<div class="inner flex flex-dirc" in:fade>
+<div class="inner flex flex-dirc">
   <div class="header flex flex-ac">
     <img loading="lazy" src={data.artist.image} alt={data.artist.name} />
     <div class="artistinfo flex flex-dirc">

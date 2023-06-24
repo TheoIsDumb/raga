@@ -1,11 +1,10 @@
 <script>
   export let data;
-  import { fade } from "svelte/transition";
   import SongCard from "$lib/components/SongCard.svelte";
   import { query } from "$lib/store";
 </script>
 
-<div class="inner flex flex-dirc" in:fade>
+<div class="inner flex flex-dirc">
   {#each data.searchDetails as datum}
     <SongCard
       title={datum.title}
