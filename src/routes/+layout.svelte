@@ -10,13 +10,15 @@
 
   import "@fontsource/inter-tight";
   import "@fontsource/inter-tight/400.css";
+  import { MetaTags } from "svelte-meta-tags";
 
   export let data;
 </script>
 
+<MetaTags title="🎹  Paattu" description="A libre frontend for JioSaavn." />
+
 <main>
   <Header />
-
   {#key data}
     <div in:fly={{ y: 50, duration: 500 }} out:fly={{ y: -50 }}>
       {#if $navigating}
