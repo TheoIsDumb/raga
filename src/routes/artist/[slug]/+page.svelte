@@ -2,8 +2,6 @@
   export let data;
   import SongCardHoriz from "$lib/components/SongCardHoriz.svelte";
   import AlbumCardHoriz from "$lib/components/AlbumCardHoriz.svelte";
-
-  $: console.log(data.artist.topSongs);
 </script>
 
 <div class="inner flex flex-dirc">
