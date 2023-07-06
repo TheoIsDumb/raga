@@ -18,7 +18,7 @@
   <Header />
 
   {#key data}
-    <div in:fly={{ x: 50, duration: 500 }} out:fly={{ x: -50 }}>
+    <div in:fly={{ y: 50, duration: 500 }} out:fly={{ y: -50 }}>
       {#if $navigating}
         <Spinner />
       {:else}

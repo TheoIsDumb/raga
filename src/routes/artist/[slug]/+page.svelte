@@ -2,9 +2,9 @@
   export let data;
   import SongCardHoriz from "$lib/components/SongCardHoriz.svelte";
   import AlbumCardHoriz from "$lib/components/AlbumCardHoriz.svelte";
-</script>
 
-<pre>{JSON.stringify(data, null, 2)}</pre>
+  $: console.log(data.artist.topSongs);
+</script>
 
 <div class="inner flex flex-dirc">
   <div class="header flex flex-ac">
@@ -18,38 +18,50 @@
     </div>
   </div>
 
-  <h1 class="play">Top Songs</h1>
-  <div class="hscroll">
-    {#each data.artist.topSongs as item}
-      <SongCardHoriz
-        title={item.title}
-        subtitle={item.subtitle}
-        image={item.image}
-        enc={item.more_info.encrypted_media_url}
-        kbps320={item.more_info["320kbps"]}
-      />
-    {/each}
-  </div>
+  {#if data.artist.topSongs.length !== 0}
+    <div class="scroll_container">
+      <h1 class="play">Top Songs</h1>
+      <div class="hscroll">
+        {#each data.artist.topSongs as item}
+          <SongCardHoriz
+            title={item.title}
+            subtitle={item.subtitle}
+            image={item.image}
+            enc={item.more_info.encrypted_media_url}
+            kbps320={item.more_info["320kbps"]}
+          />
+        {/each}
+      </div>
+    </div>
+  {/if}
 
-  <h1 class="play">Singles</h1>
-  <div class="hscroll">
-    {#each data.artist.singles as item}
-      <SongCardHoriz
-        title={item.title}
-        subtitle={item.subtitle}
-        image={item.image}
-        enc={item.more_info.encrypted_media_url}
-        kbps320={item.more_info["320kbps"]}
-      />
-    {/each}
-  </div>
+  {#if data.artist.singles.length !== 0}
+    <div class="scroll_container">
+      <h1 class="play">Singles</h1>
+      <div class="hscroll">
+        {#each data.artist.singles as item}
+          <SongCardHoriz
+            title={item.title}
+            subtitle={item.subtitle}
+            image={item.image}
+            enc={item.more_info.encrypted_media_url}
+            kbps320={item.more_info["320kbps"]}
+          />
+        {/each}
+      </div>
+    </div>
+  {/if}
 
-  <h1 class="play">Albums</h1>
-  <div class="hscroll">
-    {#each data.artist.topAlbums as item}
-      <AlbumCardHoriz id={item.id} title={item.title} image={item.image} />
-    {/each}
-  </div>
+  {#if data.artist.topAlbums.length !== 0}
+    <div class="scroll_container">
+      <h1 class="play">Albums</h1>
+      <div class="hscroll">
+        {#each data.artist.topAlbums as item}
+          <AlbumCardHoriz id={item.id} title={item.title} image={item.image} />
+        {/each}
+      </div>
+    </div>
+  {/if}
 </div>
 
 <style>

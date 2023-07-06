@@ -8,7 +8,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-  class="playlist flex"
+  class="playlist flex hover"
   on:click={() => {
     goto(`/playlist/${id}`);
   }}
@@ -26,9 +26,6 @@
     transition: all 0.3s;
     border-radius: 0.3rem;
     padding: 0.5rem;
-  }
-  div.playlist:hover {
-    background-color: var(--base);
   }
   div.playlist img {
     border-radius: 0.2rem;
