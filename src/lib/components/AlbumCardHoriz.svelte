@@ -2,23 +2,33 @@
   import { truncate } from "$lib/utils";
   import { goto } from "$app/navigation";
 
-  export let id;
-  export let title;
-  export let image;
+  export let array;
+  export let name;
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div
-  class="item"
-  on:click={() => {
-    goto(`/album/${id}`);
-  }}
->
-  <div class="iteminner flex flex-dirc hover">
-    <img loading="lazy" src={image.replace("150x150", "500x500")} alt={title} />
-    <span style:font-size="0.7rem" style:font-weight="bold">
-      {@html truncate(title, 20)}
-    </span>
+<div class="scroll_container">
+  <h1 class="play">{name}</h1>
+  <div class="hscroll">
+    {#each array as item}
+      <div
+        class="item"
+        on:click={() => {
+          goto(`/album/${item.id}`);
+        }}
+      >
+        <div class="iteminner flex flex-dirc hover">
+          <img
+            loading="lazy"
+            src={item.image.replace("150x150", "500x500")}
+            alt={item.title}
+          />
+          <span style:font-size="0.7rem" style:font-weight="bold">
+            {@html truncate(item.title, 20)}
+          </span>
+        </div>
+      </div>
+    {/each}
   </div>
 </div>
 

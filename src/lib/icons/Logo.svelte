@@ -176,16 +176,24 @@
 
 <style>
   @keyframes zoom {
-    0%,
-    100% {
-      filter: drop-shadow(0 0 0.1rem gray);
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
     }
     50% {
-      filter: drop-shadow(0 0 0.2rem gray);
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
     }
   }
 
   svg {
-    animation: zoom 2s ease-in-out infinite;
+    animation: zoom 1.5s ease-out infinite;
   }
 </style>

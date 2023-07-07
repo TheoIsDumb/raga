@@ -51,14 +51,7 @@
   {/if}
 
   {#if data.artist.topAlbums.length !== 0}
-    <div class="scroll_container">
-      <h1 class="play">Albums</h1>
-      <div class="hscroll">
-        {#each data.artist.topAlbums as item}
-          <AlbumCardHoriz id={item.id} title={item.title} image={item.image} />
-        {/each}
-      </div>
-    </div>
+    <AlbumCardHoriz name="Top Albums" array={data.artist.topAlbums} />
   {/if}
 </div>
 

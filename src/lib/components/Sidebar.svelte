@@ -26,6 +26,7 @@
   @media (max-width: 1200px) {
     div.menu {
       margin-top: 3rem;
+      margin-bottom: 1rem;
       justify-content: center;
       align-items: center;
       gap: 1rem;

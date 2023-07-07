@@ -42,7 +42,6 @@
     font-size: 1rem;
     border-radius: 0 0 0.4rem 0.4rem;
     padding: 0.3rem 0.8rem;
-    margin-bottom: 0.5rem;
     text-align: center;
     gap: 0.5rem;
     transition: all 0.2s;
