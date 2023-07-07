@@ -16,7 +16,7 @@
   export let data;
 </script>
 
-<MetaTags title="🎹  paattu." description="A libre frontend for JioSaavn." />
+<MetaTags title="paattu." description="A libre frontend for JioSaavn." />
 
 <main class:bottom-gap={Object.keys($active).length !== 0}>
   <Header />
