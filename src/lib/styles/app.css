@@ -91,9 +91,17 @@ div.scroll_container:nth-of-type(even) h1.play {
     transition: all 0.3s;
 }
 
-.pop:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 1rem black;
+@media (hover: hover) {
+    .pop:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 1rem black;
+    }
+}
+
+@media (hover: none) {
+    .pop:hover {
+        background-color: var(--base);
+    }
 }
 
 .hover:hover {
