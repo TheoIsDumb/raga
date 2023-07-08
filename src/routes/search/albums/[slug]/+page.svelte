@@ -53,4 +53,21 @@
     width: 100%;
     border-radius: inherit;
   }
+
+  .grid {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 </style>

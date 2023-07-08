@@ -32,6 +32,7 @@ main {
     margin: 0 auto;
 }
 
+
 .flex {
     display: flex;
 }
@@ -74,30 +75,6 @@ html::-webkit-scrollbar-track,
 html::-webkit-scrollbar-thumb,
 .hscroll::-webkit-scrollbar-thumb {
     background-color: var(--fg);
-}
-
-.grid {
-    display: grid;
-    gap: 0.5rem;
-}
-
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-pre {
-    height: 30rem;
-    overflow: scroll;
-    border: 2px solid var(--fg);
-    padding: 0.3rem;
 }
 
 h1.play {
