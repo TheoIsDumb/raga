@@ -17,7 +17,7 @@ body {
 }
 
 main {
-    height: 100dvh;
+    min-height: calc(100dvh - 7rem);
     width: 96%;
     max-width: 900px;
     margin: 0 auto;
