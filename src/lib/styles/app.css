@@ -1,123 +1,110 @@
 :root {
-    --bg: #11111b;
-    --fg: #89dceb;
-    --base: #313244;
-    --base-dark: #1e1e2e;
+  --bg: #11111b;
+  --fg: #89dceb;
+  --base: #313244;
+  --base-dark: #1e1e2e;
 }
 
 * {
-    box-sizing: border-box;
-    font-family: "Inter Tight", sans-serif;
+  box-sizing: border-box;
+  font-family: "Inter Tight", sans-serif;
 }
 
 html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--fg) transparent;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fg) transparent;
 }
 
 html::-webkit-scrollbar {
-    width: 0.5rem;
+  width: 0.5rem;
 }
 
 body {
-    margin: 0;
-    background-color: var(--bg);
-    color: var(--fg);
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 main {
-    min-height: calc(100dvh - 7rem);
-    width: 96%;
-    max-width: 900px;
-    margin: 0 auto;
+  min-height: calc(100dvh - 7rem);
+  width: 96%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-
-.flex {
-    display: flex;
-}
-
-.flex-jc {
-    justify-content: center;
-}
-
-.flex-ac {
-    align-items: center;
-}
-
-.flex-dirc {
-    flex-direction: column;
-}
-
-.inner {
-    gap: 1rem;
-}
+/* beautify ignore:start */
+.flex { display: flex; }
+.flex-jc { justify-content: center; }
+.flex-ac { align-items: center; }
+.flex-dirc { flex-direction: column; }
+.inner { gap: 1rem; }
+/* beautify ignore:end */
 
 .hscroll {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    padding-bottom: 1rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--fg) transparent;
-    height: 10rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fg) transparent;
+  height: 10rem;
 }
 
 .hscroll::-webkit-scrollbar {
-    height: 0.2rem;
+  height: 0.2rem;
 }
 
 html::-webkit-scrollbar-track,
 .hscroll::-webkit-scrollbar-track {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 html::-webkit-scrollbar-thumb,
 .hscroll::-webkit-scrollbar-thumb {
-    background-color: var(--fg);
+  background-color: var(--fg);
 }
 
 h1.play {
-    margin: 0;
-    text-transform: lowercase;
+  margin: 0;
+  text-transform: lowercase;
 }
 
 div.scroll_container:nth-of-type(even) h1.play {
-    text-align: right;
+  text-align: right;
 }
 
 .pop,
 .hover {
-    transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 @media (hover: hover) {
-    .pop:hover {
-        transform: scale(1.2);
-        box-shadow: 0 0 1rem black;
-    }
+  .pop:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 1rem black;
+  }
 }
 
 @media (hover: none) {
-    .pop:hover {
-        background-color: var(--base);
-    }
+  .pop:hover {
+    background-color: var(--base);
+  }
 }
 
 .hover:hover {
-    background-color: var(--base);
+  background-color: var(--base);
 }
 
 .pagination a {
-    color: var(--fg);
-    text-decoration: none;
-    padding: 0.2rem 0.8rem;
-    border: 1px solid var(--fg);
-    border-radius: 0.3rem;
-    transition: all 0.3s;
+  color: var(--fg);
+  text-decoration: none;
+  padding: 0.2rem 0.8rem;
+  border: 1px solid var(--fg);
+  border-radius: 0.3rem;
+  transition: all 0.3s;
 }
 
 .pagination a:hover {
-    background-color: var(--fg);
-    color: var(--bg);
+  background-color: var(--fg);
+  color: var(--bg);
 }
