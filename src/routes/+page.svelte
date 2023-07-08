@@ -2,6 +2,7 @@
   export let data;
   import { fade } from "svelte/transition";
   import PlaylistCardHoriz from "$lib/components/PlaylistCardHoriz.svelte";
+  import AlbumCardHoriz from "$lib/components/AlbumCardHoriz.svelte";
   import Logo from "$lib/icons/Logo.svelte";
 </script>
 
@@ -12,7 +13,7 @@
 
   <PlaylistCardHoriz array={data.modules.charts} name="Charts" />
   <PlaylistCardHoriz array={data.modules.top_playlists} name="Top Playlists" />
-  <PlaylistCardHoriz array={data.modules.new_albums} name="New Albums" />
+  <AlbumCardHoriz array={data.modules.new_albums} name="New Albums" />
 </div>
 
 <style>
