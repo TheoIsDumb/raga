@@ -1,12 +1,11 @@
 <script>
   export let data;
-  import { fade } from "svelte/transition";
   import PlaylistCardHoriz from "$lib/components/PlaylistCardHoriz.svelte";
   import AlbumCardHoriz from "$lib/components/AlbumCardHoriz.svelte";
   import Logo from "$lib/icons/Logo.svelte";
 </script>
 
-<div class="inner flex flex-dirc" in:fade>
+<div class="inner flex flex-dirc">
   <div class="logo flex flex-jc flex-ac">
     <Logo />
   </div>

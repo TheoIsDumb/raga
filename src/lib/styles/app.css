@@ -10,6 +10,15 @@
     font-family: "Inter Tight", sans-serif;
 }
 
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--fg) transparent;
+}
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
 body {
     margin: 0;
     background-color: var(--bg);
@@ -51,6 +60,20 @@ main {
     scrollbar-width: thin;
     scrollbar-color: var(--fg) transparent;
     height: 10rem;
+}
+
+.hscroll::-webkit-scrollbar {
+    height: 0.2rem;
+}
+
+html::-webkit-scrollbar-track,
+.hscroll::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb,
+.hscroll::-webkit-scrollbar-thumb {
+    background-color: var(--fg);
 }
 
 .grid {
