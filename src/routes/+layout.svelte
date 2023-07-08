@@ -18,7 +18,10 @@
 
 <MetaTags title="paattu." description="A libre frontend for JioSaavn." />
 
-<main class:bottom-gap={Object.keys($active).length !== 0}>
+<main
+  class:bottom-gap={Object.keys($active).length !== 0}
+  class="flex flex-dirc"
+>
   <Header />
   {#key data}
     <div in:fly={{ y: 50, duration: 500 }} out:fly={{ y: -50 }}>
@@ -26,10 +29,12 @@
         <Spinner />
       {:else}
         <slot />
-        <Footer />
       {/if}
     </div>
   {/key}
+  {#if !$navigating}
+    <Footer />
+  {/if}
 </main>
 
 {#if Object.keys($active).length !== 0}
@@ -39,6 +44,10 @@
 <style>
   .bottom-gap {
     margin-bottom: 6rem;
+  }
+
+  main {
+    justify-content: space-between;
   }
 
   @media (max-width: 1000px) {
