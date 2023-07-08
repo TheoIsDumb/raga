@@ -62,6 +62,8 @@
   }
   .header img {
     border-radius: 0.3rem;
+    height: 150px;
+    width: 150px;
   }
   .artistinfo {
     text-align: right;

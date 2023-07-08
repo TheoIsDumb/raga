@@ -32,7 +32,8 @@
     justify-content: space-between;
   }
   .playlistheader img {
-    height: 100%;
+    height: 150px;
+    width: 150px;
     border-radius: 0.3rem;
   }
   .playlistinfo {
