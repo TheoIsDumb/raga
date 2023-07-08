@@ -7,10 +7,10 @@
   }
 </script>
 
-<div class="inner grid">
+<div class="inner">
   {#each data.artists.results as artist}
     <div
-      class="artist flex flex-dirc"
+      class="artist flex hover"
       on:click={gotoartist(artist.id)}
       on:keypress={gotoartist(artist.id)}
     >
@@ -29,19 +29,16 @@
 
 <style>
   div.artist {
-    padding: 0.5rem;
-    background: var(--base-dark);
-    border-radius: 0.3rem;
+    width: 100%;
+    gap: 1rem;
     cursor: pointer;
-    gap: 0.5rem;
     transition: all 0.3s;
-  }
-  div.artist:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 1rem black;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
   }
   img {
-    width: 100%;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
   }
 </style>
