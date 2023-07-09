@@ -195,6 +195,7 @@
 
   svg {
     animation: zoom 1.5s ease-out infinite;
+    margin-top: 1rem;
   }
 
   @media (max-width: 768px) {

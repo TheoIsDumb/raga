@@ -48,17 +48,6 @@
 
   main {
     justify-content: space-between;
-  }
-
-  @media (max-width: 1000px) {
-    main {
-      margin-top: 2rem;
-    }
-  }
-
-  @media (min-width: 1000px) {
-    main {
-      margin-top: 3rem;
-    }
+    margin-top: 2rem;
   }
 </style>
