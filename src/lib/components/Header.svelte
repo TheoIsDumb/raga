@@ -9,7 +9,8 @@
 
   const handleInput = (e) => {
     if (e.key === "Enter" && $query !== "") {
-      goto(`/search/songs/${$query}?index=1`);
+      let q = encodeURI($query);
+      goto(`/search/songs?q=${q}`);
     }
   };
 </script>

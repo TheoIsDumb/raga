@@ -5,7 +5,7 @@
 </script>
 
 <div class="inner flex flex-dirc">
-  {#each data.searchDetails as datum}
+  {#each data.results as datum}
     <SongCard
       title={datum.title}
       subtitle={datum.subtitle}
@@ -17,12 +17,12 @@
 
   <span class="pagination">
     {#if data.index > 1}
-      <a href="/search/songs/{$query}&index={Number(data.index) - 1}">
+      <a href="/search/songs/{$query}?index={Number(data.index) - 1}">
         previous
       </a>
     {/if}
 
-    <a href="/search/songs/{$query}&index={Number(data.index) + 1}">next</a>
+    <a href="/search/songs/{$query}?index={Number(data.index) + 1}">next</a>
   </span>
 </div>
 
