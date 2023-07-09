@@ -8,7 +8,7 @@
   }
 </script>
 
-<div class="inner flex flex-dirc">
+<div class="inner scrollable flex flex-dirc">
   <div class="grid">
     {#each data.results as album}
       <div

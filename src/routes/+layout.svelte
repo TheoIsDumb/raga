@@ -32,9 +32,7 @@
       {/if}
     </div>
   {/key}
-  {#if !$navigating}
-    <Footer />
-  {/if}
+  <Footer />
 </main>
 
 {#if Object.keys($active).length !== 0}

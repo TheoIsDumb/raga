@@ -1,3 +1,4 @@
+/* beautify ignore:start */
 :root {
   --bg: #11111b;
   --fg: #89dceb;
@@ -5,18 +6,17 @@
   --base-dark: #1e1e2e;
 }
 
+.flex { display: flex; }
+.flex-jc { justify-content: center; }
+.flex-ac { align-items: center; }
+.flex-dirc { flex-direction: column; }
+.inner { gap: 1rem; }
+
+/**************************************/
+
 * {
   box-sizing: border-box;
   font-family: "Inter Tight", sans-serif;
-}
-
-html {
-  scrollbar-width: thin;
-  scrollbar-color: var(--fg) transparent;
-}
-
-html::-webkit-scrollbar {
-  width: 0.5rem;
 }
 
 body {
@@ -32,14 +32,6 @@ main {
   margin: 0 auto;
 }
 
-/* beautify ignore:start */
-.flex { display: flex; }
-.flex-jc { justify-content: center; }
-.flex-ac { align-items: center; }
-.flex-dirc { flex-direction: column; }
-.inner { gap: 1rem; }
-/* beautify ignore:end */
-
 .hscroll {
   overflow-x: auto;
   overflow-y: hidden;
@@ -50,19 +42,37 @@ main {
   height: 10rem;
 }
 
+.scrollable {
+	height: calc(100dvh - 9.5rem);
+	overflow-y: scroll;
+}
+
+/**************************************/
+
+html, .scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: var(--fg) transparent;
+}
+
+html::-webkit-scrollbar, .scrollable::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
 .hscroll::-webkit-scrollbar {
   height: 0.2rem;
 }
 
-html::-webkit-scrollbar-track,
-.hscroll::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track, .hscroll::-webkit-scrollbar-track,
+.scrollable::-webkit-scrollbar-track{
   background-color: transparent;
 }
 
-html::-webkit-scrollbar-thumb,
-.hscroll::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb, .hscroll::-webkit-scrollbar-thumb,
+.scrollable::-webkit-scrollbar-thumb{
   background-color: var(--fg);
 }
+
+/**************************************/
 
 h1.play {
   margin: 0;
@@ -73,9 +83,14 @@ div.scroll_container:nth-of-type(even) h1.play {
   text-align: right;
 }
 
-.pop,
-.hover {
+/**************************************/
+
+.pop, .hover {
   transition: all 0.3s;
+}
+
+.hover:hover {
+  background-color: var(--base);
 }
 
 @media (hover: hover) {
@@ -90,7 +105,4 @@ div.scroll_container:nth-of-type(even) h1.play {
     background-color: var(--base);
   }
 }
-
-.hover:hover {
-  background-color: var(--base);
-}
+/* beautify ignore:end */
