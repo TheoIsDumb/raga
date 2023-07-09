@@ -7,5 +7,7 @@ export async function GET({ url }) {
     const data = await resp.json();
     const results = await data.results;
 
-    return json(results);
+    return json({
+        'results': results
+    });
 }

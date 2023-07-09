@@ -8,7 +8,7 @@
 </script>
 
 <div class="inner">
-  {#each data.artists.results as artist}
+  {#each data.results as artist}
     <div
       class="artist flex hover"
       on:click={gotoartist(artist.id)}

@@ -14,16 +14,6 @@
       kbps320={datum.more_info["320kbps"]}
     />
   {/each}
-
-  <span class="pagination">
-    {#if data.index > 1}
-      <a href="/search/songs/{$query}?index={Number(data.index) - 1}">
-        previous
-      </a>
-    {/if}
-
-    <a href="/search/songs/{$query}?index={Number(data.index) + 1}">next</a>
-  </span>
 </div>
 
 <style>
