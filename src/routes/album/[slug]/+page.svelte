@@ -5,19 +5,19 @@
 
 <div class="inner flex flex-dirc">
   <div class="albumheader flex flex-ac">
-    <img loading="lazy" src={data.album.image} alt={data.album.title} />
+    <img loading="lazy" src={data.image} alt={data.title} />
     <div class="albuminfo flex flex-dirc">
-      <span style:font-weight="bold">{data.album.title}</span>
-      <span style:font-size="0.8rem">{data.album.subtitle}</span>
-      <span style:font-size="0.8rem">{data.album.header_desc}</span>
+      <span style:font-weight="bold">{data.title}</span>
+      <span style:font-size="0.8rem">{data.subtitle}</span>
+      <span style:font-size="0.8rem">{data.header_desc}</span>
     </div>
   </div>
 
-  {#each data.album.list as item}
+  {#each data.list as item}
     <SongCard
       title={item.title}
       subtitle={item.subtitle}
-      image={data.album.image}
+      image={data.image}
       enc={item.more_info.encrypted_media_url}
       kbps320={item.more_info["320kbps"]}
     />
