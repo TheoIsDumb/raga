@@ -6,21 +6,19 @@
 
 <div class="inner flex flex-dirc">
   <div class="header flex flex-ac">
-    <img loading="lazy" src={data.artist.image} alt={data.artist.name} />
+    <img loading="lazy" src={data.image} alt={data.name} />
     <div class="artistinfo flex flex-dirc">
-      <span style:font-weight="bold">{data.artist.name}</span>
-      <span style:font-size="0.8rem">{data.artist.subtitle}</span>
-      <span style:font-size="0.8rem"
-        >Followers: {data.artist.follower_count}</span
-      >
+      <span style:font-weight="bold">{data.name}</span>
+      <span style:font-size="0.8rem">{data.subtitle}</span>
+      <span style:font-size="0.8rem">Followers: {data.follower_count}</span>
     </div>
   </div>
 
-  {#if data.artist.topSongs.length !== 0}
+  {#if data.topSongs.length !== 0}
     <div class="scroll_container">
       <h1 class="play">Top Songs</h1>
       <div class="hscroll">
-        {#each data.artist.topSongs as item}
+        {#each data.topSongs as item}
           <SongCardHoriz
             title={item.title}
             subtitle={item.subtitle}
@@ -33,11 +31,11 @@
     </div>
   {/if}
 
-  {#if data.artist.singles.length !== 0}
+  {#if data.singles.length !== 0}
     <div class="scroll_container">
       <h1 class="play">Singles</h1>
       <div class="hscroll">
-        {#each data.artist.singles as item}
+        {#each data.singles as item}
           <SongCardHoriz
             title={item.title}
             subtitle={item.subtitle}
@@ -50,8 +48,8 @@
     </div>
   {/if}
 
-  {#if data.artist.topAlbums.length !== 0}
-    <AlbumCardHoriz name="Top Albums" array={data.artist.topAlbums} />
+  {#if data.topAlbums.length !== 0}
+    <AlbumCardHoriz name="Top Albums" array={data.topAlbums} />
   {/if}
 </div>
 
