@@ -26,7 +26,7 @@ body {
 }
 
 main {
-  min-height: calc(100dvh - 7rem);
+  min-height: calc(100dvh - 2rem);
   width: 96%;
   max-width: 900px;
   margin: 0 auto;
@@ -93,18 +93,4 @@ div.scroll_container:nth-of-type(even) h1.play {
 
 .hover:hover {
   background-color: var(--base);
-}
-
-.pagination a {
-  color: var(--fg);
-  text-decoration: none;
-  padding: 0.2rem 0.8rem;
-  border: 1px solid var(--fg);
-  border-radius: 0.3rem;
-  transition: all 0.3s;
-}
-
-.pagination a:hover {
-  background-color: var(--fg);
-  color: var(--bg);
 }
