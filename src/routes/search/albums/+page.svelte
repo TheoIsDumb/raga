@@ -10,7 +10,7 @@
 
 <div class="inner flex flex-dirc">
   <div class="grid">
-    {#each data.albums.results as album}
+    {#each data.results as album}
       <div
         class="album flex flex-dirc pop"
         on:click={gotoalbum(album.id)}

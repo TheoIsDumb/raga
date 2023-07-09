@@ -9,7 +9,6 @@ export async function GET({ url }) {
     const results = await data.results;
 
     return json({
-        'index': index,
         'results': results
     });
 }
