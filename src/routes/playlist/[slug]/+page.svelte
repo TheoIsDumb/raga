@@ -5,15 +5,15 @@
 
 <div class="inner flex flex-dirc">
   <div class="playlistheader flex flex-ac">
-    <img loading="lazy" src={data.playlist.image} alt={data.playlist.title} />
+    <img loading="lazy" src={data.image} alt={data.title} />
     <div class="playlistinfo flex flex-dirc">
-      <span style:font-weight="bold">{data.playlist.title}</span>
-      <span style:font-size="0.8rem">{data.playlist.subtitle}</span>
-      <span style:font-size="0.8rem">{data.playlist.header_desc}</span>
+      <span style:font-weight="bold">{data.title}</span>
+      <span style:font-size="0.8rem">{data.subtitle}</span>
+      <span style:font-size="0.8rem">{data.header_desc}</span>
     </div>
   </div>
 
-  {#each data.playlist.list as item}
+  {#each data.list as item}
     <SongCard
       title={item.title}
       subtitle={item.subtitle}
