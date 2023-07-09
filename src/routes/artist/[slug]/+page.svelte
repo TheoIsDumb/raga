@@ -1,7 +1,7 @@
 <script>
   export let data;
-  import SongCardHoriz from "$lib/components/SongCardHoriz.svelte";
-  import AlbumCardHoriz from "$lib/components/AlbumCardHoriz.svelte";
+  import SongCardHoriz from "$lib/components/cards/SongCardHoriz.svelte";
+  import AlbumCardHoriz from "$lib/components/cards/AlbumCardHoriz.svelte";
 </script>
 
 <div class="inner flex flex-dirc">

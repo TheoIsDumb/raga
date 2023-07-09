@@ -1,6 +1,6 @@
 <script>
   export let data;
-  import PlaylistCard from "$lib/components/PlaylistCard.svelte";
+  import PlaylistCard from "$lib/components/cards/PlaylistCard.svelte";
 </script>
 
 <div class="inner flex flex-dirc">

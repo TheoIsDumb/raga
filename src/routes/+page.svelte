@@ -1,7 +1,7 @@
 <script>
   export let data;
-  import PlaylistCardHoriz from "$lib/components/PlaylistCardHoriz.svelte";
-  import AlbumCardHoriz from "$lib/components/AlbumCardHoriz.svelte";
+  import PlaylistCardHoriz from "$lib/components/cards/PlaylistCardHoriz.svelte";
+  import AlbumCardHoriz from "$lib/components/cards/AlbumCardHoriz.svelte";
   import Logo from "$lib/icons/Logo.svelte";
 </script>
 

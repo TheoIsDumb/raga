@@ -1,7 +1,6 @@
 <script>
   export let data;
-  import SongCard from "$lib/components/SongCard.svelte";
-  import { query } from "$lib/store";
+  import SongCard from "$lib/components/cards/SongCard.svelte";
 </script>
 
 <div class="inner flex flex-dirc">
