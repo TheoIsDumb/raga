@@ -8,11 +8,11 @@
   }
 </script>
 
-<div class="inner scrollable flex flex-dirc">
+<div class="inner flex flex-dirc">
   <div class="grid">
     {#each data.results as album}
       <div
-        class="album flex flex-dirc pop"
+        class="album flex flex-dirc"
         on:click={gotoalbum(album.id)}
         on:keypress={gotoalbum(album.id)}
       >
@@ -30,16 +30,6 @@
       </div>
     {/each}
   </div>
-
-  <span class="pagination">
-    {#if data.index > 1}
-      <a href="/search/albums/{$query}&index={Number(data.index) - 1}">
-        previous
-      </a>
-    {/if}
-
-    <a href="/search/albums/{$query}&index={Number(data.index) + 1}">next</a>
-  </span>
 </div>
 
 <style>
@@ -48,10 +38,16 @@
     background-color: var(--base-dark);
     border-radius: 0.3rem;
     cursor: pointer;
+    transition: all 0.3s;
+  }
+  div.album:hover {
+    background-color: var(--base);
   }
   img {
     width: 100%;
     border-radius: inherit;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
 
   .grid {

@@ -26,7 +26,7 @@
   };
 </script>
 
-<div class="inner scrollable flex flex-dirc" on:scroll={loadMore}>
+<div class="inner flex flex-dirc" on:scroll={loadMore}>
   {#each results as datum}
     <SongCard
       title={datum.title}

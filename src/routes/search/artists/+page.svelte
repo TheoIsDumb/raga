@@ -7,7 +7,7 @@
   }
 </script>
 
-<div class="inner scrollable">
+<div class="inner">
   {#each data.results as artist}
     <div
       class="artist flex hover"

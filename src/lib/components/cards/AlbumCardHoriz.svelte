@@ -44,6 +44,8 @@
   .item img {
     width: 100%;
     border-radius: 0.3rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
   .iteminner {
     gap: 0.5rem;

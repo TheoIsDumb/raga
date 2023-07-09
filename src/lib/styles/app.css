@@ -42,19 +42,20 @@ main {
   height: 10rem;
 }
 
-.scrollable {
-	height: calc(100dvh - 9.5rem);
+.inner {
+	height: calc(100dvh - 6rem);
 	overflow-y: scroll;
+  padding: 0 1rem;
 }
 
 /**************************************/
 
-html, .scrollable {
+html, .inner {
   scrollbar-width: thin;
   scrollbar-color: var(--fg) transparent;
 }
 
-html::-webkit-scrollbar, .scrollable::-webkit-scrollbar {
+html::-webkit-scrollbar, .inner::-webkit-scrollbar {
   width: 0.5rem;
 }
 
@@ -63,12 +64,12 @@ html::-webkit-scrollbar, .scrollable::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track, .hscroll::-webkit-scrollbar-track,
-.scrollable::-webkit-scrollbar-track{
+.inner::-webkit-scrollbar-track{
   background-color: transparent;
 }
 
 html::-webkit-scrollbar-thumb, .hscroll::-webkit-scrollbar-thumb,
-.scrollable::-webkit-scrollbar-thumb{
+.inner::-webkit-scrollbar-thumb{
   background-color: var(--fg);
 }
 
@@ -85,24 +86,11 @@ div.scroll_container:nth-of-type(even) h1.play {
 
 /**************************************/
 
-.pop, .hover {
+.hover {
   transition: all 0.3s;
 }
 
 .hover:hover {
   background-color: var(--base);
-}
-
-@media (hover: hover) {
-  .pop:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 1rem black;
-  }
-}
-
-@media (hover: none) {
-  .pop:hover {
-    background-color: var(--base);
-  }
 }
 /* beautify ignore:end */

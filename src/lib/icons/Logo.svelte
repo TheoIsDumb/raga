@@ -24,8 +24,7 @@
         in2="SourceGraphic"
         operator="in"
         result="composite1"
-      />
-      <feGaussianBlur in="composite1" result="blur" stdDeviation="0.4" />
+      /> <feGaussianBlur in="composite1" result="blur" stdDeviation="0.4" />
       <feOffset dx="0" dy="0" result="offset" />
       <feComposite in="SourceGraphic" in2="offset" result="composite2" />
     </filter>
@@ -200,8 +199,8 @@
 
   @media (max-width: 768px) {
     svg {
-      height: 150px;
-      width: 150px;
+      height: 175px;
+      width: 175px;
     }
   }
 </style>
