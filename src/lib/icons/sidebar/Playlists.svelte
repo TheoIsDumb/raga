@@ -7,7 +7,7 @@
 <svg
   on:click={() => {
     if ($query != "") {
-      goto(`/search/playlists/${$query}`);
+      goto(`/search/playlists?q=${$query}`);
     }
   }}
   xmlns="http://www.w3.org/2000/svg"

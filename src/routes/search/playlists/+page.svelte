@@ -4,7 +4,7 @@
 </script>
 
 <div class="inner flex flex-dirc">
-  {#each data.playlists as playlist}
+  {#each data.results as playlist}
     <PlaylistCard
       id={playlist.id}
       title={playlist.title}
