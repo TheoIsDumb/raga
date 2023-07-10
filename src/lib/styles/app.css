@@ -53,16 +53,9 @@ main {
   scrollbar-width: thin;
   scrollbar-color: var(--fg) transparent;
 }
-.inner::-webkit-scrollbar {
-  width: 0.2rem;
-}
-.inner::-webkit-scrollbar-thumb{
-  background-color: var(--fg);
-} 
-
-.hscroll::-webkit-scrollbar {
-  display: none;
-}
+.inner::-webkit-scrollbar { width: 0.2rem; }
+.inner::-webkit-scrollbar-thumb{ background-color: var(--fg); } 
+.hscroll::-webkit-scrollbar { display: none; }
 
 /**************************************/
 
@@ -74,11 +67,6 @@ h1.play {
 
 /**************************************/
 
-.hover {
-  transition: all 0.3s;
-}
-
-.hover:hover {
-  background-color: var(--base);
-}
+.hover { transition: all 0.3s; }
+.hover:hover { background-color: var(--base); }
 /* beautify ignore:end */

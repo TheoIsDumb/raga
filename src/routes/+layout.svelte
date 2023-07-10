@@ -3,11 +3,13 @@
   import Player from "$lib/components/Player.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import Spinner from "$lib/icons/Spinner.svelte";
+  import BelowHeader from "$lib/components/BelowHeader.svelte";
   import "$lib/styles/app.css";
 
   import { active } from "$lib/store";
   import { navigating } from "$app/stores";
   import { fly } from "svelte/transition";
+  import { page } from "$app/stores";
 
   import "@fontsource/inter-tight";
   import "@fontsource/inter-tight/400.css";
@@ -23,6 +25,9 @@
   class="flex flex-dirc"
 >
   <Header />
+  {#if $page.url.pathname.includes("search")}
+    <BelowHeader />
+  {/if}
   {#key data}
     <div in:fly={{ y: 50, duration: 500 }} out:fly={{ y: -50 }}>
       {#if $navigating}
