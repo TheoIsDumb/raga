@@ -2,6 +2,6 @@
 
 <style>
   :global(.inner) {
-    height: calc(100dvh - 9.5rem);
+    height: calc(100dvh - 10rem);
   }
 </style>
