@@ -3,7 +3,7 @@
   import PlaylistCard from "$lib/components/cards/PlaylistCard.svelte";
 </script>
 
-<div class="inner flex flex-dirc">
+<div class="inner smol flex flex-dirc">
   {#each data.results as playlist}
     <PlaylistCard
       id={playlist.id}

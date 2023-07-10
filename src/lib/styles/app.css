@@ -65,6 +65,8 @@ h1.play {
   text-align: right;
 }
 
+.smol {height: calc(100dvh - 10rem);}
+
 /**************************************/
 
 .hover { transition: all 0.3s; }
