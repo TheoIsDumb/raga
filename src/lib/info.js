@@ -13,5 +13,6 @@ export const sub = Object.freeze({
   albumDetails: "__call=content.getAlbumDetails&albumid=",
   artistDetails: "__call=artist.getArtistPageDetails&artistId=",
   playlistDetails: "__call=playlist.getDetails&listid=",
+  lyrics: "__call=lyrics.getLyrics&lyrics_id=",
   index: "p="
 });
