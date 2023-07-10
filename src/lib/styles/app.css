@@ -10,7 +10,6 @@
 .flex-jc { justify-content: center; }
 .flex-ac { align-items: center; }
 .flex-dirc { flex-direction: column; }
-.inner { gap: 1rem; }
 
 /**************************************/
 
@@ -37,8 +36,7 @@ main {
   overflow-y: hidden;
   white-space: nowrap;
   padding-bottom: 1rem;
-  scrollbar-width: thin;
-  scrollbar-color: var(--fg) transparent;
+  scrollbar-width: none;
   height: 10rem;
 }
 
@@ -46,31 +44,24 @@ main {
 	height: calc(100dvh - 6rem);
 	overflow-y: scroll;
   padding: 0 1rem;
+  gap: 1rem;
 }
 
 /**************************************/
 
-html, .inner {
+.inner {
   scrollbar-width: thin;
   scrollbar-color: var(--fg) transparent;
 }
-
-html::-webkit-scrollbar, .inner::-webkit-scrollbar {
-  width: 0.5rem;
+.inner::-webkit-scrollbar {
+  width: 0.2rem;
 }
-
-.hscroll::-webkit-scrollbar {
-  height: 0.2rem;
-}
-
-html::-webkit-scrollbar-track, .hscroll::-webkit-scrollbar-track,
-.inner::-webkit-scrollbar-track{
-  background-color: transparent;
-}
-
-html::-webkit-scrollbar-thumb, .hscroll::-webkit-scrollbar-thumb,
 .inner::-webkit-scrollbar-thumb{
   background-color: var(--fg);
+} 
+
+.hscroll::-webkit-scrollbar {
+  display: none;
 }
 
 /**************************************/
@@ -78,9 +69,6 @@ html::-webkit-scrollbar-thumb, .hscroll::-webkit-scrollbar-thumb,
 h1.play {
   margin: 0;
   text-transform: lowercase;
-}
-
-div.scroll_container:nth-of-type(even) h1.play {
   text-align: right;
 }
 
