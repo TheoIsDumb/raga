@@ -13,6 +13,10 @@
       goto(`/search/songs?q=${q}`);
     }
   };
+
+  if ($query === "") {
+    $query = $page.url.searchParams.get("q") || "";
+  }
 </script>
 
 <div class="header flex flex-ac">
