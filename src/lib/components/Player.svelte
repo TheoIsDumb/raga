@@ -31,9 +31,9 @@
     />
 
     {#if paused}
-      <Pause bind:paused />
-    {:else}
       <Play bind:paused />
+    {:else}
+      <Pause bind:paused />
     {/if}
   </div>
 </div>

@@ -69,6 +69,7 @@ h1.play {
 
 /**************************************/
 
-.hover { transition: all 0.3s; }
+.glow, .hover { transition: all 0.3s; }
 .hover:hover { background-color: var(--base); }
+.glow:hover { filter: drop-shadow(0 0 0.7rem var(--fg)); }
 /* beautify ignore:end */
