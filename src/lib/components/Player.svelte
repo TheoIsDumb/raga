@@ -10,7 +10,7 @@
   let duration = 0;
 </script>
 
-<div class="player flex flex-dirc" transition:fly={{ y: 50, duration: 800 }}>
+<div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
   <Seekbar bind:currentTime bind:duration />
 
   <div class="buttonimginfo flex flex-ac">
@@ -47,18 +47,9 @@
   }
   div.player {
     background-color: var(--base-dark);
-    padding: 0.5rem;
-    border: 1px solid var(--fg);
-    border-radius: 0.4rem;
+    padding: 0.2rem;
     justify-content: space-between;
     gap: 0.5rem;
-    box-shadow: 0 0 0.7rem var(--fg);
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-    width: 96%;
-    max-width: 900px;
   }
   div#title {
     font-weight: bold;

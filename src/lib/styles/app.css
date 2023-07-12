@@ -27,7 +27,7 @@ body {
 main {
   height: 100dvh;
   max-height: 100dvh;
-  width: 96%;
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
   gap: 1rem;

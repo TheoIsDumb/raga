@@ -8,7 +8,7 @@
 
   import { active } from "$lib/store";
   import { navigating } from "$app/stores";
-  import { fly } from "svelte/transition";
+  import { fade } from "svelte/transition";
   import { page } from "$app/stores";
 
   import "@fontsource/inter-tight";
@@ -26,12 +26,7 @@
     <BelowHeader />
   {/if}
   {#key data}
-    <div
-      class:diff={Object.keys($active).length === 0}
-      class="inner_container"
-      in:fly={{ y: 50, duration: 500 }}
-      out:fly={{ y: -50 }}
-    >
+    <div class="inner_container" in:fade={{ delay: 500 }} out:fade>
       {#if $navigating}
         <Spinner />
       {:else}
@@ -49,6 +44,8 @@
 
 <style>
   div.inner_container {
+    height: 85%;
     max-height: 85%;
+    overflow: auto;
   }
 </style>

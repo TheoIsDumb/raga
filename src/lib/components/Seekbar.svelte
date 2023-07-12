@@ -12,51 +12,49 @@
   }
 </script>
 
-<div class="progresstime flex flex-ac">
-  <span>{format(currentTime)}</span>
+<div
+  class="slider flex flex-ac"
+  on:pointerdown={(e) => {
+    const div = e.currentTarget;
 
-  <div
-    class="slider flex flex-ac"
-    on:pointerdown={(e) => {
-      const div = e.currentTarget;
+    function seek(e) {
+      const { left, width } = div.getBoundingClientRect();
 
-      function seek(e) {
-        const { left, width } = div.getBoundingClientRect();
+      let p = (e.clientX - left) / width;
+      if (p < 0) p = 0;
+      if (p > 1) p = 1;
 
-        let p = (e.clientX - left) / width;
-        if (p < 0) p = 0;
-        if (p > 1) p = 1;
+      currentTime = p * duration;
+    }
 
-        currentTime = p * duration;
+    seek(e);
+
+    window.addEventListener("pointermove", seek);
+
+    window.addEventListener(
+      "pointerup",
+      () => {
+        window.removeEventListener("pointermove", seek);
+      },
+      {
+        once: true,
       }
+    );
+  }}
+>
+  <div class="progessbar" style="--progress: {currentTime / duration}%" />
+</div>
 
-      seek(e);
-
-      window.addEventListener("pointermove", seek);
-
-      window.addEventListener(
-        "pointerup",
-        () => {
-          window.removeEventListener("pointermove", seek);
-        },
-        {
-          once: true,
-        }
-      );
-    }}
-  >
-    <div class="progessbar" style="--progress: {currentTime / duration}%" />
-  </div>
-
+<div class="time flex">
+  <span>{format(currentTime)}</span>
   <span>{format(duration)}</span>
 </div>
 
 <style>
   .slider {
     width: 100%;
-    border: 1px solid var(--fg);
-    border-radius: 1rem;
     height: 0.5rem;
+    background-color: var(--base);
   }
   .progessbar {
     width: calc(100 * var(--progress));
@@ -65,14 +63,9 @@
     background-color: var(--fg);
     cursor: pointer;
   }
-  div.progresstime {
-    gap: 0.3rem;
+  .time {
     font-size: 0.8rem;
-  }
-  .flex {
-    display: flex;
-  }
-  .flex-ac {
-    align-items: center;
+    width: 100%;
+    justify-content: space-between;
   }
 </style>
