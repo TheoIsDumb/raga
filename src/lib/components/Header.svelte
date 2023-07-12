@@ -40,8 +40,6 @@
 
 <style>
   div.header {
-    width: 100%;
-    max-width: 900px;
     background-color: var(--base-dark);
     font-size: 1rem;
     border-radius: 0 0 0.4rem 0.4rem;
@@ -49,10 +47,6 @@
     text-align: center;
     gap: 0.5rem;
     transition: all 0.2s;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
     z-index: 100;
   }
   div.header:focus-within {

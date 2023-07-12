@@ -24,7 +24,6 @@
 
 <style>
     div.footer {
-        margin: 1rem 0;
         gap: 1rem;
     }
     a {

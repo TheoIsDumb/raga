@@ -30,7 +30,6 @@
   div.buttons {
     width: 100%;
     align-items: stretch;
-    margin: 1rem 0;
     gap: 0.5rem;
   }
   div.buttons button {

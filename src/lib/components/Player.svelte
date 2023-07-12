@@ -46,12 +46,6 @@
     gap: 1rem;
   }
   div.player {
-    position: fixed;
-    bottom: 0.5rem;
-    left: 50%;
-    transform: translate(-50%);
-    width: 96%;
-    max-width: 900px;
     background-color: var(--base-dark);
     padding: 0.5rem;
     border: 1px solid var(--fg);
@@ -59,6 +53,12 @@
     justify-content: space-between;
     gap: 0.5rem;
     box-shadow: 0 0 0.7rem var(--fg);
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 96%;
+    max-width: 900px;
   }
   div#title {
     font-weight: bold;

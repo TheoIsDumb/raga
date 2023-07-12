@@ -25,10 +25,12 @@ body {
 }
 
 main {
-  min-height: calc(100dvh - 2rem);
+  height: 100dvh;
+  max-height: 100dvh;
   width: 96%;
   max-width: 900px;
   margin: 0 auto;
+  gap: 1rem;
 }
 
 .hscroll {
@@ -41,7 +43,7 @@ main {
 }
 
 .inner {
-	height: calc(100dvh - 6rem);
+  height: 100%;
 	overflow-y: scroll;
   padding: 0 1rem;
   gap: 1rem;
@@ -64,8 +66,6 @@ h1.play {
   text-transform: lowercase;
   text-align: right;
 }
-
-.smol {height: calc(100dvh - 10rem);}
 
 /**************************************/
 
