@@ -1,5 +1,5 @@
 <div class="footer flex flex-ac flex-jc">
-    <span>paattu.</span>
+    <span>പാട്ട്.</span>
 
     <a
         href="https://github.com/theoisdumb/paattu"
