@@ -37,11 +37,11 @@
     flex: 1;
     background-color: transparent;
     color: var(--fg);
-    border: 2px solid var(--fg);
+    border: 0.1rem solid var(--fg);
     border-radius: 0.3rem;
     padding: 0.2rem;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: 0.1s;
   }
   div.buttons button:hover {

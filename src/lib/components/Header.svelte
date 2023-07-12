@@ -40,9 +40,8 @@
 
 <style>
   div.header {
-    width: 96%;
+    width: 100%;
     max-width: 900px;
-    color: var(--fg);
     background-color: var(--base-dark);
     font-size: 1rem;
     border-radius: 0 0 0.4rem 0.4rem;
@@ -55,17 +54,13 @@
     left: 50%;
     transform: translate(-50%);
     z-index: 100;
-    border: 1px solid var(--fg);
-    border-top: 0;
   }
   div.header:focus-within {
     background-color: var(--base);
   }
   input {
     all: unset;
-    flex-grow: 2;
     width: 100%;
-    transition: all 0.6s;
   }
   :global(.header svg) {
     cursor: pointer;
