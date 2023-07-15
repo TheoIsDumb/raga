@@ -1,24 +1,14 @@
 <script>
-  import { decrypt, truncate } from "$lib/utils";
+  import { truncate } from "$lib/utils";
   import { active, currentPlaylist } from "$lib/store";
-  export let image;
-  export let title;
-  export let subtitle;
-  export let enc;
-  export let kbps320;
 
-  function play(enc, title, subtitle, image, kbps320) {
-    let dec_url = decrypt(enc, kbps320);
+  export let item;
 
-    $active = {
-      name: truncate(title, 30),
-      artist: truncate(subtitle, 50),
-      image: image,
-      url: dec_url,
-    };
-    $currentPlaylist.push($active);
+  function play(item) {
+    $active = item;
+    // $currentPlaylist = [$active];
 
-    console.log($currentPlaylist);
+    // console.log($currentPlaylist);
   }
 </script>
 
@@ -26,14 +16,14 @@
 <div
   class="song flex hover"
   on:click={() => {
-    play(enc, title, subtitle, image, kbps320);
+    play(item);
   }}
 >
-  <img loading="lazy" src={image} alt={title} />
+  <img loading="lazy" src={item.image} alt={item.title} />
 
   <div class="info flex flex-jc flex-dirc">
-    <div id="title">{@html truncate(title, 50)}</div>
-    <div id="subtitle">{@html truncate(subtitle, 50)}</div>
+    <div id="title">{@html truncate(item.title, 50)}</div>
+    <div id="subtitle">{@html truncate(item.subtitle, 50)}</div>
   </div>
 </div>
 

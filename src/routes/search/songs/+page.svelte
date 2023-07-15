@@ -30,13 +30,7 @@
 
 <div class="inner smol flex flex-dirc" on:scroll={scrollHandler}>
   {#each results as datum}
-    <SongCard
-      title={datum.title}
-      subtitle={datum.subtitle}
-      image={datum.image}
-      enc={datum.more_info.encrypted_media_url}
-      kbps320={datum.more_info["320kbps"]}
-    />
+    <SongCard item={datum} />
   {/each}
 
   <button on:click={loadMore}>&darr;</button>

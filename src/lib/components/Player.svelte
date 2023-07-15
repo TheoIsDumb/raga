@@ -4,6 +4,7 @@
   import Play from "$lib/icons/Play.svelte";
   import Seekbar from "./Seekbar.svelte";
   import { active } from "$lib/store";
+  import { decrypt } from "$lib/utils";
 
   let paused = true;
   let currentTime = 0;
@@ -15,15 +16,18 @@
 
   <div class="buttonimginfo flex flex-ac">
     <div class="imginfo flex flex-ac">
-      <img loading="lazy" src={$active.image} alt={$active.name} />
+      <img loading="lazy" src={$active.image} alt={$active.title} />
       <div class="info">
-        <div id="title">{@html $active.name}</div>
-        <div id="subtitle">{@html $active.artist}</div>
+        <div id="title">{@html $active.title}</div>
+        <div id="subtitle">{@html $active.subtitle}</div>
       </div>
     </div>
 
     <audio
-      src={$active.url}
+      src={decrypt(
+        $active.more_info.encrypted_media_url,
+        $active.more_info["320kbps"]
+      )}
       bind:currentTime
       bind:paused
       bind:duration
