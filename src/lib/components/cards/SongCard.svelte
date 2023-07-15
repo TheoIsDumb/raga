@@ -1,6 +1,6 @@
 <script>
   import { decrypt, truncate } from "$lib/utils";
-  import { active } from "$lib/store";
+  import { active, currentPlaylist } from "$lib/store";
   export let image;
   export let title;
   export let subtitle;
@@ -16,6 +16,9 @@
       image: image,
       url: dec_url,
     };
+    $currentPlaylist.push($active);
+
+    console.log($currentPlaylist);
   }
 </script>
 

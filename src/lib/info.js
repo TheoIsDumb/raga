@@ -1,6 +1,6 @@
 export const baseURL = "https://www.jiosaavn.com/api.php?_format=json&_marker=0&api_version=4&ctx=web6dot0&"
 
-export const sub = Object.freeze({ 
+export const sub = Object.freeze({
   search: {
     all: '&__call=autocomplete.get',
     songs: '&__call=search.getResults&q=',
@@ -14,5 +14,6 @@ export const sub = Object.freeze({
   artistDetails: "__call=artist.getArtistPageDetails&artistId=",
   playlistDetails: "__call=playlist.getDetails&listid=",
   lyrics: "__call=lyrics.getLyrics&lyrics_id=",
+  reco: "__call=reco.getreco&language=english&pid=",
   index: "p="
 });
