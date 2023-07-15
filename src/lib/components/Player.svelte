@@ -1,10 +1,13 @@
 <script>
   import { fly } from "svelte/transition";
+  import { decrypt } from "$lib/utils";
+  import { active, currentPlaylist } from "$lib/store";
+
   import Pause from "$lib/icons/Pause.svelte";
   import Play from "$lib/icons/Play.svelte";
+  import Prev from "$lib/icons/Prev.svelte";
+  import Next from "$lib/icons/Next.svelte";
   import Seekbar from "./Seekbar.svelte";
-  import { active } from "$lib/store";
-  import { decrypt } from "$lib/utils";
 
   let paused = true;
   let currentTime = 0;
@@ -34,11 +37,17 @@
       autoplay
     />
 
-    {#if paused}
-      <Play bind:paused />
-    {:else}
-      <Pause bind:paused />
-    {/if}
+    <div class="buttons">
+      <Prev />
+
+      {#if paused}
+        <Play bind:paused />
+      {:else}
+        <Pause bind:paused />
+      {/if}
+
+      <Next />
+    </div>
   </div>
 </div>
 

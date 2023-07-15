@@ -8,17 +8,17 @@
     $active = item;
     $currentPlaylist = [$active];
 
-    // console.log($currentPlaylist);
-
     const resp = await fetch(`/api/reco?songid=${$active.id}`);
 
     const addData = await resp.json();
 
-    addData.results.forEach((song) => {
+    addData.forEach((song) => {
       $currentPlaylist.push(song);
     });
     $currentPlaylist = $currentPlaylist;
   }
+
+  $: console.log($currentPlaylist);
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
