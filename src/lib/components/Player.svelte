@@ -1,7 +1,7 @@
 <script>
   import { fly } from "svelte/transition";
   import { decrypt } from "$lib/utils";
-  import { active, currentPlaylist } from "$lib/store";
+  import { active, currentPlaylist, index } from "$lib/store";
 
   import Pause from "$lib/icons/Pause.svelte";
   import Play from "$lib/icons/Play.svelte";
@@ -35,6 +35,10 @@
       bind:paused
       bind:duration
       autoplay
+      on:ended={() => {
+        $index++;
+        $active = $currentPlaylist[$index];
+      }}
     />
 
     <div class="buttons">
