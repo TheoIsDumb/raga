@@ -29,8 +29,8 @@
 </script>
 
 <div class="inner smol flex flex-dirc" on:scroll={scrollHandler}>
-  {#each results as datum}
-    <SongCard item={datum} />
+  {#each results as item}
+    <SongCard {item} />
   {/each}
 
   <button on:click={loadMore}>&darr;</button>

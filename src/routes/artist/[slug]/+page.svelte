@@ -19,13 +19,7 @@
       <h1 class="play">Top Songs</h1>
       <div class="hscroll">
         {#each data.topSongs as item}
-          <SongCardHoriz
-            title={item.title}
-            subtitle={item.subtitle}
-            image={item.image}
-            enc={item.more_info.encrypted_media_url}
-            kbps320={item.more_info["320kbps"]}
-          />
+          <SongCardHoriz {item} />
         {/each}
       </div>
     </div>
@@ -36,13 +30,7 @@
       <h1 class="play">Singles</h1>
       <div class="hscroll">
         {#each data.singles as item}
-          <SongCardHoriz
-            title={item.title}
-            subtitle={item.subtitle}
-            image={item.image}
-            enc={item.more_info.encrypted_media_url}
-            kbps320={item.more_info["320kbps"]}
-          />
+          <SongCardHoriz {item} />
         {/each}
       </div>
     </div>

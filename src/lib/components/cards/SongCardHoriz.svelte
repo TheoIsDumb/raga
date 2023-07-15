@@ -1,37 +1,30 @@
 <script>
-  import { decrypt, truncate } from "$lib/utils";
-  import { active } from "$lib/store";
-  export let image;
-  export let title;
-  export let subtitle;
-  export let enc;
-  export let kbps320;
+  import { truncate } from "$lib/utils";
+  import { active, currentPlaylist } from "$lib/store";
 
-  function play(enc, title, subtitle, image, kbps320) {
-    let dec_url = decrypt(enc, kbps320);
+  export let item;
 
-    $active = {
-      name: truncate(title, 30),
-      artist: truncate(subtitle, 30),
-      image: image,
-      url: dec_url,
-    };
+  function play(item) {
+    $active = item;
+    $currentPlaylist = [$active];
   }
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
   class="item"
   on:click={() => {
-    play(enc, title, subtitle, image, kbps320);
-  }}
-  on:keypress={() => {
-    play(enc, title, subtitle, image, kbps320);
+    play(item);
   }}
 >
   <div class="iteminner flex flex-dirc hover">
-    <img loading="lazy" src={image.replace("150x150", "500x500")} alt={title} />
+    <img
+      loading="lazy"
+      src={item.image.replace("150x150", "500x500")}
+      alt={item.title}
+    />
     <span style:font-size="0.7rem" style:font-weight="bold">
-      {truncate(title, 20)}
+      {truncate(item.title, 20)}
     </span>
   </div>
 </div>

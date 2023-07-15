@@ -14,13 +14,7 @@
   </div>
 
   {#each data.list as item}
-    <SongCard
-      title={item.title}
-      subtitle={item.subtitle}
-      image={data.image}
-      enc={item.more_info.encrypted_media_url}
-      kbps320={item.more_info["320kbps"]}
-    />
+    <SongCard {item} />
   {/each}
 </div>
 

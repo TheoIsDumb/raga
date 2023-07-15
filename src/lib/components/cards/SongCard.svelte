@@ -4,11 +4,21 @@
 
   export let item;
 
-  function play(item) {
+  async function play(item) {
     $active = item;
-    // $currentPlaylist = [$active];
+    $currentPlaylist = [$active];
 
-    // console.log($currentPlaylist);
+    console.log($currentPlaylist);
+    console.log($active.id);
+
+    // const resp = await fetch(`/api/search/songs?q=${$query}&index=${index}`);
+
+    // const addData = await resp.json();
+
+    // addData.results.forEach((song) => {
+    //   results.pushwolves at the gate(song);
+    // });
+    // results = results;
   }
 </script>
 
