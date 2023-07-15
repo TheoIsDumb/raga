@@ -4,26 +4,52 @@
   import { page } from "$app/stores";
 
   $: pathname = $page.url.pathname;
-
-  let buttons = [
-    { id: `Songs`, link: `/search/songs?q=${$query}` },
-    { id: `Albums`, link: `/search/albums?q=${$query}&index=1` },
-    { id: `Artists`, link: `/search/artists?q=${$query}` },
-    { id: `Playlists`, link: `/search/playlists?q=${$query}` },
-  ];
 </script>
 
 <div class="buttons flex">
-  {#each buttons as btn}
-    <button
-      class:clicked={pathname.includes(btn.id.toLowerCase())}
-      on:click={() => {
-        if (query != "") {
-          goto(btn.link);
-        }
-      }}>{btn.id}</button
-    >
-  {/each}
+  <button
+    class:clicked={pathname.includes("songs")}
+    on:click={() => {
+      if ($query !== "") {
+        goto(`/search/songs?q=${$query}`);
+      }
+    }}
+  >
+    Songs
+  </button>
+
+  <button
+    class:clicked={pathname.includes("albums")}
+    on:click={() => {
+      if ($query !== "") {
+        goto(`/search/albums?q=${$query}&index=1`);
+      }
+    }}
+  >
+    Albums
+  </button>
+
+  <button
+    class:clicked={pathname.includes("artists")}
+    on:click={() => {
+      if ($query !== "") {
+        goto(`/search/artists?q=${$query}`);
+      }
+    }}
+  >
+    Artists
+  </button>
+
+  <button
+    class:clicked={pathname.includes("playlists")}
+    on:click={() => {
+      if ($query !== "") {
+        goto(`/search/playlists?q=${$query}`);
+      }
+    }}
+  >
+    Playlists
+  </button>
 </div>
 
 <style>

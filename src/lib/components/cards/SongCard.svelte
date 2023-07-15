@@ -8,17 +8,16 @@
     $active = item;
     $currentPlaylist = [$active];
 
-    console.log($currentPlaylist);
-    console.log($active.id);
+    // console.log($currentPlaylist);
 
-    // const resp = await fetch(`/api/search/songs?q=${$query}&index=${index}`);
+    const resp = await fetch(`/api/reco?songid=${$active.id}`);
 
-    // const addData = await resp.json();
+    const addData = await resp.json();
 
-    // addData.results.forEach((song) => {
-    //   results.pushwolves at the gate(song);
-    // });
-    // results = results;
+    addData.results.forEach((song) => {
+      $currentPlaylist.push(song);
+    });
+    $currentPlaylist = $currentPlaylist;
   }
 </script>
 
