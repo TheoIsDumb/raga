@@ -3,19 +3,14 @@
   import { active, currentPlaylist } from "$lib/store";
 
   export let item;
+  export let index = 0;
+  export let list = [];
 
   async function play(item) {
-    $active = item;
-    $currentPlaylist = [$active];
-
-    const resp = await fetch(`/api/reco?songid=${$active.id}`);
-
-    const addData = await resp.json();
-
-    addData.forEach((song) => {
-      $currentPlaylist.push(song);
-    });
-    $currentPlaylist = $currentPlaylist;
+    if (list.length !== 0) {
+      $currentPlaylist = list;
+      $active = $currentPlaylist[index];
+    }
   }
 </script>
 
