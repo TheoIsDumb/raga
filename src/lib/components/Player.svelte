@@ -69,6 +69,7 @@
     padding: 0.2rem;
     justify-content: space-between;
     gap: 0.5rem;
+    width: 100%;
   }
   div.title {
     width: 100%;

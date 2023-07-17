@@ -1,7 +1,6 @@
 <script>
-  import Header from "$lib/components/Header.svelte";
+  import NewHeader from "$lib/components/NewHeader.svelte";
   import Player from "$lib/components/Player.svelte";
-  import Footer from "$lib/components/Footer.svelte";
   import Spinner from "$lib/icons/Spinner.svelte";
   import BelowHeader from "$lib/components/BelowHeader.svelte";
   import "$lib/styles/app.css";
@@ -20,12 +19,14 @@
 
 <MetaTags title="paattu." description="A libre frontend for JioSaavn." />
 
-<main class="flex flex-dirc">
-  <Header />
+<main class="flex flex-ac flex-dirc">
+  <div class="container flex flex-dirc">
+    <NewHeader />
 
-  {#if $page.url.pathname.includes("search")}
-    <BelowHeader />
-  {/if}
+    {#if $page.url.pathname.includes("search")}
+      <BelowHeader />
+    {/if}
+  </div>
 
   {#key data}
     <div class="inner_container" in:fade={{ delay: 500 }} out:fade>
@@ -37,10 +38,6 @@
     </div>
   {/key}
 
-  {#if !$navigating}
-    <Footer />
-  {/if}
-
   {#if Object.keys($active).length !== 0}
     <Player />
   {/if}
@@ -48,8 +45,8 @@
 
 <style>
   div.inner_container {
-    height: 85%;
-    max-height: 85%;
+    height: 100%;
+    max-height: 100%;
     overflow: auto;
   }
 </style>

@@ -27,8 +27,7 @@ body {
 main {
   height: 100dvh;
   max-height: 100dvh;
-  width: 100%;
-  max-width: 900px;
+  width: 100dvw;
   margin: 0 auto;
   gap: 1rem;
 }
@@ -40,6 +39,19 @@ main {
   padding-bottom: 1rem;
   scrollbar-width: none;
   height: 10rem;
+}
+
+.inner_container, .container {
+  width: 100%;
+  max-width: 900px;
+}
+.inner_container {
+  gap: 1rem;
+}
+@media (max-width: 900px) {
+  .container {
+      padding: 0 0.5rem;
+  }
 }
 
 .inner {
