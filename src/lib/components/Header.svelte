@@ -39,8 +39,8 @@
       class="glow search"
       on:click={() => (isShown = !isShown)}
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
+      width="1.5rem"
+      height="1.5rem"
       viewBox="0 0 24 24"
       ><path
         fill="none"
@@ -60,8 +60,8 @@
       <svg
         class="glow github"
         xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
+        width="1.5rem"
+        height="1.5rem"
         viewBox="0 0 24 24"
         ><path
           fill="currentColor"
@@ -82,7 +82,7 @@
   }
   a {
     all: unset;
-    height: 32px;
+    height: 1.5rem;
   }
   input[type="text"] {
     background-color: transparent;
@@ -91,9 +91,8 @@
     border: 0.08rem solid gray;
     border-radius: 0.3rem;
     outline: 0;
-    transition: all 0.3s;
-    height: 70%;
     width: 60%;
+    transition: all 0.3s;
   }
   input[type="text"]:focus {
     border: 0.08rem solid var(--fg);
@@ -101,9 +100,16 @@
   @media (max-width: 900px) {
     div.header {
       gap: 0.5rem;
+      padding: 0.5rem;
     }
     input[type="text"] {
       max-width: 50%;
+      height: 1.5rem;
+    }
+  }
+  @media (max-width: 900px) {
+    div.header {
+      height: 70%;
     }
   }
 </style>
