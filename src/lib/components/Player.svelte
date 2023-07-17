@@ -23,7 +23,7 @@
     <img loading="lazy" src={$active.image} alt={$active.title} />
     <div class="title">
       <span>
-        <strong>{$active.title}</strong> - {$active.subtitle}
+        <strong>{@html $active.title}</strong> - {@html $active.subtitle}
       </span>
     </div>
 
@@ -68,13 +68,14 @@
     background-color: var(--base-dark);
     padding: 0.2rem;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 0.3rem;
     width: 100%;
   }
   div.title {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
+    font-size: 0.8rem;
   }
   img {
     height: 2rem;
