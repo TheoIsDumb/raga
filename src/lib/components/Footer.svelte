@@ -25,6 +25,7 @@
 <style>
     div.footer {
         gap: 1rem;
+        margin-bottom: 0.5rem;
     }
     a {
         text-decoration: none;

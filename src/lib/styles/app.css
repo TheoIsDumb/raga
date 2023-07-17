@@ -1,9 +1,9 @@
 /* beautify ignore:start */
 :root {
-  --bg: #11111b;
-  --fg: #89dceb;
-  --base: #313244;
-  --base-dark: #1e1e2e;
+  --bg: #070707;
+  --fg: gainsboro;
+  --base: #2a2a2a;
+  --base-dark: #1f1f1f;
 }
 
 .flex { display: flex; }
