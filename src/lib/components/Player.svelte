@@ -19,13 +19,24 @@
 <div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
   <Seekbar bind:currentTime bind:duration />
 
-  <div class="buttonimginfo flex flex-ac">
-    <div class="imginfo flex flex-ac">
-      <img loading="lazy" src={$active.image} alt={$active.title} />
-      <div class="info">
-        <div id="title">{@html $active.title}</div>
-        <div id="subtitle">{@html $active.subtitle}</div>
-      </div>
+  <div class="imginfo flex flex-ac">
+    <img loading="lazy" src={$active.image} alt={$active.title} />
+    <div class="title">
+      <span>
+        <strong>{$active.title}</strong> - {$active.subtitle}
+      </span>
+    </div>
+
+    <div class="buttons flex">
+      <Prev />
+
+      {#if paused}
+        <Play bind:paused />
+      {:else}
+        <Pause bind:paused />
+      {/if}
+
+      <Next />
     </div>
 
     <audio
@@ -45,27 +56,13 @@
         }
       }}
     />
-
-    <div class="buttons">
-      <Prev />
-
-      {#if paused}
-        <Play bind:paused />
-      {:else}
-        <Pause bind:paused />
-      {/if}
-
-      <Next />
-    </div>
   </div>
 </div>
 
 <style>
-  .buttonimginfo {
-    justify-content: space-between;
-  }
   .imginfo {
     gap: 1rem;
+    max-width: 100%;
   }
   div.player {
     background-color: var(--base-dark);
@@ -73,12 +70,10 @@
     justify-content: space-between;
     gap: 0.5rem;
   }
-  div#title {
-    font-weight: bold;
-    font-size: 0.8rem;
-  }
-  div#subtitle {
-    font-size: 0.6rem;
+  div.title {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
   }
   img {
     height: 2rem;

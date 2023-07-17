@@ -22,9 +22,11 @@
 
 <main class="flex flex-dirc">
   <Header />
+
   {#if $page.url.pathname.includes("search")}
     <BelowHeader />
   {/if}
+
   {#key data}
     <div class="inner_container" in:fade={{ delay: 500 }} out:fade>
       {#if $navigating}
@@ -34,9 +36,11 @@
       {/if}
     </div>
   {/key}
+
   {#if !$navigating}
     <Footer />
   {/if}
+
   {#if Object.keys($active).length !== 0}
     <Player />
   {/if}
