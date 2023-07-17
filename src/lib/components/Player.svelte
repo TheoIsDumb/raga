@@ -1,12 +1,10 @@
 <script>
   import { fly } from "svelte/transition";
   import { decrypt } from "$lib/utils";
-  import { active, currentPlaylist, index } from "$lib/store";
+  import { active, currentPlaylist, index, BiggerPlayerVisible } from "$lib/store";
 
   import Pause from "$lib/icons/Pause.svelte";
   import Play from "$lib/icons/Play.svelte";
-  import Prev from "$lib/icons/Prev.svelte";
-  import Next from "$lib/icons/Next.svelte";
   import Seekbar from "./Seekbar.svelte";
 
   let paused = true;
@@ -14,6 +12,7 @@
   let duration = 0;
 
   $: $active = $currentPlaylist[$index];
+
 </script>
 
 <div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
@@ -21,22 +20,22 @@
 
   <div class="imginfo flex flex-ac">
     <img loading="lazy" src={$active.image} alt={$active.title} />
-    <div class="title">
+
+    <div class="title flex flex-ac"
+    on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}
+    on:keypress={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}
+    >
       <span>
         <strong>{@html $active.title}</strong> - {@html $active.subtitle}
       </span>
     </div>
 
-    <div class="buttons flex">
-      <Prev />
-
+    <div class="buttons">
       {#if paused}
         <Play bind:paused />
       {:else}
         <Pause bind:paused />
       {/if}
-
-      <Next />
     </div>
 
     <audio
@@ -73,6 +72,7 @@
   }
   div.title {
     width: 100%;
+    height: 100%;
     overflow: hidden;
     white-space: nowrap;
     font-size: 0.8rem;

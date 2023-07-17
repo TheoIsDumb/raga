@@ -3,9 +3,10 @@
   import Player from "$lib/components/Player.svelte";
   import Spinner from "$lib/icons/Spinner.svelte";
   import BelowHeader from "$lib/components/BelowHeader.svelte";
+  import BiggerPlayer from "$lib/components/BiggerPlayer.svelte";
   import "$lib/styles/app.css";
 
-  import { active } from "$lib/store";
+  import { active, BiggerPlayerVisible } from "$lib/store";
   import { navigating } from "$app/stores";
   import { fade } from "svelte/transition";
   import { page } from "$app/stores";
@@ -42,6 +43,10 @@
     <Player />
   {/if}
 </main>
+
+{#if $BiggerPlayerVisible}
+  <BiggerPlayer/>
+{/if}
 
 <style>
   div.inner_container {
