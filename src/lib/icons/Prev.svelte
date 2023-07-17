@@ -8,7 +8,6 @@
     on:click={() => {
         if ($index !== 0) {
             $index--;
-            $active = $currentPlaylist[$index];
         } else {
             $index = $currentPlaylist.length - 1;
         }

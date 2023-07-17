@@ -6,11 +6,10 @@
 <svg
     class="glow"
     on:click={() => {
-        if ($index !== $currentPlaylist.length + 1) {
+        if ($index !== $currentPlaylist.length - 1) {
             $index++;
-            $active = $currentPlaylist[$index];
         } else {
-            $active = $currentPlaylist[0];
+            $index = 0;
         }
     }}
     xmlns="http://www.w3.org/2000/svg"

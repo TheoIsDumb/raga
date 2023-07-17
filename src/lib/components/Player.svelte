@@ -12,6 +12,8 @@
   let paused = true;
   let currentTime = 0;
   let duration = 0;
+
+  $: $active = $currentPlaylist[$index];
 </script>
 
 <div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
@@ -36,8 +38,11 @@
       bind:duration
       autoplay
       on:ended={() => {
-        $index++;
-        $active = $currentPlaylist[$index];
+        if ($index === $currentPlaylist.length - 1) {
+          $index = 0;
+        } else {
+          $index++;
+        }
       }}
     />
 
