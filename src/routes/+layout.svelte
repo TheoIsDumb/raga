@@ -1,5 +1,5 @@
 <script>
-  import NewHeader from "$lib/components/NewHeader.svelte";
+  import Header from "$lib/components/Header.svelte";
   import Player from "$lib/components/Player.svelte";
   import Spinner from "$lib/icons/Spinner.svelte";
   import BelowHeader from "$lib/components/BelowHeader.svelte";
@@ -21,7 +21,7 @@
 
 <main class="flex flex-ac flex-dirc">
   <div class="container flex flex-dirc">
-    <NewHeader />
+    <Header />
 
     {#if $page.url.pathname.includes("search")}
       <BelowHeader />

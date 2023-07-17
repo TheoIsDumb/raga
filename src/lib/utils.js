@@ -1,4 +1,5 @@
-import { cipher, util } from 'node-forge';
+import pkg from 'node-forge';
+const { util, cipher } = pkg;
 
 const key = '38346591'
 const iv = '00000000'
