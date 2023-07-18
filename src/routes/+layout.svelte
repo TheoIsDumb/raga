@@ -18,7 +18,16 @@
   export let data;
 </script>
 
-<MetaTags title="paattu." description="A libre frontend for JioSaavn." />
+<MetaTags
+  title="paattu."
+  description="A libre frontend for JioSaavn."
+  additionalLinkTags={[
+    {
+      rel: 'icon',
+      href: '/favicon.png'
+    }
+  ]}  
+  />
 
 <main class="flex flex-ac flex-dirc">
   <div class="container flex flex-jc flex-dirc">

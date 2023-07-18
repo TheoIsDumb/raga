@@ -39,6 +39,7 @@
     border-radius: 0.3rem;
     cursor: pointer;
     transition: all 0.3s;
+    gap: 0.5rem;
   }
   div.album:hover {
     background-color: var(--base);
