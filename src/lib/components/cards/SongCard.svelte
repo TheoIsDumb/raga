@@ -1,12 +1,12 @@
 <script>
   import { truncate } from "$lib/utils";
-  import { active, currentPlaylist } from "$lib/store";
+  import { active, currentPlaylist, index } from "$lib/store";
 
   export let item;
 
   async function play(item) {
-    $active = item;
-    $currentPlaylist = [$active];
+    $currentPlaylist = [item];
+    $index = 0;
 
     const resp = await fetch(`/api/reco?songid=${$active.id}`);
 

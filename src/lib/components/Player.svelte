@@ -20,6 +20,7 @@
         artist: $active.subtitle.split('-')[0],
         album: $active.more_info.album,
         artwork: [
+          { src: $active.image, sizes: '150x150', type: 'image/jpeg' },
           { src: $active.image.replace('150x150', '500x500'), sizes: '500x500', type: 'image/jpeg' }
         ]
       });
