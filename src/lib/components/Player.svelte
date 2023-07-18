@@ -13,6 +13,18 @@
 
   $: $active = $currentPlaylist[$index];
 
+  function playhandle() {
+		if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: $active.title,
+        artist: $active.subtitle.split('-')[0],
+        album: $active.more_info.album,
+        artwork: [
+          { src: $active.image.replace('150x150', '500x500'), sizes: '500x500', type: 'image/jpeg' }
+        ]
+      });
+    }
+	}
 </script>
 
 <div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
@@ -26,7 +38,7 @@
     on:keypress={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}
     >
       <span>
-        <strong>{@html $active.title}</strong> - {@html $active.subtitle}
+        <strong>{@html $active.title}</strong> - {@html $active.subtitle.split('-')[0]}
       </span>
     </div>
 
@@ -47,6 +59,7 @@
       bind:paused
       bind:duration
       autoplay
+      on:play={playhandle}
       on:ended={() => {
         if ($index === $currentPlaylist.length - 1) {
           $index = 0;

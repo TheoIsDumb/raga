@@ -7,8 +7,8 @@
 <div class="biggerplayer flex flex-ac flex-jc flex-dirc" transition:fade>
   <img src={$active.image.replace('150x150', '500x500')} alt={$active.title} loading="lazy"/>
 
-  <div class="title">{$active.title}</div>
-  <div class="subtitle">{$active.subtitle}</div>
+  <div class="title">{@html $active.title}</div>
+  <div class="subtitle">{@html $active.subtitle}</div>
 
   <button class="glow"
   on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}

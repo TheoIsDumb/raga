@@ -21,7 +21,7 @@
 <MetaTags title="paattu." description="A libre frontend for JioSaavn." />
 
 <main class="flex flex-ac flex-dirc">
-  <div class="container flex flex-dirc">
+  <div class="container flex flex-jc flex-dirc">
     <Header />
 
     {#if $page.url.pathname.includes("search")}
