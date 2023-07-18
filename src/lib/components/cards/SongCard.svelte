@@ -45,10 +45,11 @@
     border-radius: 0.2rem;
     height: 3.5rem;
   }
-  div#title {
+  div#title, div#subtitle {
     font-weight: bold;
   }
   div#subtitle {
     font-size: 0.7rem;
+    color: darkgray;
   }
 </style>

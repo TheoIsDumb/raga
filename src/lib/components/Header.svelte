@@ -20,7 +20,9 @@
 </script>
 
 <div class="header flex flex-ac">
-  <Logo2 />
+  <a class="home" href="/">
+    <Logo2 />
+  </a>
 
   {#if isShown}
     <input
@@ -83,6 +85,9 @@
   a {
     all: unset;
     height: 1.5rem;
+  }
+  a.home {
+    height: auto;
   }
   input[type="text"] {
     background-color: transparent;
