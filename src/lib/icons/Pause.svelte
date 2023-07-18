@@ -1,8 +1,8 @@
 <script>
-  export let paused;
+  import { paused } from '$lib/store'
 
   function playtoggle() {
-    paused = !paused;
+    $paused = !$paused;
   }
 </script>
 

@@ -7,6 +7,7 @@
   async function play(item) {
     $currentPlaylist = [item];
     $index = 0;
+    $active = $currentPlaylist[$index];
 
     const resp = await fetch(`/api/reco?songid=${$active.id}`);
 

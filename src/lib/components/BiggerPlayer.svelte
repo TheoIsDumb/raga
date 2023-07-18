@@ -1,18 +1,41 @@
 <script>
-  import { fade } from 'svelte/transition'
+  import { fly } from 'svelte/transition'
   import { BiggerPlayerVisible } from '$lib/store.js'
-  import { active } from '$lib/store'
+  import { active, paused } from '$lib/store'
+
+  import Seekbar from './Seekbar.svelte';
+  import Play from '$lib/icons/Play.svelte';
+  import Pause from '$lib/icons/Pause.svelte';
+  import Prev from '$lib/icons/Prev.svelte';
+  import Next from '$lib/icons/Next.svelte';
 </script>
 
-<div class="biggerplayer flex flex-ac flex-jc flex-dirc" transition:fade>
+<div class="biggerplayer flex flex-ac flex-jc flex-dirc" in:fly={{ y: -50 }} out:fly={{ y: 50, duration: 200 }}>
   <img src={$active.image.replace('150x150', '500x500')} alt={$active.title} loading="lazy"/>
 
-  <div class="title">{@html $active.title}</div>
-  <div class="subtitle">{@html $active.subtitle}</div>
+  <div class="info_container">
+    <div class="title">{@html $active.title}</div>
+    <div class="subtitle">{@html $active.subtitle.split('-')[0]}</div>
+    <div class="album">{@html $active.more_info.album}</div>
+  </div>
 
-  <button class="glow"
-  on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}
-  >▽</button>
+  <div class="seekbar_container">
+    <Seekbar/>
+  </div>
+
+  <div class="buttons">
+    <Prev />
+
+    {#if $paused}
+      <Play />
+    {:else}
+      <Pause />
+    {/if}
+
+    <Next />
+  </div>
+
+  <button class="glow" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>▽</button>
 </div>
 
 <style>
@@ -23,22 +46,23 @@
     height: 100dvh;
     width: 100dvw;
     background: #000000cd;
+    gap: 1rem;
   }
   div.title {
     margin-top: 0.5rem;
     font-weight: bold;
   }
-  div.subtitle {
+  div.subtitle, div.album {
     font-size: 0.8rem;
   }
   @media (max-width: 768px) {
       img {
-          width: 85%;
+          width: 50%;
       }
   }
   @media (min-width: 768px) {
       img {
-          height: 60%;
+          height: 50%;
       }
   }
   button {
@@ -47,5 +71,11 @@
     bottom: 1rem;
     cursor: pointer;
     font-size: 1.5rem;
+  }
+  .seekbar_container {
+    width: 50%;
+  }
+  div.info_container {
+    text-align: center;
   }
 </style>

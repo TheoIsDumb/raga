@@ -1,15 +1,11 @@
 <script>
   import { fly } from "svelte/transition";
   import { decrypt } from "$lib/utils";
-  import { active, currentPlaylist, index, BiggerPlayerVisible } from "$lib/store";
+  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused } from "$lib/store";
 
   import Pause from "$lib/icons/Pause.svelte";
   import Play from "$lib/icons/Play.svelte";
   import Seekbar from "./Seekbar.svelte";
-
-  let paused = true;
-  let currentTime = 0;
-  let duration = 0;
 
   $: $active = $currentPlaylist[$index];
 
@@ -29,7 +25,7 @@
 </script>
 
 <div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
-  <Seekbar bind:currentTime bind:duration />
+  <Seekbar />
 
   <div class="imginfo flex flex-ac">
     <img loading="lazy" src={$active.image} alt={$active.title} />
@@ -44,10 +40,10 @@
     </div>
 
     <div class="buttons">
-      {#if paused}
-        <Play bind:paused />
+      {#if $paused}
+        <Play />
       {:else}
-        <Pause bind:paused />
+        <Pause />
       {/if}
     </div>
 
@@ -56,9 +52,9 @@
         $active.more_info.encrypted_media_url,
         $active.more_info["320kbps"]
       )}
-      bind:currentTime
-      bind:paused
-      bind:duration
+      bind:currentTime={$currentTime}
+      bind:paused={$paused}
+      bind:duration={$duration}
       autoplay
       on:play={playhandle}
       on:ended={() => {
