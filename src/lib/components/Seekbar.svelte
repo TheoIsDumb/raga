@@ -44,22 +44,32 @@
       );
     }}
   >
-    <div class="progressbar" style="--progress: {currentTime / duration}%" />
+  <div class="progressbar flex flex-ac" style="--progress: {currentTime / duration}%">
+      <div class="circle"/>
+      </div>
+
   </div>
 
   <span>{format(duration)}</span>
 </div>
 
 <style>
+   .circle {
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 50%;
+    background-color: var(--fg);
+  }
   .progress {
     gap: 1rem;
+    user-select: none;
   }
   .progress span {
     font-size: 0.8rem;
   }
   .slider {
     width: 100%;
-    height: 0.4rem;
+    height: 0.2rem;
     background-color: var(--base);
   }
   .progressbar {
@@ -68,5 +78,6 @@
     border-radius: inherit;
     background-color: var(--fg);
     cursor: pointer;
+    justify-content: end;
   }
 </style>
