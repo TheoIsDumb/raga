@@ -1,5 +1,5 @@
 <script>
-  import { fly } from 'svelte/transition'
+  import { fade } from 'svelte/transition'
   import { BiggerPlayerVisible } from '$lib/store.js'
   import { active, paused } from '$lib/store'
 
@@ -10,7 +10,7 @@
   import Next from '$lib/icons/Next.svelte';
 </script>
 
-<div class="biggerplayer flex flex-ac flex-jc flex-dirc" in:fly={{ y: -50 }} out:fly={{ y: 50, duration: 200 }}>
+<div class="biggerplayer flex flex-ac flex-jc flex-dirc" transition:fade>
   <img src={$active.image.replace('150x150', '500x500')} alt={$active.title} loading="lazy"/>
 
   <div class="info_container">
@@ -45,8 +45,10 @@
     left: 0;
     height: 100dvh;
     width: 100dvw;
-    background: #000000cd;
     gap: 1rem;
+    background-color: #00000073;
+    backdrop-filter: blur(13.6px);
+    -webkit-backdrop-filter: blur(13.6px);
   }
   div.title {
     margin-top: 0.5rem;
