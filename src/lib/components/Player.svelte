@@ -5,7 +5,6 @@
 
   import Pause from "$lib/icons/Pause.svelte";
   import Play from "$lib/icons/Play.svelte";
-  import Seekbar from "./Seekbar.svelte";
 
   $: $active = $currentPlaylist[$index];
 
@@ -25,7 +24,9 @@
 </script>
 
 <div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
-  <Seekbar />
+  <div class="base">
+    <div class="bar" style="--progress: {$currentTime / $duration}%"></div>
+  </div> 
 
   <div class="imginfo flex flex-ac">
     <img loading="lazy" src={$active.image} alt={$active.title} />
@@ -74,7 +75,7 @@
     max-width: 100%;
   }
   div.player {
-    background-color: var(--base-dark);
+    background-color: var(--base-darker);
     padding: 0.2rem;
     justify-content: space-between;
     gap: 0.3rem;
@@ -92,5 +93,13 @@
   }
   :global(.player svg) {
     cursor: pointer;
+  }
+  .base {
+    width: 100%;
+  }
+  .bar {
+    width: calc(100 * var(--progress));
+    height: 0.2rem;
+    background-color: var(--fg);
   }
 </style>

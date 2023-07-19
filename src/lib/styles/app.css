@@ -4,6 +4,7 @@
   --fg: gainsboro;
   --base: #2a2a2a;
   --base-dark: #1f1f1f;
+  --base-darker: #131313;
 }
 
 .flex { display: flex; }
@@ -40,7 +41,6 @@ main {
   scrollbar-width: none;
   height: 10rem;
 }
-
 .inner_container, .container {
   width: 100%;
   max-width: 900px;
