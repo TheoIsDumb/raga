@@ -21,6 +21,12 @@
       });
     }
 	}
+
+  function pause(e) {
+    if (e.code === "Space") {
+      $paused = !$paused;
+    }
+  } 
 </script>
 
 <div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
@@ -69,14 +75,16 @@
   </div>
 </div>
 
+<svelte:window on:keydown={pause}></svelte:window>
+
 <style>
   .imginfo {
+    padding: 0.2rem;
     gap: 1rem;
     max-width: 100%;
   }
   div.player {
     background-color: var(--base-darker);
-    padding: 0.2rem;
     justify-content: space-between;
     gap: 0.3rem;
     width: 100%;
