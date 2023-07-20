@@ -31,6 +31,7 @@ main {
   width: 100dvw;
   margin: 0 auto;
   gap: 1rem;
+  overflow: hidden;
 }
 
 .hscroll {
@@ -63,12 +64,12 @@ main {
 
 /**************************************/
 
-.inner {
+.inner, .scrollable {
   scrollbar-width: thin;
   scrollbar-color: var(--fg) transparent;
 }
-.inner::-webkit-scrollbar { width: 0.2rem; }
-.inner::-webkit-scrollbar-thumb{ background-color: var(--fg); } 
+.inner::-webkit-scrollbar, .scrollable::-webkit-scrollbar { width: 0.2rem; }
+.inner::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background-color: var(--fg); } 
 .hscroll::-webkit-scrollbar { display: none; }
 
 /**************************************/

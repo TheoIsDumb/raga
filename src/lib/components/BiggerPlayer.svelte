@@ -177,6 +177,7 @@
   .colorful {
     background-image: linear-gradient(to right, #5d26c1, #a17fe0, #59c173);
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent !important;
   }
 </style>

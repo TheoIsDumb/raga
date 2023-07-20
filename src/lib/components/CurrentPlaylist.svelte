@@ -4,7 +4,7 @@
     import CurrentSongCard from "$lib/components/cards/CurrentSongCard.svelte";
 </script>
 
-<div class="playlist flex flex-dirc">
+<div class="playlist scrollable flex flex-dirc">
     {#each $currentPlaylist as item, i}
         <CurrentSongCard {item} {i} />
     {/each}
