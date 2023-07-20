@@ -5,28 +5,24 @@
   export let item;
 
   async function play(item) {
-    $currentPlaylist = [item];
-    $index = 0;
-    $active = $currentPlaylist[$index];
+      $currentPlaylist = [item];
+      $index = 0;
+      $active = $currentPlaylist[$index];
 
-    const resp = await fetch(`/api/reco?songid=${$active.id}`);
+      const resp = await fetch(`/api/reco?songid=${$active.id}`);
 
-    const addData = await resp.json();
+      const addData = await resp.json();
 
-    addData.forEach((song) => {
-      $currentPlaylist.push(song);
-    });
-    $currentPlaylist = $currentPlaylist;
-  }
+      addData.forEach((song) => {
+        $currentPlaylist.push(song);
+      });
+      $currentPlaylist = $currentPlaylist;
+    }
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div
-  class="song flex hover"
-  on:click={() => {
-    play(item);
-  }}
->
+<div class="song_container flex flex-ac">
+<div class="song flex hover" on:click={() => { play(item); }}>
   <img loading="lazy" src={item.image} alt={item.title} />
 
   <div class="info flex flex-jc flex-dirc">
@@ -35,11 +31,20 @@
   </div>
 </div>
 
+  <button class="next" title="add track after current track" on:click={() => $currentPlaylist.splice($index+1, 0, item)}>
+    <svg class="glow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18.4 10.6C16.55 9 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16a8.002 8.002 0 0 1 7.6-5.5c1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6Z"/></svg>
+  </button>
+</div>
+
 <style>
+  div.song_container {
+    width: 100%;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
   div.song {
     width: 100%;
     gap: 1rem;
-    cursor: pointer;
     border-radius: 0.3rem;
   }
   div.song img {
@@ -52,5 +57,8 @@
   div#subtitle {
     font-size: 0.7rem;
     color: darkgray;
+  }
+  button.next {
+    all: unset;
   }
 </style>

@@ -105,6 +105,7 @@
     gap: 0.3rem;
     border-radius: 0.3rem 0.3rem 0 0;
     padding: 0 !important;
+    cursor: pointer;
   }
   div.title {
     width: 100%;
