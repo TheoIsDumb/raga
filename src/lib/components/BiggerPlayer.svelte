@@ -9,12 +9,15 @@
   import Prev from "$lib/icons/Prev.svelte";
   import Next from "$lib/icons/Next.svelte";
   import Lyrics from "./Lyrics.svelte";
+  import CurrentPlaylist from "./CurrentPlaylist.svelte";
 
   function close(e) {
     if (e.key === "Escape") {
       $BiggerPlayerVisible = false;
     }
   }
+
+  let shown = Lyrics;
 </script>
 
 <div class="biggerplayer flex flex-ac flex-jc flex-dirc" transition:fade>
@@ -49,11 +52,26 @@
       </div>
     </div>
 
-    <Lyrics />
+    <div class="lyrics_playlist flex flex-dirc">
+      <div class="lyrplaybtns flex">
+        <button
+          class:colorful={shown === Lyrics}
+          on:click={() => (shown = Lyrics)}>Lyrics</button
+        >
+        <button
+          on:click={() => (shown = CurrentPlaylist)}
+          class:colorful={shown === CurrentPlaylist}>Now Playing</button
+        >
+      </div>
+
+      {#key shown}
+        <svelte:component this={shown} />
+      {/key}
+    </div>
   </div>
 
   <button
-    class="glow"
+    class="close glow"
     on:click={() => ($BiggerPlayerVisible = !$BiggerPlayerVisible)}
   >
     ✕
@@ -80,7 +98,6 @@
     max-width: 1800px;
   }
   div.player {
-    width: 50%;
     gap: 1rem;
   }
   div.title {
@@ -91,21 +108,35 @@
   div.album {
     font-size: 0.8rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
+    img {
+      height: 50%;
+    }
+    .player_container {
+      padding: 2rem 0;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .player {
+      height: 40%;
+    }
+    .lyrplaybtns {
+      text-align: center;
+    }
+  }
+  @media (min-width: 900px) {
     img {
       width: 50%;
     }
-  }
-  @media (min-width: 768px) {
-    img {
+    .player {
       width: 50%;
     }
   }
-  button {
+  button.close {
     all: unset;
     position: fixed;
-    top: 2rem;
-    left: 2rem;
+    top: 1.5rem;
+    left: 1.5rem;
     cursor: pointer;
     font-size: 1.5rem;
   }
@@ -114,5 +145,37 @@
   }
   div.info_container {
     text-align: center;
+  }
+  div.lyrics_playlist {
+    gap: 0.5rem;
+  }
+  @media (max-width: 900px) {
+    div.lyrics_playlist {
+      height: 60%;
+    }
+  }
+  @media (min-width: 900px) {
+    div.lyrics_playlist {
+      width: 50%;
+      margin: 2rem 0;
+    }
+  }
+  .buttons {
+    margin-top: -1rem;
+  }
+  .lyrplaybtns {
+    justify-content: space-between;
+  }
+  .lyrplaybtns button {
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    color: var(--fg);
+    font-weight: bold;
+  }
+  .colorful {
+    background-image: linear-gradient(to right, #5d26c1, #a17fe0, #59c173);
+    background-clip: text;
+    color: transparent !important;
   }
 </style>

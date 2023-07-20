@@ -104,6 +104,7 @@
     justify-content: space-between;
     gap: 0.3rem;
     border-radius: 0.3rem 0.3rem 0 0;
+    padding: 0 !important;
   }
   div.title {
     width: 100%;

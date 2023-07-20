@@ -31,11 +31,18 @@
 </div>
 
 <style>
-    div.lyrics {
+    p {
+        margin: 0;
+    }
+    .lyrics {
+        height: 100%;
         overflow: auto;
         scrollbar-width: thin;
-        margin: 2rem 0;
         font-weight: bold;
-        width: 50%;
+    }
+    @media (max-width: 900px) {
+        .lyrics {
+            text-align: center;
+        }
     }
 </style>
