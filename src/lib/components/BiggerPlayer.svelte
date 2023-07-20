@@ -108,7 +108,7 @@
   div.album {
     font-size: 0.8rem;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     img {
       height: 50%;
     }
@@ -124,7 +124,7 @@
       text-align: center;
     }
   }
-  @media (min-width: 900px) {
+  @media (min-width: 1000px) {
     img {
       width: 50%;
     }
@@ -149,12 +149,12 @@
   div.lyrics_playlist {
     gap: 0.5rem;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     div.lyrics_playlist {
       height: 60%;
     }
   }
-  @media (min-width: 900px) {
+  @media (min-width: 1000px) {
     div.lyrics_playlist {
       width: 50%;
       margin: 2rem 0;
