@@ -1,5 +1,5 @@
 <script>
-  import { currentTime, duration } from '$lib/store'
+  import { currentTime, duration } from "$lib/store";
 
   function format(time) {
     if (isNaN(time)) return "...";
@@ -11,8 +11,7 @@
   }
 </script>
 
-<div class="progress flex flex-ac">
-  <span>{format($currentTime)}</span>
+<div class="progress flex flex-ac flex-dirc">
   <div
     class="slider flex flex-ac"
     on:pointerdown={(e) => {
@@ -43,28 +42,38 @@
       );
     }}
   >
-  <div class="progressbar flex flex-ac" style="--progress: {$currentTime / $duration}%">
-      <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2z"/></svg>
+    <div
+      class="progressbar flex flex-ac"
+      style="--progress: {$currentTime / $duration}%"
+    >
+      <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        ><path
+          fill="currentColor"
+          d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2z"
+        /></svg
+      >
     </div>
-
   </div>
 
-  <span>{format($duration)}</span>
+  <div class="time flex">
+    <span>{format($currentTime)}</span>
+    <span>{format($duration)}</span>
+  </div>
 </div>
 
 <style>
-   .circle {
+  .circle {
     height: 0.8rem;
     width: 0.8rem;
     fill: var(--fg);
     margin-right: -0.5rem;
   }
   .progress {
-    gap: 1rem;
+    gap: 0.5rem;
     user-select: none;
   }
   .progress span {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
   }
   .slider {
     width: 100%;
@@ -78,5 +87,9 @@
     background-color: var(--fg);
     cursor: pointer;
     justify-content: end;
+  }
+  div.time {
+    width: 100%;
+    justify-content: space-between;
   }
 </style>

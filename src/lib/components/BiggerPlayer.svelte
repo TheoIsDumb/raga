@@ -8,22 +8,7 @@
   import Pause from "$lib/icons/Pause.svelte";
   import Prev from "$lib/icons/Prev.svelte";
   import Next from "$lib/icons/Next.svelte";
-  import Spinner from "$lib/icons/Spinner.svelte";
-
-  async function showLyrics() {
-    if ($active.more_info.has_lyrics === "false") {
-      return "No lyrics found.";
-    } else {
-      const res = await fetch(`/api/lyrics?songid=${$active.id}`);
-      const data = await res.json();
-
-      if (res.ok) {
-        return data.lyrics;
-      } else {
-        throw new Error(data);
-      }
-    }
-  }
+  import Lyrics from "./Lyrics.svelte";
 
   function close(e) {
     if (e.key === "Escape") {
@@ -64,17 +49,7 @@
       </div>
     </div>
 
-    <div class="lyrics">
-      {#key $active.id}
-        {#await showLyrics()}
-          <Spinner />
-        {:then lyrics}
-          <p>{@html lyrics}</p>
-        {:catch error}
-          <p>No lyrics found.</p>
-        {/await}
-      {/key}
-    </div>
+    <Lyrics />
   </div>
 
   <button
@@ -88,12 +63,6 @@
 <svelte:window on:keydown={close} />
 
 <style>
-  div.lyrics {
-    overflow: auto;
-    scrollbar-width: thin;
-    margin: 2rem 0;
-    font-weight: bold;
-  }
   div.biggerplayer {
     position: fixed;
     top: 0;
@@ -112,10 +81,7 @@
   }
   div.player {
     width: 50%;
-    gap: 0.5rem;
-  }
-  div.lyrics {
-    width: 50%;
+    gap: 1rem;
   }
   div.title {
     margin-top: 0.5rem;

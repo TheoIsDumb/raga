@@ -1,7 +1,15 @@
 <script>
   import { fly } from "svelte/transition";
   import { decrypt } from "$lib/utils";
-  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused } from "$lib/store";
+  import {
+    active,
+    currentPlaylist,
+    index,
+    BiggerPlayerVisible,
+    currentTime,
+    duration,
+    paused,
+  } from "$lib/store";
 
   import Pause from "$lib/icons/Pause.svelte";
   import Play from "$lib/icons/Play.svelte";
@@ -9,40 +17,47 @@
   $: $active = $currentPlaylist[$index];
 
   function playhandle() {
-		if ('mediaSession' in navigator) {
+    if ("mediaSession" in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: $active.title,
-        artist: $active.subtitle.split('-')[0],
+        artist: $active.subtitle.split("-")[0],
         album: $active.more_info.album,
         artwork: [
-          { src: $active.image, sizes: '150x150', type: 'image/jpeg' },
-          { src: $active.image.replace('150x150', '500x500'), sizes: '500x500', type: 'image/jpeg' }
-        ]
+          { src: $active.image, sizes: "150x150", type: "image/jpeg" },
+          {
+            src: $active.image.replace("150x150", "500x500"),
+            sizes: "500x500",
+            type: "image/jpeg",
+          },
+        ],
       });
     }
-	}
+  }
 
   function pause(e) {
     if (e.code === "Space") {
       $paused = !$paused;
     }
-  } 
+  }
 </script>
 
-<div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
+<div class="player container flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
   <div class="base">
-    <div class="bar" style="--progress: {$currentTime / $duration}%"></div>
-  </div> 
+    <div class="bar" style="--progress: {$currentTime / $duration}%" />
+  </div>
 
   <div class="imginfo flex flex-ac">
     <img loading="lazy" src={$active.image} alt={$active.title} />
 
-    <div class="title flex flex-ac"
-    on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}
-    on:keypress={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}
+    <div
+      class="title flex flex-ac"
+      on:click={() => ($BiggerPlayerVisible = !$BiggerPlayerVisible)}
+      on:keypress={() => ($BiggerPlayerVisible = !$BiggerPlayerVisible)}
     >
       <span>
-        <strong>{@html $active.title}</strong> - {@html $active.subtitle.split('-')[0]}
+        <strong>{@html $active.title}</strong> - {@html $active.subtitle.split(
+          "-"
+        )[0]}
       </span>
     </div>
 
@@ -75,7 +90,7 @@
   </div>
 </div>
 
-<svelte:window on:keydown={pause}></svelte:window>
+<svelte:window on:keydown={pause} />
 
 <style>
   .imginfo {
@@ -84,10 +99,11 @@
     max-width: 100%;
   }
   div.player {
-    background-color: var(--base-darker);
+    background-color: var(--base-dark);
+    background: linear-gradient(to bottom, #434343, #000000);
     justify-content: space-between;
     gap: 0.3rem;
-    width: 100%;
+    border-radius: 0.3rem 0.3rem 0 0;
   }
   div.title {
     width: 100%;
@@ -104,10 +120,12 @@
   }
   .base {
     width: 100%;
+    border-radius: inherit;
   }
   .bar {
     width: calc(100 * var(--progress));
     height: 0.2rem;
     background-color: var(--fg);
+    border-radius: inherit;
   }
 </style>

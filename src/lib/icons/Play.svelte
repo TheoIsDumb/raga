@@ -1,5 +1,5 @@
 <script>
-  import { paused } from '$lib/store'
+  import { paused } from "$lib/store";
 
   function playtoggle() {
     $paused = !$paused;
@@ -13,6 +13,9 @@
   xmlns="http://www.w3.org/2000/svg"
   width="32"
   height="32"
-  viewBox="0 0 512 512"
-  ><path fill="currentColor" d="m96 448l320-192L96 64v384z" /></svg
+  viewBox="0 0 32 32"
+  ><path
+    fill="currentColor"
+    d="M10.138 3.382C8.304 2.31 6 3.632 6 5.756v16.489c0 2.123 2.304 3.445 4.138 2.374l14.697-8.59c1.552-.907 1.552-3.15 0-4.057l-14.697-8.59Z"
+  /></svg
 >
