@@ -35,7 +35,6 @@
         margin: 0;
     }
     .lyrics {
-        height: 100%;
         overflow: auto;
         scrollbar-width: thin;
         font-weight: bold;

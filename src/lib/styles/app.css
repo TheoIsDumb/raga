@@ -66,11 +66,7 @@ main {
 
 .inner, .scrollable {
   scrollbar-width: thin;
-  scrollbar-color: var(--fg) transparent;
 }
-.inner::-webkit-scrollbar, .scrollable::-webkit-scrollbar { width: 0.2rem; }
-.inner::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background-color: var(--fg); } 
-.hscroll::-webkit-scrollbar { display: none; }
 
 /**************************************/
 

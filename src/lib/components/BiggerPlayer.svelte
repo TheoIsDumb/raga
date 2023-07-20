@@ -17,7 +17,7 @@
     }
   }
 
-  let shown = Lyrics;
+  let shown = CurrentPlaylist;
 </script>
 
 <div class="biggerplayer flex flex-ac flex-jc flex-dirc" transition:fade>
@@ -39,7 +39,7 @@
         <Seekbar />
       </div>
 
-      <div class="buttons">
+      <div class="buttons flex flex-jc">
         <Prev />
 
         {#if $paused}
@@ -70,12 +70,7 @@
     </div>
   </div>
 
-  <button
-    class="close glow"
-    on:click={() => ($BiggerPlayerVisible = !$BiggerPlayerVisible)}
-  >
-    ✕
-  </button>
+  <button class="close glow" on:click={() => ($BiggerPlayerVisible = !$BiggerPlayerVisible)}>✕</button>
 </div>
 
 <svelte:window on:keydown={close} />
@@ -88,7 +83,7 @@
     height: 100dvh;
     width: 100dvw;
     gap: 1rem;
-    background-color: #00000073;
+    background-color: #0000008e;
     backdrop-filter: blur(13.6px);
     -webkit-backdrop-filter: blur(13.6px);
   }
@@ -145,6 +140,7 @@
   }
   div.info_container {
     text-align: center;
+    width: 100%;
   }
   div.lyrics_playlist {
     gap: 0.5rem;
@@ -162,6 +158,7 @@
   }
   .buttons {
     margin-top: -1rem;
+    width: 100%;
   }
   .lyrplaybtns {
     justify-content: space-between;
