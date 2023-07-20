@@ -35,7 +35,7 @@
   }
 
   function pause(e) {
-    if (e.code === "Space") {
+    if (e.code === "Space" && e.target.tagName !== "INPUT") {
       $paused = !$paused;
     }
   }

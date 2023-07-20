@@ -172,6 +172,7 @@
     background-color: transparent;
     color: var(--fg);
     font-weight: bold;
+    transition: all 0.3s;
   }
   .colorful {
     background-image: linear-gradient(to right, #5d26c1, #a17fe0, #59c173);
