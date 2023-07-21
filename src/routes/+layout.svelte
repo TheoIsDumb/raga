@@ -27,7 +27,7 @@
     description: 'A libre frontend for JioSaavn.',
     images: [
       {
-        url: 'https://paattu.vkdbois.xyz/og.png',
+        url: 'https://paattu.vkdbois.xyz/img/og.png',
         width: 1200,
         height: 630,
         alt: "Paattu - A libre music frontend."
@@ -38,12 +38,12 @@
     cardType: 'summary_large_image',
     title: "paattu.",
     description: 'A libre frontend for JioSaavn.',
-    image: 'https://paattu.vkdbois.xyz/og.png',
+    image: 'https://paattu.vkdbois.xyz/img/og.png',
   }}
   additionalLinkTags={[
     {
       rel: 'icon',
-      href: '/favicon.png'
+      href: '/img/favicon.png'
     }
   ]}  
   />
