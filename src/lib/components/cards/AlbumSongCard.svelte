@@ -1,5 +1,6 @@
 <script>
   import { truncate } from "$lib/utils";
+  import '$lib/styles/songcard.css';
   import { active, currentPlaylist, index } from "$lib/store";
 
   export let list = [];
@@ -14,13 +15,11 @@
   }
 </script>
 
-
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
 {#each list as item, i}
 <div class="song_container flex flex-ac">
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="song flex hover" on:click={() => { play(item); }}>
+  <div class="song flex hover" on:click={() => { play(item, i); }}>
     <img loading="lazy" src={item.image} alt={item.title} />
   
     <div class="info flex flex-jc flex-dirc">
@@ -34,30 +33,3 @@
     </button>
   </div>
 {/each}
-
-<style>
-  div.song_container {
-    width: 100%;
-    gap: 0.5rem;
-    cursor: pointer;
-  }
-  div.song {
-    width: 100%;
-    gap: 1rem;
-    border-radius: 0.3rem;
-  }
-  div.song img {
-    border-radius: 0.2rem;
-    height: 3.5rem;
-  }
-  div#title, div#subtitle {
-    font-weight: bold;
-  }
-  div#subtitle {
-    font-size: 0.7rem;
-    color: darkgray;
-  }
-  button.next {
-    all: unset;
-  }
-</style>

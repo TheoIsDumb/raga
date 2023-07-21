@@ -1,6 +1,6 @@
 <script>
   export let data;
-  import SongCard from "$lib/components/cards/SongCard.svelte";
+  import AlbumSongCard from "$lib/components/cards/AlbumSongCard.svelte";
 </script>
 
 <div class="inner flex flex-dirc">
@@ -13,9 +13,7 @@
     </div>
   </div>
 
-  {#each data.list as item}
-    <SongCard {item} />
-  {/each}
+  <AlbumSongCard list={data.list}/>
 </div>
 
 <style>

@@ -1,5 +1,6 @@
 <script>
   import { truncate } from "$lib/utils";
+  import '$lib/styles/songcard.css';
   import { active, currentPlaylist, index } from "$lib/store";
 
   export let item;
@@ -22,6 +23,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="song_container flex flex-ac">
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="song flex hover" on:click={() => { play(item); }}>
   <img loading="lazy" src={item.image} alt={item.title} />
 
@@ -35,30 +37,3 @@
     <svg class="glow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18.4 10.6C16.55 9 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16a8.002 8.002 0 0 1 7.6-5.5c1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6Z"/></svg>
   </button>
 </div>
-
-<style>
-  div.song_container {
-    width: 100%;
-    gap: 0.5rem;
-    cursor: pointer;
-  }
-  div.song {
-    width: 100%;
-    gap: 1rem;
-    border-radius: 0.3rem;
-  }
-  div.song img {
-    border-radius: 0.2rem;
-    height: 3.5rem;
-  }
-  div#title, div#subtitle {
-    font-weight: bold;
-  }
-  div#subtitle {
-    font-size: 0.7rem;
-    color: darkgray;
-  }
-  button.next {
-    all: unset;
-  }
-</style>

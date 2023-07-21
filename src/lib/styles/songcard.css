@@ -1,0 +1,24 @@
+  div.song_container {
+    width: 100%;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  div.song {
+    width: 100%;
+    gap: 1rem;
+    border-radius: 0.3rem;
+  }
+  div.song img {
+    border-radius: 0.2rem;
+    height: 3.5rem;
+  }
+  div#title, div#subtitle {
+    font-weight: bold;
+  }
+  div#subtitle {
+    font-size: 0.7rem;
+    color: darkgray;
+  }
+  button.next {
+    all: unset;
+  }
