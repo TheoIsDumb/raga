@@ -21,6 +21,25 @@
 <MetaTags
   title="paattu."
   description="A libre frontend for JioSaavn."
+  openGraph={{
+    url: 'https://paattu.vkdbois.xyz',
+    title: 'Paattu',
+    description: 'A libre frontend for JioSaavn.',
+    images: [
+      {
+        url: 'https://paattu.vkdbois.xyz/og.png',
+        width: 1200,
+        height: 630,
+        alt: "Paattu - A libre music frontend."
+      },
+    ],
+  }}
+  twitter={{
+    cardType: 'summary_large_image',
+    title: "paattu.",
+    description: 'A libre frontend for JioSaavn.',
+    image: 'https://paattu.vkdbois.xyz/og.png',
+  }}
   additionalLinkTags={[
     {
       rel: 'icon',
