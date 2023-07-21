@@ -1,6 +1,5 @@
 <script>
     import { currentPlaylist } from "$lib/store";
-
     import CurrentSongCard from "$lib/components/cards/CurrentSongCard.svelte";
 </script>
 

@@ -13,9 +13,7 @@
     </div>
   </div>
 
-  {#each data.list as item, index}
-    <AlbumSongCard {item} {index} list={data.list} />
-  {/each}
+  <AlbumSongCard list={data.list} />
 </div>
 
 <style>
