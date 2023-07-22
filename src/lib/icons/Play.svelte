@@ -6,9 +6,9 @@
   }
 </script>
 
-<svg
-  class="glow"
-  on:click={playtoggle}
-  on:keypress={playtoggle}
-  xmlns="http://www.w3.org/2000/svg"
-  width="32" height="32" viewBox="0 0 32 32" ><path fill="currentColor" d="M10.138 3.382C8.304 2.31 6 3.632 6 5.756v16.489c0 2.123 2.304 3.445 4.138 2.374l14.697-8.59c1.552-.907 1.552-3.15 0-4.057l-14.697-8.59Z"/></svg>
+<svg 
+class="glow"
+on:click={playtoggle}
+on:keypress={playtoggle}
+width="32" height="32" viewBox="0 0 8.4667 8.4667" xmlns="http://www.w3.org/2000/svg"><path d="m2.1966 0.16188c-0.82367-0.46563-1.8431 0.12875-1.8431 1.0745v5.9939c0 0.94607 1.0202 1.5405 1.8435 1.0741l5.2902-2.9977c0.83496-0.47304 0.8346-1.6759 0-2.1486l-5.2909-2.9963z" fill="currentColor" stroke-width=".35275"/></svg>
+

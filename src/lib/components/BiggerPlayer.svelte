@@ -10,6 +10,8 @@
   import Next from "$lib/icons/Next.svelte";
   import Lyrics from "./Lyrics.svelte";
   import CurrentPlaylist from "./CurrentPlaylist.svelte";
+  import Repeat from '$lib/icons/Repeat.svelte'
+  import Shuffle from '$lib/icons/Shuffle.svelte'
 
   function close(e) {
     if (e.key === "Escape") {
@@ -40,6 +42,8 @@
       </div>
 
       <div class="buttons flex flex-jc">
+        <Repeat />
+
         <Prev />
 
         {#if $paused}
@@ -49,6 +53,8 @@
         {/if}
 
         <Next />
+
+        <Shuffle />
       </div>
     </div>
 
@@ -160,8 +166,8 @@
     }
   }
   .buttons {
-    margin-top: -1rem;
     width: 100%;
+    justify-content: space-evenly;
   }
   .lyrplaybtns {
     justify-content: space-between;

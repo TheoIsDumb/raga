@@ -1,7 +1,7 @@
 <script>
   import { fly } from "svelte/transition";
   import { decrypt } from "$lib/utils";
-  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused } from "$lib/store";
+  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused, repeat } from "$lib/store";
 
   import Pause from "$lib/icons/Pause.svelte"
   import Play from "$lib/icons/Play.svelte"
@@ -73,10 +73,15 @@
       autoplay
       on:play={playhandle}
       on:ended={() => {
-        if ($index === $currentPlaylist.length - 1) {
-          $index = 0;
+        if ($repeat === true) {
+          $currentTime = 0;
+          $paused = !$paused;
         } else {
-          $index++;
+          if ($index === $currentPlaylist.length - 1) {
+            $index = 0;
+          } else {
+            $index++;
+          }
         }
       }}
     />

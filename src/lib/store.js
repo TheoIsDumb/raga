@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { writable } from "svelte/store"
 
 export let active = writable({});
 
@@ -13,3 +13,5 @@ export let BiggerPlayerVisible = writable(false);
 export let currentTime = writable(0);
 export let duration = writable(0);
 export let paused = writable(true);
+
+export let repeat = writable(false);
