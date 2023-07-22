@@ -1,15 +1,22 @@
 <script>
     import { currentTime, currentPlaylist, index } from "$lib/store";
 
+    // function back() {
+    //     if ($currentTime < 10) {
+    //         $currentTime = 0;
+    //     } else {
+    //         if ($index !== 0) {
+    //             $index--;
+    //         } else {
+    //             $index = $currentPlaylist.length - 1;
+    //         }
+    //     }
+    // }
     function back() {
-        if ($currentTime < 10) {
-            $currentTime = 0;
+        if ($index !== 0) {
+            $index--;
         } else {
-            if ($index !== 0) {
-                $index--;
-            } else {
-                $index = $currentPlaylist.length - 1;
-            }
+            $index = $currentPlaylist.length - 1;
         }
     }
 </script>

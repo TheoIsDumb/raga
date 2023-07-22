@@ -52,7 +52,7 @@
         <strong>{@html $active.title}</strong> - {@html $active.subtitle.split("-")[0]}
     </div>
 
-    <div class="buttons flex flex-jc">
+    <div class="buttons flex flex-ac">
       <Prev />
       {#if $paused}
         <Play />
@@ -123,7 +123,11 @@
     border-radius: inherit;
   }
   .buttons {
-    gap: 0.5rem;
+    gap: 0.8rem;
+  }
+  :global(.player .buttons svg) {
+    height: 1.2rem;
+    width: 1.2rem;
   }
   @media (max-width: 768px) {
     .player {
