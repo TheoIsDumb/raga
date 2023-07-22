@@ -1,18 +1,12 @@
 <script>
   import { fly } from "svelte/transition";
   import { decrypt } from "$lib/utils";
-  import {
-    active,
-    currentPlaylist,
-    index,
-    BiggerPlayerVisible,
-    currentTime,
-    duration,
-    paused,
-  } from "$lib/store";
+  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused } from "$lib/store";
 
-  import Pause from "$lib/icons/Pause.svelte";
-  import Play from "$lib/icons/Play.svelte";
+  import Pause from "$lib/icons/Pause.svelte"
+  import Play from "$lib/icons/Play.svelte"
+  import Prev from "$lib/icons/Prev.svelte"
+  import Next from "$lib/icons/Next.svelte"
 
   $: $active = $currentPlaylist[$index];
 
@@ -47,8 +41,6 @@
   </div>
 
   <div class="imginfo flex flex-ac">
-    <img loading="lazy" src={$active.image} alt={$active.title} />
-
     <div
       class="title flex flex-ac"
       on:click={() => ($BiggerPlayerVisible = !$BiggerPlayerVisible)}
@@ -61,12 +53,14 @@
       </span>
     </div>
 
-    <div class="buttons">
+    <div class="buttons flex flex-jc">
+      <Prev />
       {#if $paused}
         <Play />
       {:else}
         <Pause />
       {/if}
+      <Next />
     </div>
 
     <audio
@@ -93,29 +87,19 @@
 <svelte:window on:keydown={pause} />
 
 <style>
-  .imginfo {
-    padding: 0.2rem;
-    gap: 1rem;
-    max-width: 100%;
-  }
   div.player {
-    background-color: var(--base-dark);
-    background: linear-gradient(to bottom, #434343, #000000);
-    justify-content: space-between;
-    gap: 0.3rem;
-    border-radius: 0.3rem 0.3rem 0 0;
-    padding: 0 !important;
+    background: #0575E6;
+    background: linear-gradient(to top, #0c2fad, #0575E6);
+    border-radius: 0.3rem;
+    padding: 0.3rem;
     cursor: pointer;
+    margin-bottom: 0.5rem;
   }
   div.title {
     width: 100%;
-    height: 100%;
     overflow: hidden;
     white-space: nowrap;
     font-size: 0.8rem;
-  }
-  img {
-    height: 2rem;
   }
   :global(.player svg) {
     cursor: pointer;
@@ -129,5 +113,8 @@
     height: 0.2rem;
     background-color: var(--fg);
     border-radius: inherit;
+  }
+  .buttons {
+    gap: 0.5rem;
   }
 </style>
