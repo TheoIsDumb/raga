@@ -35,22 +35,21 @@
   }
 </script>
 
-<div class="player container flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
+<div class="player container flex flex-dirc" in:fly={{ y: 50, duration: 800 }}
+>
   <div class="base">
     <div class="bar" style="--progress: {$currentTime / $duration}%" />
   </div>
 
-  <div class="imginfo flex flex-ac">
-    <div
-      class="title flex flex-ac"
-      on:click={() => ($BiggerPlayerVisible = !$BiggerPlayerVisible)}
-      on:keypress={() => ($BiggerPlayerVisible = !$BiggerPlayerVisible)}
-    >
-      <span>
-        <strong>{@html $active.title}</strong> - {@html $active.subtitle.split(
-          "-"
-        )[0]}
-      </span>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
+  <div class="imginfo flex flex-ac"
+      on:click|self={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}
+  >
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class="title" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
+        <strong>{@html $active.title}</strong> - {@html $active.subtitle.split("-")[0]}
     </div>
 
     <div class="buttons flex flex-jc">
@@ -93,9 +92,13 @@
     padding: 0.3rem;
     cursor: pointer;
     gap: 0.3rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.3rem;
+  }
+  .imginfo {
+    justify-content: space-between;
   }
   div.title {
-    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -106,7 +109,7 @@
   }
   .base {
     width: 100%;
-    border-radius: inherit;
+    border-radius: 0.3rem;
   }
   .bar {
     width: calc(100 * var(--progress));
@@ -117,10 +120,9 @@
   .buttons {
     gap: 0.5rem;
   }
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .player {
-      margin-bottom: 0.5rem;
-      border-radius: 0.3rem;
+      width: 96%;
     }
   }
 </style>

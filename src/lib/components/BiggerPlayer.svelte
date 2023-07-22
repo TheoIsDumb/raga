@@ -103,6 +103,9 @@
   div.album {
     font-size: 0.8rem;
   }
+  img {
+    border-radius: 0.3rem;
+  }
   @media (max-width: 1000px) {
     img {
       height: 50%;

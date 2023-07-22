@@ -19,9 +19,7 @@
     <div class="scroll_container">
       <h1 class="play">Top Songs</h1>
       <div class="hscroll">
-        {#each data.topSongs as item}
-          <SongCardHoriz {item} />
-        {/each}
+          <SongCardHoriz list={data.topSongs} />
       </div>
     </div>
   {/if}
@@ -30,9 +28,7 @@
     <div class="scroll_container">
       <h1 class="play">Singles</h1>
       <div class="hscroll">
-        {#each data.singles as item}
-          <SongCardHoriz {item} />
-        {/each}
+        <SongCardHoriz list={data.singles}/>
       </div>
     </div>
   {/if}

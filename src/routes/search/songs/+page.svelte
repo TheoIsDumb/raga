@@ -33,7 +33,7 @@
     <SongCard {item} />
   {/each}
 
-  <button on:click={loadMore}>&darr;</button>
+  <button on:click={loadMore}>🞃</button>
 </div>
 
 <style>

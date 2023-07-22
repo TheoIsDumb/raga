@@ -1,21 +1,27 @@
 <script>
   import { truncate } from "$lib/utils";
-  import { active, currentPlaylist } from "$lib/store";
+  import { active, currentPlaylist, index } from "$lib/store";
   import "$lib/styles/horizcard.css"
 
-  export let item;
+  // export let item;
+  export let list = [];
 
-  function play(item) {
-    $active = item;
-    $currentPlaylist = [$active];
+  async function play(item, i) {
+    // if (list.length !== 0) {
+    //   $currentPlaylist = list;
+    // } 
+
+    // $index = i
+    // $active = $currentPlaylist[$index]
   }
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
+{#each list as item, i}
 <div
   class="item"
   on:click={() => {
-    play(item);
+    play(item, i);
   }}
 >
   <div class="iteminner flex flex-dirc hover">
@@ -29,3 +35,4 @@
     </span>
   </div>
 </div>
+{/each}
