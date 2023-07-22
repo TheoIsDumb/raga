@@ -1,0 +1,9 @@
+version: '3.5'
+services:
+#########################
+    paattu:
+      build:
+        context: ..
+        dockerfile: .build/Dockerfile
+      hostname: paattu
+      image: paattu
