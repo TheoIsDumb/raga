@@ -90,15 +90,15 @@
   div.player {
     background: #0575E6;
     background: linear-gradient(to top, #0c2fad, #0575E6);
-    border-radius: 0.3rem;
     padding: 0.3rem;
     cursor: pointer;
-    margin-bottom: 0.5rem;
+    gap: 0.3rem;
   }
   div.title {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
     font-size: 0.8rem;
   }
   :global(.player svg) {
@@ -116,5 +116,11 @@
   }
   .buttons {
     gap: 0.5rem;
+  }
+  @media (min-width: 768px) {
+    .player {
+      margin-bottom: 0.5rem;
+      border-radius: 0.3rem;
+    }
   }
 </style>
