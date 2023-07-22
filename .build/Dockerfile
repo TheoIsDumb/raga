@@ -10,4 +10,4 @@ COPY . .
 RUN npm i \
  && npm run build
 
-CMD npm run preview
+CMD npm run prod
