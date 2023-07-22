@@ -11,8 +11,7 @@
   import { fade } from "svelte/transition";
   import { page } from "$app/stores";
 
-  import "@fontsource/inter-tight";
-  import "@fontsource/inter-tight/400.css";
+  import "@vetixy/circular-std"
   import { MetaTags } from "svelte-meta-tags";
 
   export let data;

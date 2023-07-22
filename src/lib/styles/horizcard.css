@@ -17,3 +17,8 @@
 .hscroll .iteminner {
     gap: 0.5rem;
 }
+
+.hscroll span {
+    font-weight: bold;
+    font-size: 0.7rem;
+}

@@ -24,7 +24,7 @@
       src={item.image.replace("150x150", "500x500")}
       alt={item.title}
     />
-    <span style:font-size="0.7rem" style:font-weight="bold">
+    <span>
       {truncate(item.title, 20)}
     </span>
   </div>

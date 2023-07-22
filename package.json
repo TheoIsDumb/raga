@@ -16,7 +16,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/inter-tight": "^5.0.5",
+		"@vetixy/circular-std": "^1.0.0",
 		"node-forge": "^1.3.1"
 	}
 }
