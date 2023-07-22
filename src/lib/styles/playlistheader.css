@@ -1,0 +1,13 @@
+.header {
+    justify-content: space-between;
+}
+
+.header img {
+    height: 150px;
+    width: 150px;
+    border-radius: 0.3rem;
+}
+
+.header .info {
+    text-align: right;
+}

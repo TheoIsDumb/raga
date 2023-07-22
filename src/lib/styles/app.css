@@ -71,12 +71,6 @@ main {
 
 /**************************************/
 
-.inner, .scrollable {
-  scrollbar-width: thin;
-}
-
-/**************************************/
-
 h1.play {
   margin: 0;
   text-transform: lowercase;

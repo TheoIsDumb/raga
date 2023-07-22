@@ -1,6 +1,7 @@
 <script>
   import { truncate } from "$lib/utils";
   import { active, currentPlaylist } from "$lib/store";
+  import "$lib/styles/horizcard.css"
 
   export let item;
 
@@ -28,23 +29,3 @@
     </span>
   </div>
 </div>
-
-<style>
-  .item {
-    display: inline-block;
-    border-radius: 0.3rem;
-    height: 9rem;
-    width: 8rem;
-    margin-left: 0.2rem;
-    transition: 0.3s;
-  }
-  .item img {
-    width: 100%;
-    border-radius: 0.3rem;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-  }
-  .iteminner {
-    gap: 0.5rem;
-  }
-</style>

@@ -1,6 +1,7 @@
 <script>
-  import { goto } from "$app/navigation";
-  export let data;
+  import { goto } from "$app/navigation"
+  import "$lib/styles/play_artist_card.css"
+  export let data
 
   function gotoartist(artistId) {
     goto(`/artist/${artistId}`);
@@ -10,35 +11,21 @@
 <div class="inner smol">
   {#each data.results as artist}
     <div
-      class="artist flex hover"
+      class="playcard flex hover"
       on:click={gotoartist(artist.id)}
       on:keypress={gotoartist(artist.id)}
     >
       <img
         loading="lazy"
-        src={artist.image.replace("50x50", "500x500")}
+        src={artist.image.replace("50x50", "150x150")}
         alt={artist.name}
       />
 
-      <span style:text-align="center" style:font-weight="bold"
-        >{artist.name}</span
-      >
+      <div class="title">{@html artist.name}</div>
     </div>
   {/each}
 </div>
 
 <style>
-  div.artist {
-    width: 100%;
-    gap: 1rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    border-radius: 0.3rem;
-    padding: 0.5rem;
-  }
-  img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
+  img { border-radius: 50% !important; }
 </style>

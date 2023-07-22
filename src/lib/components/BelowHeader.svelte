@@ -6,7 +6,7 @@
   $: pathname = $page.url.pathname;
 </script>
 
-<div class="buttons flex">
+<div class="belowheader flex">
   <button
     class:clicked={pathname.includes("songs")}
     on:click={() => {
@@ -53,12 +53,11 @@
 </div>
 
 <style>
-  div.buttons {
+  .belowheader {
     width: 100%;
-    align-items: stretch;
     gap: 0.5rem;
   }
-  div.buttons button {
+  .belowheader button {
     flex: 1;
     background-color: transparent;
     color: var(--fg);
@@ -66,9 +65,9 @@
     border-radius: 0.3rem;
     padding: 0.2rem;
     cursor: pointer;
-    transition: 0.1s;
+    transition: 0.3s;
   }
-  div.buttons button:hover {
+  .belowheader button:hover {
     border-left: 1rem solid var(--fg);
   }
   .clicked {

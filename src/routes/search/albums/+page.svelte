@@ -1,7 +1,6 @@
 <script>
   import { goto } from "$app/navigation";
   export let data;
-  import { query } from "$lib/store";
 
   function gotoalbum(albumid) {
     goto(`/album/${albumid}`);
@@ -50,18 +49,15 @@
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
-
   .grid {
     display: grid;
     gap: 0.5rem;
   }
-
   @media (max-width: 768px) {
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-
   @media (min-width: 768px) {
     .grid {
       grid-template-columns: repeat(3, 1fr);

@@ -1,5 +1,6 @@
 <script>
   export let data;
+  import "$lib/styles/playlistheader.css"
   import SongCardHoriz from "$lib/components/cards/SongCardHoriz.svelte";
   import AlbumCardHoriz from "$lib/components/cards/AlbumCardHoriz.svelte";
 </script>
@@ -7,7 +8,7 @@
 <div class="inner flex flex-dirc">
   <div class="header flex flex-ac">
     <img loading="lazy" src={data.image} alt={data.name} />
-    <div class="artistinfo flex flex-dirc">
+    <div class="info flex flex-dirc">
       <span style:font-weight="bold">{data.name}</span>
       <span style:font-size="0.8rem">{data.subtitle}</span>
       <span style:font-size="0.8rem">Followers: {data.follower_count}</span>
@@ -40,18 +41,3 @@
     <AlbumCardHoriz name="Top Albums" array={data.topAlbums} />
   {/if}
 </div>
-
-<style>
-  .header {
-    gap: 1rem;
-    justify-content: space-between;
-  }
-  .header img {
-    border-radius: 0.3rem;
-    height: 150px;
-    width: 150px;
-  }
-  .artistinfo {
-    text-align: right;
-  }
-</style>

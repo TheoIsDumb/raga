@@ -12,9 +12,3 @@
     />
   {/each}
 </div>
-
-<style>
-  div.inner {
-    gap: 1rem;
-  }
-</style>
