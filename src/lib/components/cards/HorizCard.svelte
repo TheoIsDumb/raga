@@ -1,13 +1,10 @@
 <script>
-  import { truncate } from "$lib/utils";
   import { goto } from "$app/navigation";
   import "$lib/styles/horizcard.css"
 
   export let array;
   export let name;
   export let type;
-
-  //album
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -31,7 +28,7 @@
             src={item.image.replace("150x150", "500x500")}
             alt={item.title}
           />
-          <span>{@html truncate(item.title, 20)}</span>
+          <span>{@html item.title}</span>
         </div>
       </div>
     {/each}

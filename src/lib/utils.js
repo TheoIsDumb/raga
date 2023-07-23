@@ -16,10 +16,3 @@ export const decrypt = (enc, kbps320) => {
   // const finalURL = kbps320 === "true" ? dec.replace('_96', '_320') : dec.replace('_96', '_160');
   return dec;
 }
-
-export function truncate(input, limit) {
-  if (input.length > limit) {
-    return input.substring(0, limit) + "...";
-  }
-  return input;
-}

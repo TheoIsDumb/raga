@@ -1,5 +1,4 @@
 <script>
-  import { truncate } from "$lib/utils";
   import { active, currentPlaylist, index } from "$lib/store";
   import "$lib/styles/horizcard.css"
 
@@ -30,9 +29,7 @@
       src={item.image.replace("150x150", "500x500")}
       alt={item.title}
     />
-    <span>
-      {truncate(item.title, 20)}
-    </span>
+    <span>{@html item.title}</span>
   </div>
 </div>
 {/each}

@@ -21,4 +21,6 @@
 .hscroll span {
     font-weight: bold;
     font-size: 0.7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
