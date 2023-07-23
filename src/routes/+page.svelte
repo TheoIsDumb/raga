@@ -1,7 +1,6 @@
 <script>
   export let data;
-  import PlaylistCardHoriz from "$lib/components/cards/PlaylistCardHoriz.svelte";
-  import AlbumCardHoriz from "$lib/components/cards/AlbumCardHoriz.svelte";
+  import HorizCard from "$lib/components/cards/HorizCard.svelte";
   import Logo from "$lib/icons/Logo.svelte";
 </script>
 
@@ -10,7 +9,7 @@
     <Logo />
   </div>
 
-  <PlaylistCardHoriz array={data.modules.charts} name="Charts" />
-  <PlaylistCardHoriz array={data.modules.top_playlists} name="Top Playlists" />
-  <AlbumCardHoriz array={data.modules.new_albums} name="New Albums" />
+  <HorizCard type="playlist" array={data.modules.charts} name="Charts" />
+  <HorizCard type="playlist" array={data.modules.top_playlists} name="Top Playlists" />
+  <HorizCard type="album" array={data.modules.new_albums} name="New Albums" />
 </div>

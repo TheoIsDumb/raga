@@ -2,7 +2,7 @@
   export let data;
   import "$lib/styles/playlistheader.css"
   import SongCardHoriz from "$lib/components/cards/SongCardHoriz.svelte";
-  import AlbumCardHoriz from "$lib/components/cards/AlbumCardHoriz.svelte";
+  import HorizCard from "$lib/components/cards/HorizCard.svelte";
 </script>
 
 <div class="inner flex flex-dirc">
@@ -34,6 +34,6 @@
   {/if}
 
   {#if data.topAlbums.length !== 0}
-    <AlbumCardHoriz name="Top Albums" array={data.topAlbums} />
+    <HorizCard type="album" name="Top Albums" array={data.topAlbums} />
   {/if}
 </div>

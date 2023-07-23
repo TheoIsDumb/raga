@@ -5,6 +5,9 @@
 
   export let array;
   export let name;
+  export let type;
+
+  //album
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -15,7 +18,11 @@
       <div
         class="item"
         on:click={() => {
-          goto(`/album/${item.id}`);
+          if (type === "album") {
+            goto(`/album/${item.id}`);
+          } else if (type === "playlist") {
+            goto(`/playlist/${item.id}`);
+          }
         }}
       >
         <div class="iteminner flex flex-dirc hover">
