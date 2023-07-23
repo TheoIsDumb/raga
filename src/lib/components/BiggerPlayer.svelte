@@ -1,7 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { BiggerPlayerVisible } from "$lib/store.js";
-  import { active, paused } from "$lib/store";
+  import { BiggerPlayerVisible, active, paused } from "$lib/store";
 
   import Seekbar2 from "./Seekbar2.svelte";
   import Play from "$lib/icons/Play.svelte";
@@ -66,6 +65,7 @@
           class:colorful={shown === Lyrics}
           on:click={() => (shown = Lyrics)}>Lyrics</button
         >
+
         <button
           on:click={() => (shown = CurrentPlaylist)}
           class:colorful={shown === CurrentPlaylist}>Now Playing</button

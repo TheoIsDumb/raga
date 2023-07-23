@@ -2,6 +2,7 @@
   import { fly } from "svelte/transition";
   import { decrypt } from "$lib/utils";
   import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused, repeat, audioElement } from "$lib/store";
+  import { back, next } from '$lib/utils'
 
   import Pause from "$lib/icons/Pause.svelte"
   import Play from "$lib/icons/Play.svelte"
@@ -25,6 +26,9 @@
           },
         ],
       });
+
+      navigator.mediaSession.setActionHandler('previoustrack', back);
+      navigator.mediaSession.setActionHandler('nexttrack', next);
     }
   }
 
@@ -35,8 +39,7 @@
   }
 </script>
 
-<div class="player container flex flex-dirc" in:fly={{ y: 50, duration: 800 }}
->
+<div class="player container flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
   <div class="base">
     <div class="bar" style="--progress: {$currentTime / $duration}%" />
   </div>
