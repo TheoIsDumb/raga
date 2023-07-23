@@ -125,6 +125,8 @@
   }
   .buttons {
     gap: 0.8rem;
+    margin-bottom: 0.3rem;
+    margin-right: 0.4rem;
   }
   :global(.player .buttons svg) {
     height: 1.2rem;
