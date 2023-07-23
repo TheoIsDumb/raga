@@ -1,7 +1,7 @@
 <script>
   import { fly } from "svelte/transition";
   import { decrypt } from "$lib/utils";
-  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused, repeat } from "$lib/store";
+  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused, repeat, audioElement } from "$lib/store";
 
   import Pause from "$lib/icons/Pause.svelte"
   import Play from "$lib/icons/Play.svelte"
@@ -67,6 +67,7 @@
         $active.more_info.encrypted_media_url,
         $active.more_info["320kbps"]
       )}
+      bind:this={$audioElement}
       bind:currentTime={$currentTime}
       bind:paused={$paused}
       bind:duration={$duration}

@@ -12,6 +12,7 @@
   import CurrentPlaylist from "./CurrentPlaylist.svelte";
   import Repeat from '$lib/icons/Repeat.svelte'
   import Shuffle from '$lib/icons/Shuffle.svelte'
+  import Volume from '$lib/components/Volume.svelte'
 
   function close(e) {
     if (e.key === "Escape") {
@@ -41,7 +42,7 @@
         <Seekbar2 />
       </div>
 
-      <div class="buttons flex flex-jc">
+      <div class="buttons flex flex-ac flex-jc">
         <Repeat />
 
         <Prev />
@@ -55,6 +56,7 @@
         <Next />
 
         <Shuffle />
+        <Volume />
       </div>
     </div>
 
@@ -166,8 +168,8 @@
     }
   }
   .buttons {
-    width: 100%;
-    justify-content: space-evenly;
+    width: 80%;
+    justify-content: space-between;
   }
   .lyrplaybtns {
     justify-content: space-between;

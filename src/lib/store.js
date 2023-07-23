@@ -13,5 +13,6 @@ export let BiggerPlayerVisible = writable(false);
 export let currentTime = writable(0);
 export let duration = writable(0);
 export let paused = writable(true);
-
 export let repeat = writable(false);
+
+export let audioElement = writable();
