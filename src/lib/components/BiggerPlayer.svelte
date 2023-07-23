@@ -3,7 +3,7 @@
   import { BiggerPlayerVisible } from "$lib/store.js";
   import { active, paused } from "$lib/store";
 
-  import Seekbar from "./Seekbar.svelte";
+  import Seekbar2 from "./Seekbar2.svelte";
   import Play from "$lib/icons/Play.svelte";
   import Pause from "$lib/icons/Pause.svelte";
   import Prev from "$lib/icons/Prev.svelte";
@@ -38,7 +38,7 @@
       </div>
 
       <div class="seekbar_container">
-        <Seekbar />
+        <Seekbar2 />
       </div>
 
       <div class="buttons flex flex-jc">
