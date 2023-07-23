@@ -1,11 +1,12 @@
 <script>
-    import { active, currentPlaylist, index } from "$lib/store";
+    import { currentTime, currentPlaylist, index } from "$lib/store";
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <svg
 class="glow"
 on:click={() => {
+    $currentTime = 0;
     if ($index !== $currentPlaylist.length - 1) {
         $index++;
     } else {

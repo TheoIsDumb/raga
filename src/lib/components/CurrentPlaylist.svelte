@@ -1,12 +1,10 @@
 <script>
     import { currentPlaylist } from "$lib/store";
-    import CurrentSongCard from "$lib/components/cards/CurrentSongCard.svelte";
+    import SongCard from "$lib/components/cards/SongCard.svelte";
 </script>
 
 <div class="playlist scrollable flex flex-dirc">
-    {#each $currentPlaylist as item, i}
-        <CurrentSongCard {item} {i} />
-    {/each}
+    <SongCard type="current" list={$currentPlaylist} />
 </div>
 
 <style>

@@ -13,6 +13,7 @@
     //     }
     // }
     function back() {
+        $currentTime = 0;
         if ($index !== 0) {
             $index--;
         } else {

@@ -1,7 +1,7 @@
 <script>
   export let data;
   import "$lib/styles/playlistheader.css";
-  import AlbumSongCard from "$lib/components/cards/AlbumSongCard.svelte";
+  import SongCard from "$lib/components/cards/SongCard.svelte";
 </script>
 
 <div class="inner flex flex-dirc">
@@ -14,5 +14,5 @@
     </div>
   </div>
 
-  <AlbumSongCard list={data.list}/>
+  <SongCard type="album" list={data.list}/>
 </div>
