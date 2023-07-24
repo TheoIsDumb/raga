@@ -1,7 +1,8 @@
 import { get } from 'svelte/store'
 import { currentTime, index, currentPlaylist } from '$lib/store'
 
-import { util, cipher } from 'node-forge';
+import pkg from 'node-forge';
+const { util, cipher } = pkg;
 
 const key = '38346591'
 const iv = '00000000'
