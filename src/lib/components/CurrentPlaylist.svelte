@@ -18,9 +18,6 @@
     function playSongFromCurrentPlaylist(i) {
         $index = i;
     }
-
-    $: console.log($index)
-    $: console.log(currentId)
 </script>
 
 <div class="playlist scrollable flex flex-dirc" use:dndzone="{{items: $currentPlaylist, flipDurationMs: 300}}" on:consider="{handleDndConsider}" on:finalize="{handleDndFinalize}" >
@@ -88,5 +85,16 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+  }
+  @media (hover: none) {
+    .playlist::-webkit-scrollbar {
+        width: 1rem;
+    }
+    .playlist::-webkit-scrollbar-thumb {
+        border-radius: 2rem;
+    }
+    .playlist {
+        scrollbar-width: auto !important;
+    }
   }
 </style>
