@@ -100,7 +100,7 @@
     background: linear-gradient(to top, #0c2fad, #0575E6);
     padding: 0.3rem;
     cursor: pointer;
-    gap: 0.3rem;
+    gap: 0.5rem;
     margin-bottom: 0.5rem;
     border-radius: 0.3rem;
   }
