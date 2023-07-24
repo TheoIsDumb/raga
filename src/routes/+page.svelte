@@ -9,7 +9,7 @@
     <Logo />
   </div>
 
-  <HorizCard type="playlist" array={data.modules.charts} name="Charts" />
-  <HorizCard type="playlist" array={data.modules.top_playlists} name="Top Playlists" />
-  <HorizCard type="album" array={data.modules.new_albums} name="New Albums" />
+  <HorizCard type="playlist" array={data.charts} name="Charts" />
+  <HorizCard type="playlist" array={data.top_playlists} name="Top Playlists" />
+  <HorizCard type="album" array={data.new_albums} name="New Albums" />
 </div>
