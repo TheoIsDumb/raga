@@ -1,5 +1,5 @@
 import { get } from 'svelte/store'
-import { currentTime, index, currentPlaylist } from '$lib/store'
+import { currentTime, index, currentPlaylist, paused, repeat } from '$lib/store'
 
 import pkg from 'node-forge';
 const { util, cipher } = pkg;
@@ -19,6 +19,11 @@ export const decrypt = (enc, kbps320) => {
   // const finalURL = kbps320 === "true" ? dec.replace('_96', '_320') : dec.replace('_96', '_160');
   return dec;
 }
+
+//////////////////////////////////////////////////////////////////
+
+export function playToggle() { paused.update((p) => p = !p); }
+export function repeatToggle() { repeat.update((r) => r = !r); }
 
 export function back() {
   currentTime.set(0);

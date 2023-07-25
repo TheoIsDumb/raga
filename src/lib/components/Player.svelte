@@ -2,7 +2,7 @@
   import { fly } from "svelte/transition";
   import { decrypt } from "$lib/utils";
   import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused, repeat, audioElement } from "$lib/store";
-  import { back, next } from '$lib/utils'
+  import { back, next, playToggle } from '$lib/utils'
 
   import Pause from "$lib/icons/Pause.svelte"
   import Play from "$lib/icons/Play.svelte"
@@ -56,13 +56,15 @@
     </div>
 
     <div class="buttons flex flex-ac">
-      <Prev />
+      <button class="empty" on:click={back}><Prev/></button>
+
       {#if $paused}
-        <Play />
+        <button class="empty" on:click={playToggle}><Play/></button>
       {:else}
-        <Pause />
+        <button class="empty" on:click={playToggle}><Pause/></button>
       {/if}
-      <Next />
+
+      <button class="empty" on:click={next}><Next/></button>
     </div>
 
     <audio

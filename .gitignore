@@ -1,4 +1,4 @@
-/node_modules
-
-# idk if this is supposed to be ignored 
+node_modules
 .svelte-kit
+todo.md
+pnpm-lock.yaml

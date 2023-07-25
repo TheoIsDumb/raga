@@ -21,9 +21,7 @@
     }
 </script>
 
-<!-- title, subtitle, image, language, year, whole item, more_info.album, more_info.album (for $active) -->
 <div class="inner flex flex-jc flex-ac flex-dirc">
-  <!-- <pre style:fontFamily=2rem>{JSON.stringify(song, null, 2)}</pre> -->
   <img src={song.image.replace('150x150', '500x500')} alt={song.title}/>
 
   <div class="info">

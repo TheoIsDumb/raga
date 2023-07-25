@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 18a1 1 0 1 0 2 0a1 1 0 0 0-2 0Zm-6 0a1 1 0 1 0 2 0a1 1 0 0 0-2 0Zm6-6a1 1 0 1 0 2 0a1 1 0 0 0-2 0Zm-6 0a1 1 0 1 0 2 0a1 1 0 0 0-2 0Zm6-6a1 1 0 1 0 2 0a1 1 0 0 0-2 0ZM8 6a1 1 0 1 0 2 0a1 1 0 0 0-2 0Z" /></svg>
+
+<style>
+    svg {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-right: 1rem;
+    }
+</style>

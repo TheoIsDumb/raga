@@ -83,5 +83,5 @@ h1.play {
 .hover:hover { background-color: var(--base); }
 .glow:hover { filter: drop-shadow(0 0 0.7rem var(--fg)); }
 .song_container { cursor: pointer; }
-
+.empty { all: unset; display: flex; }
 /* beautify ignore:end */

@@ -1,6 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
-  import { BiggerPlayerVisible, active, paused } from "$lib/store";
+  import { BiggerPlayerVisible, active, paused, repeat } from "$lib/store";
+  import { playToggle, repeatToggle, back, next } from '$lib/utils'
 
   import Seekbar2 from "./Seekbar2.svelte";
   import Play from "$lib/icons/Play.svelte";
@@ -42,17 +43,17 @@
       </div>
 
       <div class="buttons flex flex-ac flex-jc">
-        <Repeat />
+        <button class="empty" on:click={repeatToggle} style="filter: {$repeat === false ? 'brightness(50%)' : ''}"><Repeat/></button>
 
-        <Prev />
+        <button class="empty" on:click={back}><Prev/></button>
 
         {#if $paused}
-          <Play />
+          <button class="empty" on:click={playToggle}><Play/></button>
         {:else}
-          <Pause />
+          <button class="empty" on:click={playToggle}><Pause/></button>
         {/if}
 
-        <Next />
+        <button class="empty" on:click={next}><Next/></button>
 
         <Shuffle />
         <Volume />
