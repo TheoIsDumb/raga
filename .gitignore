@@ -1,0 +1,4 @@
+/node_modules
+
+# idk if this is supposed to be ignored 
+.svelte-kit
