@@ -18,7 +18,8 @@
 </script>
 
 <MetaTags
-  title="paattu."
+  title={Object.keys($active).length !== 0 ? $active.title : ''}
+  titleTemplate={Object.keys($active).length !== 0 ? '%s | paattu.' : 'paattu.'}
   description="A libre frontend for JioSaavn."
   openGraph={{
     url: 'https://paattu.vkdbois.xyz',
