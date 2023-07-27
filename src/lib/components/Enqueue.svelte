@@ -26,6 +26,8 @@
     border: 0;
     padding: 0.2rem;
     border-radius: 0.3rem;
+    width: 7rem;
+    align-self: end;
   }
   button:hover {
     background-color: lightskyblue;

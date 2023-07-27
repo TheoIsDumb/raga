@@ -1,6 +1,13 @@
 <script>
   import { active, currentPlaylist, index } from "$lib/store";
-  import PlayNext from "$lib/icons/PlayNext.svelte";
+
+  import OptionsIcon from '$lib/icons/OptionsIcon.svelte'
+  import Options from '$lib/components/Options.svelte'
+
+  let OptionsVisible;
+  let selectedOption;
+  
+  let selected;
 
   export let list = [];
   export let type;
@@ -47,13 +54,23 @@
     </div>
   </div>
 
+
   {#if type === "song" || type === "album"}
-  <button class="empty" on:click={() => $currentPlaylist.splice($index+1, 0, item)}>
-    <PlayNext />
-  </button>
+    <button
+    on:click={() => {
+      OptionsVisible = true
+      selectedOption = item
+    }}
+    class="options empty hover">
+      <OptionsIcon />
+    </button>
   {/if}
 </div>
 {/each}
+
+{#if OptionsVisible}
+  <Options bind:OptionsVisible item={selectedOption}/>
+{/if}
 
 <style>
   .song_container {
@@ -85,5 +102,11 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+  button.options {
+    width: 2rem;
+    border-radius: 0.3rem;
+    justify-content: center;
+    align-items: center;
   }
 </style>

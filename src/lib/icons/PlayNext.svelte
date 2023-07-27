@@ -2,8 +2,6 @@
 
 <style>
   svg {
-    height: auto;
-    margin-left: auto;
     padding: 0.1rem;
   }
 </style>
