@@ -54,7 +54,6 @@
     </div>
   </div>
 
-
   {#if type === "song" || type === "album"}
     <button
     on:click={() => {
