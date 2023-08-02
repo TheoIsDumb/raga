@@ -51,8 +51,12 @@
   >
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="title" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
-        <strong>{@html $active.title}</strong> - {@html $active.subtitle.split("-")[0]}
+    <div class="imgparent flex" style="gap: 0.5rem;">
+      <img class="image" src={$active.image} alt={$active.title}/>
+      <div class="title flex flex-dirc" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
+          <span style="font-size: 1rem; font-weight: bold;">{@html $active.title}</span>
+          <span>{@html $active.subtitle.split("-")[0]}</span>
+      </div>
     </div>
 
     <div class="buttons flex flex-ac">
@@ -98,11 +102,14 @@
 
 <style>
   div.player {
-    background: #0575E6;
-    background: linear-gradient(to top, #0c2fad, #0575E6);
+    background: rgba(0, 0, 0, 0.589);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    border: 1px solid rgba(255, 255, 255, 0.472);
     padding: 0.3rem;
     cursor: pointer;
-    gap: 0.5rem;
+    gap: 0.8rem;
     border-radius: 0.3rem;
     position: fixed;
     bottom: 0.3rem;
@@ -110,11 +117,11 @@
   .imginfo {
     justify-content: space-between;
   }
-  div.title {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  .title {
     font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   :global(.player svg) {
     cursor: pointer;
@@ -129,6 +136,10 @@
     background-color: var(--fg);
     border-radius: inherit;
   }
+  .image {
+    height: 3rem;
+    border-radius: 0.3rem;
+  }
   .buttons {
     gap: 0.8rem;
     margin-bottom: 0.3rem;
@@ -142,5 +153,13 @@
     .player {
       width: 96%;
     }
+    .imgparent {
+      width: 50%;
+    }
+  }
+  .title span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 </style>
