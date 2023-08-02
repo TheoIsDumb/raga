@@ -85,6 +85,6 @@
     overflow: auto;
   }
   .padding-bottom {
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
   }
 </style>
