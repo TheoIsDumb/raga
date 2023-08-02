@@ -11,7 +11,7 @@
 
     let copy = async () => {
 		try {
-      await navigator.clipboard.writeText(`https://paattu.vkdbois.xyz/song/${item.id}`);
+      await navigator.clipboard.writeText(`https://raga.vkdbois.xyz/song/${item.id}`);
 			copyButtonText = "✓ Copied!"
 			setTimeout(() => copyButtonText = "Copy", 1500)
         } catch (err) {
