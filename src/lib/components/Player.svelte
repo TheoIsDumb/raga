@@ -39,7 +39,7 @@
   }
 </script>
 
-<div class="player container flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
+<div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
   <div class="base">
     <div class="bar" style="--progress: {$currentTime / $duration}%" />
   </div>
@@ -53,7 +53,7 @@
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="imgparent flex" style="gap: 0.5rem;">
       <img class="image" src={$active.image} alt={$active.title}/>
-      <div class="title flex flex-dirc" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
+      <div class="title flex flex-jc flex-dirc" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
           <span style="font-size: 1rem; font-weight: bold;">{@html $active.title}</span>
           <span>{@html $active.subtitle.split("-")[0]}</span>
       </div>
@@ -113,6 +113,7 @@
     border-radius: 0.3rem;
     position: fixed;
     bottom: 0.3rem;
+    width: 96%;
   }
   .imginfo {
     justify-content: space-between;

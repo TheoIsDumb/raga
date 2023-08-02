@@ -48,7 +48,7 @@
       }}>
     <img src={item.image} alt={item.title}/>
 
-    <div class="info flex flex-jc flex-dirc">
+    <div class="info flex flex-dirc">
       <div class="title">{@html item.title}</div>
       <div class="subtitle">{@html item.subtitle}</div>
     </div>
@@ -107,5 +107,10 @@
     border-radius: 0.3rem;
     justify-content: center;
     align-items: center;
+  }
+  @media (min-width: 1280px) {
+    .info {
+      align-items: center;
+    }
   }
 </style>
