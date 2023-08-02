@@ -1,4 +1,4 @@
-![banner](assets/banner.webp)
+![banner](assets/banner2.webp)
 
 <h1 align="center">raga</h1>
 <h5 align="center">(formerly പാട്ട് (paattu))</h6>
