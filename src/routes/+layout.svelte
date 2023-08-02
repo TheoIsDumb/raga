@@ -58,7 +58,10 @@
   </div>
 
   {#key data}
-    <div class="inner_container" in:fade={{ delay: 500 }} out:fade>
+    <div
+      class="inner_container"
+      class:padding-bottom={Object.keys($active).length !== 0}
+      in:fade={{ delay: 500 }} out:fade>
       {#if $navigating}
         <Spinner />
       {:else}
@@ -79,7 +82,9 @@
 <style>
   div.inner_container {
     height: 100%;
-    max-height: 100%;
     overflow: auto;
+  }
+  .padding-bottom {
+    padding-bottom: 4rem;
   }
 </style>

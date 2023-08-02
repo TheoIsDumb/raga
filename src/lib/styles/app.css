@@ -32,15 +32,15 @@ main {
   max-height: 100dvh;
   width: 100dvw;
   margin: 0 auto;
-  gap: 1rem;
+  gap: 0.5rem;
   overflow: hidden;
 }
-.inner, .scrollable {
+.inner_container, .scrollable {
   scrollbar-width: thin;
   scrollbar-color: var(--scroll) transparent;
 }
-.inner::-webkit-scrollbar, .scrollable::-webkit-scrollbar { width: 0.2rem; }
-.inner::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background-color: var(--scroll); } 
+.inner_container::-webkit-scrollbar, .scrollable::-webkit-scrollbar { width: 0.2rem; }
+.inner_container::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background-color: var(--scroll); } 
 .hscroll::-webkit-scrollbar { display: none; }
 
 .hscroll {
@@ -55,9 +55,6 @@ main {
   width: 100%;
   max-width: 900px;
 }
-.inner_container {
-  gap: 1rem;
-}
 @media (max-width: 900px) {
   .container {
       padding: 0 0.5rem;
@@ -65,8 +62,8 @@ main {
 }
 
 .inner {
-  height: 100%;
-	overflow-y: scroll;
+  /* height: 100%;
+	overflow-y: scroll; */
   padding: 0 1rem;
   gap: 1rem;
 }

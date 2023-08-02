@@ -103,8 +103,9 @@
     padding: 0.3rem;
     cursor: pointer;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
     border-radius: 0.3rem;
+    position: fixed;
+    bottom: 0.3rem;
   }
   .imginfo {
     justify-content: space-between;

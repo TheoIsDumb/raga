@@ -30,6 +30,7 @@
     />
 
     <a href="https://github.com/theoisdumb/paattu"
+      class="github flex flex-ac"
       target="_blank" rel="noreferrer">
       <Github />
     </a>
