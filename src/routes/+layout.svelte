@@ -19,26 +19,26 @@
 
 <MetaTags
   title={Object.keys($active).length !== 0 ? $active.title : ''}
-  titleTemplate={Object.keys($active).length !== 0 ? '%s | paattu.' : 'paattu.'}
+  titleTemplate={Object.keys($active).length !== 0 ? '%s | Raga.' : 'Raga.'}
   description="A libre frontend for JioSaavn."
   openGraph={{
-    url: 'https://paattu.vkdbois.xyz',
-    title: 'Paattu',
+    url: 'https://raga.vkdbois.xyz',
+    title: 'Raga',
     description: 'A libre frontend for JioSaavn.',
     images: [
       {
-        url: 'https://paattu.vkdbois.xyz/img/og.png',
+        url: 'https://raga.vkdbois.xyz/img/og.png',
         width: 1200,
         height: 630,
-        alt: "Paattu - A libre music frontend."
+        alt: "Raga - A libre music frontend."
       },
     ],
   }}
   twitter={{
     cardType: 'summary_large_image',
-    title: "paattu.",
+    title: "Raga.",
     description: 'A libre frontend for JioSaavn.',
-    image: 'https://paattu.vkdbois.xyz/img/og.png',
+    image: 'https://raga.vkdbois.xyz/img/og.png',
   }}
   additionalLinkTags={[
     {
