@@ -47,24 +47,30 @@ main {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  padding-bottom: 1rem;
   scrollbar-width: none;
-  height: 10rem;
 }
-.inner_container, .container {
+.inner_container {
   width: 100%;
-  max-width: 900px;
 }
-@media (max-width: 900px) {
+.container {
+  width: 100%;
+}
+@media (max-width: 1200px) {
   .container {
       padding: 0 0.5rem;
   }
 }
+@media (min-width: 1200px) {
+  .inner_container {
+    padding: 0 1rem;
+  }
+  .container {
+    max-width: 50%;
+  }
+}
 
 .inner {
-  /* height: 100%;
-	overflow-y: scroll; */
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   gap: 1rem;
 }
 
