@@ -29,7 +29,7 @@
       autocomplete="off"
     />
 
-    <a href="https://github.com/theoisdumb/paattu"
+    <a href="https://github.com/theoisdumb/raga"
       class="github flex flex-ac"
       target="_blank" rel="noreferrer">
       <Github />

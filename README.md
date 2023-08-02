@@ -1,6 +1,7 @@
 ![banner](assets/banner.webp)
 
-<h1 align="center">paattu</h1>
+<h1 align="center">raga</h1>
+<h5 align="center">(formerly പാട്ട് (paattu))</h6>
 
 A libre frontend which uses the JioSaavn API.
 
@@ -12,15 +13,9 @@ Powered by SvelteKit. ⚡
 ![two](assets/2.webp)
 ![three](assets/3.webp)
 
-## Why the name?
-
-'പാട്ട്' (pronounced 'Paattu') is a Malayalam word that means 'song'.
-
-Remember, programmers are bad at naming things. 😉
-
 ## Disclaimer
 
-Paattu is not yet complete and is experimental.  
+Raga is not yet complete and is experimental.  
 Expect bugs.  
 Please open issues if you found any.  
 PRs and suggestions are welcome! 😄
