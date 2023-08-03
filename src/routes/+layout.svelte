@@ -19,7 +19,7 @@
 
 <MetaTags
   title={Object.keys($active).length !== 0 ? $active.title : ''}
-  titleTemplate={Object.keys($active).length !== 0 ? '%s | Raga.' : 'Raga.'}
+  titleTemplate={Object.keys($active).length !== 0 ? '%s | raga.' : 'raga.'}
   description="A libre frontend for JioSaavn."
   openGraph={{
     url: 'https://raga.vkdbois.xyz',
