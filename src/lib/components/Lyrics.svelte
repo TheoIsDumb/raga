@@ -18,7 +18,7 @@
     }
 </script>
 
-<div class="lyrics">
+<div class="lyrics overflow-auto font-bold text-center xl:text-left">
     {#key $active.id}
         {#await showLyrics()}
             <Spinner />
@@ -31,17 +31,6 @@
 </div>
 
 <style>
-    p {
-        margin: 0;
-    }
-    .lyrics {
-        overflow: auto;
-        scrollbar-width: thin;
-        font-weight: bold;
-    }
-    @media (max-width: 900px) {
-        .lyrics {
-            text-align: center;
-        }
-    }
+    p { @apply m-0; }
+    .lyrics { scrollbar-width: thin; }
 </style>

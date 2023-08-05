@@ -4,11 +4,11 @@
   import Logo2 from "$lib/icons/Logo2.svelte";
 </script>
 
-<div class="inner flex flex-dirc">
-  <div class="logo flex flex-jc flex-ac flex-dirc">
+<div class="inner flex flex-col">
+  <div class="logo flex flex-col justify-center items-center mt-4 gap-4">
     <Logo2 />
 
-    <h1>raga.</h1>
+    <h1 class="m-0 text-xl">raga.</h1>
   </div>
 
   <HorizCard type="playlist" array={data.charts} name="Charts" />
@@ -17,15 +17,5 @@
 </div>
 
 <style>
-  .logo {
-    margin-top: 1rem;
-    gap: 1rem;
-  }
-  :global(.logo svg) {
-    height: 4rem;
-    width: 4rem;
-  }
-  h1 {
-    margin: 0;
-  }
+  :global(.logo svg) { @apply h-16 w-16; }
 </style>

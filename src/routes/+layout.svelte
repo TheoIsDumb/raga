@@ -5,6 +5,7 @@
   import BelowHeader from "$lib/components/BelowHeader.svelte";
   import BiggerPlayer from "$lib/components/BiggerPlayer.svelte";
   import "$lib/styles/app.css";
+  import "$lib/styles/tailwind.css";
 
   import { active, BiggerPlayerVisible } from "$lib/store";
   import { navigating } from "$app/stores";
@@ -48,8 +49,8 @@
   ]}  
   />
 
-<main class="flex flex-ac flex-dirc">
-  <div class="container flex flex-jc flex-dirc">
+<main class="flex items-center flex-col">
+  <div class="container flex justify-center flex-col">
     <Header />
 
     {#if $page.url.pathname.includes("search")}
@@ -59,7 +60,7 @@
 
   {#key data}
     <div
-      class="inner_container"
+      class="inner_container w-full h-full overflow-auto xl:px-2"
       class:padding-bottom={Object.keys($active).length !== 0}
       in:fade={{ delay: 500 }} out:fade>
       {#if $navigating}
@@ -80,11 +81,5 @@
 {/if}
 
 <style>
-  div.inner_container {
-    height: 100%;
-    overflow: auto;
-  }
-  .padding-bottom {
-    padding-bottom: 5rem;
-  }
+  .padding-bottom { @apply pb-20; }
 </style>

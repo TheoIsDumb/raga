@@ -5,13 +5,13 @@
   import HorizCard from "$lib/components/cards/HorizCard.svelte";
 </script>
 
-<div class="inner flex flex-dirc">
-  <div class="header flex flex-ac">
+<div class="inner flex flex-col">
+  <div class="header flex items-center">
     <img loading="lazy" src={data.image} alt={data.name} />
-    <div class="info flex flex-dirc">
-      <span style:font-weight="bold">{data.name}</span>
-      <span style:font-size="0.8rem">{data.subtitle}</span>
-      <span style:font-size="0.8rem">Followers: {data.follower_count}</span>
+    <div class="info flex flex-col">
+      <span class="font-bold">{data.name}</span>
+      <span class="text-sm">{data.subtitle}</span>
+      <span class="text-sm">Followers: {data.follower_count}</span>
     </div>
   </div>
 

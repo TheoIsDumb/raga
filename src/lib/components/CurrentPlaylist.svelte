@@ -47,7 +47,7 @@
 </script>
 
 <div
-    class="playlist scrollable flex flex-dirc"
+    class="playlist scrollable flex flex-col overflow-auto gap-2 select-none"
     use:dndzone={{
         items: $currentPlaylist,
         dragDisabled,
@@ -61,26 +61,25 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
-            class="card flex flex-ac hover"
+            class="card flex justify-center items-center hover gap-2 cursor-pointer"
             on:click={() => playSongFromCurrentPlaylist(i)}
             animate:flip={{ duration: 300 }}
         >
-            <div class="img_container">
+            <div class="img_container relative h-14 w-14 flex items-center">
                 {#if i === $index && $paused === false}
                     <PlayIndicator/>
                 {:else if i === $index && $paused === true}
                     <PauseIndicator/>
                 {/if}
-                <img
-                    src={item.image}
-                    alt={item.title}
+                <img class="rounded"
+                    src={item.image} alt={item.title}
                     style={i === $index ? "filter: brightness(50%);" : ""}
                 />
             </div>
 
-            <div class="info flex flex-dirc">
-                <div class="title">{@html item.title}</div>
-                <div class="subtitle">{@html item.subtitle}</div>
+            <div class="info flex flex-col w-full">
+                <div class="title font-bold">{@html item.title}</div>
+                <div class="subtitle opacity-60 text-sm">{@html item.subtitle}</div>
             </div>
 
             <button
@@ -97,44 +96,14 @@
 </div>
 
 <style>
-    div.img_container {
-        position: relative;
-        color: white;
-    }
-    div.info {
-        width: 100%;
-    }
     :global(.img_container svg) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
+        @apply absolute top-1/2 left-1/2 z-[1];
         transform: translate(-50%, -50%);
-        z-index: 1;
     }
     div.playlist {
-        overflow: scroll;
         scrollbar-width: thin;
-        gap: 0.5rem;
-        user-select: none;
-    }
-    div.card {
-        gap: 0.5rem;
-        cursor: pointer;
-    }
-    div.title {
-        font-weight: bold;
-    }
-    div.subtitle {
-        font-size: 0.8rem;
-        opacity: 0.6;
-    }
-    img {
-        height: 3.5rem;
-        border-radius: 0.3rem;
     }
     .title, .info, .subtitle {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        @apply truncate;
     }
 </style>

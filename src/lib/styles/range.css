@@ -1,45 +1,20 @@
 input[type="range"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 100%;
-    height: 0.3rem;
+    @apply appearance-none w-full h-[0.3rem] rounded;
     background: #ffffff70;
-    border-radius: 5px;
     background-image: linear-gradient(white, white);
     background-size: var(--value) 100%;
     background-repeat: no-repeat;
 }
 input[type="range"]::-moz-range-thumb {
-    appearance: none;
-    height: 1rem;
-    width: 1rem;
-    border-radius: 50%;
-    background: white;
+    @apply appearance-none h-4 w-4 rounded-[50%] transition duration-300 ease-in-out bg-white border-0 cursor-pointer;
     box-shadow: 0 0 1rem black;
-    border: 0;
-    cursor: pointer;
-    transition: background .3s ease-in-out;
 }
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 1rem;
-    width: 1rem;
-    border-radius: 50%;
-    background: white;
+    @apply appearance-none h-4 w-4 rounded-[50%] transition duration-300 ease-in-out bg-white border-0 cursor-pointer;
     box-shadow: 0 0 1rem black;
-    border: 0;
-    cursor: pointer;
-    transition: background .3s ease-in-out; 
 }
-input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: gainsboro;
-}
-input[type="range"]::-moz-range-thumb:hover {
-    background-color: gainsboro;
-}
+input[type="range"]::-webkit-slider-thumb:hover { background-color: gainsboro; }
+input[type="range"]::-moz-range-thumb:hover { background-color: gainsboro; }
 input[type=range]::-moz-range-track, input[type="range"]::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
-    box-shadow: none;
-    border: none;
-    background: transparent;
+    @apply appearance-none border-0 bg-transparent shadow-none;
 }

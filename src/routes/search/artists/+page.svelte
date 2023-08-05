@@ -15,12 +15,7 @@
       on:click={gotoartist(artist.id)}
       on:keypress={gotoartist(artist.id)}
     >
-      <img
-        loading="lazy"
-        src={artist.image.replace("50x50", "150x150")}
-        alt={artist.name}
-      />
-
+      <img loading="lazy" src={artist.image.replace("50x50", "150x150")} alt={artist.name}/>
       <div class="title">{@html artist.name}</div>
     </div>
   {/each}

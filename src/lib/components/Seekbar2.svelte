@@ -14,24 +14,14 @@
   }
 </script>
 
-<div class="progress flex flex-ac flex-dirc">
+<div class="progress flex flex-col gap-1 select-none">
   <input type="range" max={$duration} bind:value={$currentTime} style="--value: {percentage.toString() + "%"}">
-  <div class="time flex">
+  <div class="time flex w-full justify-between">
     <span>{format($currentTime)}</span>
     <span>{format($duration)}</span>
   </div>
 </div>
 
 <style>
-  .progress {
-    gap: 0.5rem;
-    user-select: none;
-  }
-  .progress span {
-    font-size: 0.65rem;
-  }
-  div.time {
-    width: 100%;
-    justify-content: space-between;
-  }
+  .progress span { @apply text-xs; }
 </style>

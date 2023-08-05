@@ -38,19 +38,19 @@
 </script>
 
 {#each list as item, i}
-  <div class="song_container flex">
-    <div class="song flex hover flex-ac" on:click={() => {
+  <div class="song_container cursor-pointer flex">
+    <div class="song flex hover items-center w-full overflow-hidden gap-2 rounded" on:click={() => {
       if (type === "song") {
         playSong(item);
       } else if (type === "album") {
         playSongFromAlbum(item, i);
       }
       }}>
-    <img src={item.image} alt={item.title}/>
+    <img class="rounded h-14" src={item.image} alt={item.title}/>
 
-    <div class="info flex flex-dirc">
-      <div class="title">{@html item.title}</div>
-      <div class="subtitle">{@html item.subtitle}</div>
+    <div class="info flex flex-col w-full overflow-hidden">
+      <div class="title font-bold">{@html item.title}</div>
+      <div class="subtitle text-gray-400 text-xs">{@html item.subtitle}</div>
     </div>
   </div>
 
@@ -60,7 +60,7 @@
       OptionsVisible = true
       selectedOption = item
     }}
-    class="options empty hover">
+    class="options empty hover w-8 rounded justify-center items-center">
       <OptionsIcon />
     </button>
   {/if}
@@ -72,45 +72,5 @@
 {/if}
 
 <style>
-  .song_container {
-    width: 100%;
-    gap: 0.5rem;
-  }
-  .song {
-    width: 100%;
-    overflow: hidden;
-    gap: 0.5rem;
-    border-radius: 0.3rem;
-  }
-  .song img {
-    border-radius: 0.2rem;
-    height: 3.5rem;
-  }
-  .info {
-    width: 100%;
-    overflow: hidden;
-  }
-  .title {
-    font-weight: bold;
-  }
-  .subtitle {
-    color: gray;
-    font-size: 0.7rem;
-  }
-  .title, .subtitle {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  button.options {
-    width: 2rem;
-    border-radius: 0.3rem;
-    justify-content: center;
-    align-items: center;
-  }
-  @media (min-width: 1280px) {
-    .info {
-      align-items: center;
-    }
-  }
+  .title, .subtitle { @apply truncate; }
 </style>

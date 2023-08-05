@@ -13,7 +13,7 @@
   <div class="hscroll">
     {#each array as item}
       <div
-        class="item"
+        class="webkititem"
         on:click={() => {
           if (type === "album") {
             goto(`/album/${item.id}`);
@@ -22,7 +22,7 @@
           }
         }}
       >
-        <div class="iteminner flex flex-dirc hover">
+        <div class="iteminner flex flex-col hover">
           <img
             loading="lazy"
             src={item.image.replace("150x150", "500x500")}

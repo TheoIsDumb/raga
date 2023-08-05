@@ -8,7 +8,6 @@
 	$: percentage = (volume/1) * 100;
 
 	function setVolume() {
-        // volume = Math.max(0, Math.min(1, volume));
         $audioElement.volume = volume;
     }
 
@@ -16,7 +15,7 @@
         $audioElement.muted = !$audioElement.muted
     }
 </script>
-<div class="volume flex flex-jc flex-ac">
+<div class="volume flex justify-center items-center gap-1 w-1/3">
     <button class="empty" on:click={mutetoggle}>
         {#if !$audioElement.muted}
             <Speaker />
@@ -36,10 +35,3 @@
         style="--value: {percentage.toString() + "%"}"
     />
 </div>
-
- <style>
-    div.volume {
-        gap: 0.5rem;
-        width: 30%;
-    }
- </style>

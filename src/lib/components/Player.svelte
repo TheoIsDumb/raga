@@ -39,27 +39,28 @@
   }
 </script>
 
-<div class="player flex flex-dirc" in:fly={{ y: 50, duration: 800 }}>
-  <div class="base">
-    <div class="bar" style="--progress: {$currentTime / $duration}%" />
+<div class="player flex flex-col p-1 cursor-pointer gap-3 rounded fixed bottom-3 w-[96%] backdrop-blur"
+  in:fly={{ y: 50, duration: 800 }}>
+  <div class="base w-full rounded h-1">
+    <div class="bar h-1 rounded" style="--progress: {$currentTime / $duration}%" />
   </div>
 
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="imginfo flex flex-ac"
+  <div class="imginfo flex items-center justify-between"
       on:click|self={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}
   >
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="imgparent flex" style="gap: 0.5rem;">
-      <img class="image" src={$active.image} alt={$active.title}/>
-      <div class="title flex flex-jc flex-dirc" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
-          <span style="font-size: 1rem; font-weight: bold;">{@html $active.title}</span>
+    <div class="imgparent flex gap-2 w-4/6 lg:w-auto">
+      <img class="image h-12 rounded" src={$active.image} alt={$active.title}/>
+      <div class="title flex flex-col justify-center text-sm truncate" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
+          <span class="font-bold text-base">{@html $active.title}</span>
           <span>{@html $active.subtitle.split("-")[0]}</span>
       </div>
     </div>
 
-    <div class="buttons flex flex-ac">
+    <div class="buttons flex gap-3 mb-3 mr-3">
       <button class="empty" on:click={back}><Prev/></button>
 
       {#if $paused}
@@ -102,65 +103,14 @@
 
 <style>
   div.player {
-    background: rgba(0, 0, 0, 0.589);
+    background: rgba(0, 0, 0, 0.471);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.5px);
-    -webkit-backdrop-filter: blur(7.5px);
     border: 1px solid rgba(255, 255, 255, 0.472);
-    padding: 0.3rem;
-    cursor: pointer;
-    gap: 0.8rem;
-    border-radius: 0.3rem;
-    position: fixed;
-    bottom: 0.3rem;
-    width: 96%;
-  }
-  .imginfo {
-    justify-content: space-between;
-  }
-  .title {
-    font-size: 0.8rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  :global(.player svg) {
-    cursor: pointer;
-  }
-  .base {
-    width: 100%;
-    border-radius: 0.3rem;
   }
   .bar {
     width: calc(100 * var(--progress));
-    height: 0.2rem;
     background-color: var(--fg);
-    border-radius: inherit;
   }
-  .image {
-    height: 3rem;
-    border-radius: 0.3rem;
-  }
-  .buttons {
-    gap: 0.8rem;
-    margin-bottom: 0.3rem;
-    margin-right: 0.4rem;
-  }
-  :global(.player .buttons svg) {
-    height: 1.2rem;
-    width: 1.2rem;
-  }
-  @media (max-width: 768px) {
-    .player {
-      width: 96%;
-    }
-    .imgparent {
-      width: 50%;
-    }
-  }
-  .title span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  :global(.player .buttons svg) { @apply h-5 w-5 cursor-pointer; }
+  .title span { @apply truncate; }
 </style>

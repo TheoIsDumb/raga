@@ -15,21 +15,8 @@
   }
 </script>
 
-<button class="flex flex-jc flex-ac" on:click={enqueue}>
-  <EnqueueIcon />
-    Enqueue
+<button on:click={enqueue}
+  class="flex justify-center items-center gap-1 rounded w-28 self-end bg-gray-600 hover:bg-gray-500 mt-2">
+    <EnqueueIcon />
+      Enqueue
 </button>
-
-<style>
-  button {
-    margin-top: 0.5rem;
-    border: 0;
-    padding: 0.2rem;
-    border-radius: 0.3rem;
-    width: 7rem;
-    align-self: end;
-  }
-  button:hover {
-    background-color: lightskyblue;
-  }
-</style>

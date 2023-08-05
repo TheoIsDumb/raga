@@ -7,24 +7,25 @@
   }
 </script>
 
-<div class="inner smol flex flex-dirc">
-  <div class="grid">
+<div class="inner flex flex-col">
+  <div class="grid gap-2 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     {#each data.results as album}
       <div
-        class="album flex flex-dirc"
+        class="album flex flex-col p-2 rounded cursor-pointer gap-2 transition duration-300"
         on:click={gotoalbum(album.id)}
         on:keypress={gotoalbum(album.id)}
       >
         <img
+          class="w-full aspect-square rounded object-cover"
           loading="lazy"
           src={album.image.replace("150x150", "500x500")}
           alt={album.title}
         />
 
-        <div class="info flex flex-dirc">
-          <span style:font-weight="bold">{@html album.title}</span>
-          <span style:font-size="0.8rem">{@html album.subtitle}</span>
-          <span style:font-size="0.8rem">{album.year}</span>
+        <div class="info flex flex-col">
+          <span class="font-bold">{@html album.title}</span>
+          <span class="text-sm">{@html album.subtitle}</span>
+          <span class="text-sm">{album.year}</span>
         </div>
       </div>
     {/each}
@@ -33,34 +34,9 @@
 
 <style>
   div.album {
-    padding: 0.5rem;
     background-color: var(--base-dark);
-    border-radius: 0.3rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    gap: 0.5rem;
   }
   div.album:hover {
     background-color: var(--base);
-  }
-  img {
-    width: 100%;
-    border-radius: inherit;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-  }
-  .grid {
-    display: grid;
-    gap: 0.5rem;
-  }
-  @media (max-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
   }
 </style>

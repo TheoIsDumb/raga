@@ -18,10 +18,12 @@
   }
 </script>
 
-<div class="topheader flex flex-ac">
-  <a class="home flex flex-ac" href="/"> <Logo2 /> </a>
+<div class="topheader flex items-center gap-2 h-12">
+  <a class="home flex items-center" href="/"> <Logo2 /> </a>
 
     <input
+      class="bg-transparent border-2 border-solid border-gray-500 focus:border-gray-400
+        text-center rounded w-full outline-none transition duration-300 text-gainsboro"
       type="text"
       bind:value={$query}
       placeholder="Search..."
@@ -30,38 +32,12 @@
     />
 
     <a href="https://github.com/theoisdumb/raga"
-      class="github flex flex-ac"
+      class="github flex items-center"
       target="_blank" rel="noreferrer">
       <Github />
     </a>
 </div>
 
 <style>
-  .topheader {
-    justify-content: space-between;
-    height: 3rem;
-    gap: 0.8rem;
-  }
-  a {
-    color: var(--fg);
-    text-decoration: none;
-  }
-  input[type="text"] {
-    background-color: transparent;
-    color: var(--fg);
-    text-align: center;
-    border: 0.1rem solid gray;
-    border-radius: 0.3rem;
-    outline: 0;
-    width: 100%;
-    transition: all 0.3s;
-    height: 2rem;
-  }
-  input[type="text"]:focus {
-    border: 0.1rem solid var(--fg);
-  }
-  :global(.topheader svg) {
-    height: 2rem;
-    width: 2rem;
-  }
+  :global(.topheader svg) { @apply h-8 w-8; }
 </style>

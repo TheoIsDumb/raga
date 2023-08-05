@@ -20,7 +20,6 @@
 	}
 
     let playNext = () => {
-        // console.log($currentPlaylist.some((i) => i.id === item.id))
         if ($currentPlaylist.some((i) => i.id === item.id) === false) {
             $currentPlaylist.splice($index+1, 0, item)
 
@@ -35,27 +34,26 @@
     $: console.log($currentPlaylist)
 </script>
 
-<div class="fullscreen flex flex-jc flex-ac"
+<div class="fullscreen fixed top-0 left-0 flex justify-center items-center"
     on:click|self={() => OptionsVisible = false}
     transition:fade>
-    <div class="options">
-        <div class="top flex flex-ac">
+    <div class="options rounded p-2 flex flex-col gap-2 w-11/12 max-w-screen-md">
+        <div class="flex justify-between items-center">
             <img src={item.image} alt={item.title}/>
 
-            <div class="text">
-                <div id="title">{@html item.title}</div>
-                <div id="subtitle">{@html item.subtitle.split('-')[0]}</div>
-                <div id="subtitle">{@html item.subtitle.split('-')[1]}</div>
+            <div class="text-right">
+                <div class="font-bold">{@html item.title}</div>
+                <div class="text-gray-400 text-sm">{@html item.subtitle.split('-')[0]}</div>
+                <div class="text-gray-400 text-sm">{@html item.subtitle.split('-')[1]}</div>
             </div>
         </div>
 
-        <hr style="color: var(--base);"/>
-
-        <div class="buttons flex flex-dirc">
-        <button class="flex flex-ac" on:click={copy}>
+        <div class="flex flex-col gap-2">
+        <button class="flex items-center w-full bg-transparent rounded cursor-pointer justify-between p-2 border-2 border-solid border-gray-400" on:click={copy}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9.25 3.5A1.75 1.75 0 0 0 7.5 5.25v1a.75.75 0 0 1-1.5 0v-1A3.25 3.25 0 0 1 9.25 2h1a.75.75 0 0 1 0 1.5h-1ZM12 2.75a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Zm.75 13.75a.75.75 0 0 0 0 1.5h2.5a.75.75 0 0 0 0-1.5h-2.5Zm-6-8.5a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-1.5 0v-2.5A.75.75 0 0 1 6.75 8ZM22 8.75a.75.75 0 0 0-1.5 0v2.5a.75.75 0 0 0 1.5 0v-2.5Zm-3.25 7.75a1.75 1.75 0 0 0 1.75-1.75v-1a.75.75 0 0 1 1.5 0v1A3.25 3.25 0 0 1 18.75 18h-1a.75.75 0 0 1 0-1.5h1ZM20.5 5.25a1.75 1.75 0 0 0-1.75-1.75h-1a.75.75 0 0 1 0-1.5h1A3.25 3.25 0 0 1 22 5.25v1a.75.75 0 0 1-1.5 0v-1ZM9.25 16.5a1.75 1.75 0 0 1-1.75-1.75v-1a.75.75 0 0 0-1.5 0v1A3.25 3.25 0 0 0 9.25 18h1a.75.75 0 0 0 0-1.5h-1ZM2 9.25a3.25 3.25 0 0 1 3-3.24v1.508A1.75 1.75 0 0 0 3.5 9.25v7a4.25 4.25 0 0 0 4.25 4.25h7a1.75 1.75 0 0 0 1.732-1.5h1.509a3.25 3.25 0 0 1-3.241 3h-7A5.75 5.75 0 0 1 2 16.25v-7Z"/></svg>
             {copyButtonText}</button>
-        <button class="flex flex-ac" on:click={playNext}>
+
+        <button class="flex items-center w-full bg-transparent rounded cursor-pointer justify-between p-2 border-2 border-solid border-gray-400" on:click={playNext}>
             <PlayNext/>
             {playNextButtonText}</button>
         </div>
@@ -66,45 +64,8 @@
   .fullscreen {
       height: 100dvh;
       width: 100dvw;
-      position: fixed;
-      top: 0;
-      left: 0;
       background-color: #000000c4;
   }
-  .options {
-      background-color: #131313;
-      width: 96%;
-      max-width: 768px;
-      border-radius: 0.3rem;
-      padding: 0.5rem;
-  }
-  .top {
-    justify-content: space-between;
-  }
-  .text {
-    text-align: right;
-  }
-  #title {
-    font-weight: bold;
-  }
-  #subtitle {
-    font-size: 0.8rem;
-    color: gray;
-  }
-  .buttons {
-    gap: 0.5rem;
-  }
-  button {
-    width: 100%;
-    background-color: transparent;
-    border: 0.1rem solid gray;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    justify-content: space-between;
-    padding: 0.5rem;
-  }
-  :global(.options button svg) {
-    height: 2rem;
-    width: 2rem;
-  }
+  .options { background-color: #131313; }
+  :global(.options button svg) { @apply h-8 w-8; }
 </style>

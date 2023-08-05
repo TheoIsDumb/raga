@@ -5,13 +5,13 @@
   import Enqueue from "$lib/components/Enqueue.svelte";
 </script>
 
-<div class="inner flex flex-dirc">
-  <div class="header flex flex-ac">
+<div class="inner flex flex-col">
+  <div class="header flex items-center">
     <img loading="lazy" src={data.image} alt={data.title} />
-    <div class="info flex flex-dirc">
-      <span style:font-weight="bold">{@html data.title}</span>
-      <span style:font-size="0.8rem">{@html data.subtitle}</span>
-      <span style:font-size="0.8rem">{@html data.header_desc}</span>
+    <div class="info flex flex-col">
+      <span class="font-bold">{@html data.title}</span>
+      <span class="text-sm">{@html data.subtitle}</span>
+      <span class="text-sm">{@html data.header_desc}</span>
 
       <Enqueue list={data.list}/>
     </div>

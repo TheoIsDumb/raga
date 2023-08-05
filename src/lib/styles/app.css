@@ -1,4 +1,3 @@
-/* beautify ignore:start */
 :root {
   color-scheme: dark;
   --bg: #070707;
@@ -8,13 +7,6 @@
   --base-dark: #1f1f1f;
   --base-darker: #131313;
 }
-
-.flex { display: flex; }
-.flex-jc { justify-content: center; }
-.flex-ac { align-items: center; }
-.flex-dirc { flex-direction: column; }
-
-/**************************************/
 
 * {
   box-sizing: border-box;
@@ -31,63 +23,22 @@ main {
   height: 100dvh;
   max-height: 100dvh;
   width: 100dvw;
-  margin: 0 auto;
-  gap: 0.5rem;
-  overflow: hidden;
+  @apply gap-2 overflow-hidden mx-0 my-auto;
 }
 .inner_container, .scrollable {
   scrollbar-width: thin;
   scrollbar-color: var(--scroll) transparent;
 }
+.hscroll {
+  @apply overflow-x-auto overflow-y-hidden whitespace-nowrap;
+  scrollbar-width: none;
+}
+h1.play { @apply m-0 lowercase text-right font-bold text-2xl xl:text-3xl; }
 .inner_container::-webkit-scrollbar, .scrollable::-webkit-scrollbar { width: 0.2rem; }
 .inner_container::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background-color: var(--scroll); } 
 .hscroll::-webkit-scrollbar { display: none; }
-
-.hscroll {
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  scrollbar-width: none;
-}
-.inner_container {
-  width: 100%;
-}
-.container {
-  width: 100%;
-}
-@media (max-width: 1200px) {
-  .container {
-      padding: 0 0.5rem;
-  }
-}
-@media (min-width: 1200px) {
-  .inner_container {
-    padding: 0 1rem;
-  }
-  .container {
-    max-width: 50%;
-  }
-}
-
-.inner {
-  padding: 0 0.5rem;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-/**************************************/
-
-h1.play {
-  margin: 0;
-  text-transform: lowercase;
-  text-align: right;
-}
-
-/**************************************/
-
-.glow, .hover { transition: all 0.3s; }
+.inner { @apply gap-4 mb-6; }
+.glow, .hover { @apply transition duration-300 }
 .hover:hover { background-color: var(--base) !important; }
 .glow:hover { filter: drop-shadow(0 0 0.7rem var(--fg)); }
-.song_container { cursor: pointer; }
 .empty { all: unset; display: flex; }
-/* beautify ignore:end */

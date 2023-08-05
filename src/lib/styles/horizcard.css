@@ -1,38 +1,4 @@
-.hscroll .item {
-    display: inline-block;
-    border-radius: 0.3rem;
-    margin-left: 0.5rem;
-}
-
-.hscroll .item img {
-    border-radius: 0.3rem;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-}
-@media (max-width: 768px) {
-    .hscroll .item img {
-        height: 8rem;
-    }
-    .hscroll .iteminner {
-        width: 8rem;
-    }
-}
-@media (min-width: 768px) {
-    .hscroll .item img {
-        height: 10rem;
-    }
-    .hscroll .iteminner {
-        width: 10rem;
-    }
-}
-
-.hscroll .iteminner {
-    gap: 0.5rem;
-}
-
-.hscroll span {
-    font-weight: bold;
-    font-size: 0.7rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+.hscroll .item { @apply inline-block ml-2 rounded; }
+.hscroll .item img { @apply rounded aspect-square object-cover h-32 xl:h-40; }
+.hscroll .iteminner { @apply gap-2 w-32 xl:w-40; }
+.hscroll span { @apply truncate text-xs font-bold; }
