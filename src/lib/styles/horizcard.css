@@ -1,4 +1,0 @@
-.hscroll .item { @apply inline-block ml-2 rounded; }
-.hscroll .item img { @apply rounded aspect-square object-cover h-32 xl:h-40; }
-.hscroll .iteminner { @apply gap-2 w-32 xl:w-40; }
-.hscroll span { @apply truncate text-xs font-bold; }

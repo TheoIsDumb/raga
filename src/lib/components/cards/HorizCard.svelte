@@ -1,6 +1,5 @@
 <script>
   import { goto } from "$app/navigation";
-  import "$lib/styles/horizcard.css"
 
   export let array;
   export let name;
@@ -9,11 +8,11 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="scroll_container">
-  <h1 class="play">{name}</h1>
-  <div class="hscroll">
+  <h1 class="play m-0 lowercase text-right font-bold text-2xl xl:text-3xl">{name}</h1>
+  <div class="hscroll overflow-x-auto overflow-y-hidden whitespace-nowrap">
     {#each array as item}
       <div
-        class="item"
+        class="item inline-block ml-2 rounded"
         on:click={() => {
           if (type === "album") {
             goto(`/album/${item.id}`);
@@ -22,13 +21,14 @@
           }
         }}
       >
-        <div class="iteminner flex flex-col hover">
+        <div class="iteminner flex flex-col hover gap-2 w-32 xl:w-40">
           <img
+            class="rounded aspect-square object-cover h-32 xl:h-40"
             loading="lazy"
             src={item.image.replace("150x150", "500x500")}
             alt={item.title}
           />
-          <span>{@html item.title}</span>
+          <span class="truncate text-xs font-bold">{@html item.title}</span>
         </div>
       </div>
     {/each}

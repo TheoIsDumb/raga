@@ -5,17 +5,13 @@
 </script>
 
 <div class="inner flex flex-col">
-  <div class="logo flex flex-col justify-center items-center mt-4 gap-4">
+  <div class="h-20 gap-2 flex flex-col justify-center items-center">
     <Logo2 />
 
-    <h1 class="m-0 text-xl">raga.</h1>
+    <h1 class="m-0 text-base font-bold">raga.</h1>
   </div>
 
   <HorizCard type="playlist" array={data.charts} name="Charts" />
   <HorizCard type="playlist" array={data.top_playlists} name="Top Playlists" />
   <HorizCard type="album" array={data.new_albums} name="New Albums" />
 </div>
-
-<style>
-  :global(.logo svg) { @apply h-16 w-16; }
-</style>

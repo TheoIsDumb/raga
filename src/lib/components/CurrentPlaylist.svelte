@@ -77,9 +77,9 @@
                 />
             </div>
 
-            <div class="info flex flex-col w-full">
-                <div class="title font-bold">{@html item.title}</div>
-                <div class="subtitle opacity-60 text-sm">{@html item.subtitle}</div>
+            <div class="info flex flex-col w-full truncate">
+                <div class="title font-bold truncate">{@html item.title}</div>
+                <div class="subtitle opacity-60 text-sm truncate">{@html item.subtitle}</div>
             </div>
 
             <button
@@ -96,14 +96,5 @@
 </div>
 
 <style>
-    :global(.img_container svg) {
-        @apply absolute top-1/2 left-1/2 z-[1];
-        transform: translate(-50%, -50%);
-    }
-    div.playlist {
-        scrollbar-width: thin;
-    }
-    .title, .info, .subtitle {
-        @apply truncate;
-    }
+    :global(.img_container svg) { transform: translate(-50%, -50%); }
 </style>

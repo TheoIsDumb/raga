@@ -18,19 +18,14 @@
     }
 </script>
 
-<div class="lyrics overflow-auto font-bold text-center xl:text-left">
+<div class="scrollable overflow-auto font-bold text-center xl:text-left">
     {#key $active.id}
         {#await showLyrics()}
             <Spinner />
         {:then lyrics}
-            <p>{@html lyrics}</p>
+            <p class="m-0">{@html lyrics}</p>
         {:catch error}
-            <p>No lyrics found.</p>
+            <p class="m-0">No lyrics found.</p>
         {/await}
     {/key}
 </div>
-
-<style>
-    p { @apply m-0; }
-    .lyrics { scrollbar-width: thin; }
-</style>

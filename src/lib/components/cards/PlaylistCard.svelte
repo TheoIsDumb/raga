@@ -1,20 +1,22 @@
 <script>
   import { goto } from "$app/navigation"
-  import "$lib/styles/play_artist_card.css"
 
   export let id;
   export let title;
   export let image;
+  export let type;
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-  class="playcard flex hover"
+  class="flex w-full gap-4 cursor-pointer transition duration-300 rounded p-2 hover"
   on:click={() => {
-    goto(`/playlist/${id}`);
-  }}
->
-  <img loading="lazy" src={image} alt={title} />
-
-  <div class="title">{@html title}</div>
+    if (type === "artist") {
+      goto(`/artist/${id}`) 
+    } else if (type === "playlist") {
+      goto(`/playlist/${id}`) 
+    }
+  }} >
+  <img class="rounded-[50%] h-14" loading="lazy" src={image.replace('50x50', '150x150')} alt={title} />
+  <div class="font-bold">{@html title}</div>
 </div>

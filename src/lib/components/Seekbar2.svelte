@@ -17,11 +17,8 @@
 <div class="progress flex flex-col gap-1 select-none">
   <input type="range" max={$duration} bind:value={$currentTime} style="--value: {percentage.toString() + "%"}">
   <div class="time flex w-full justify-between">
-    <span>{format($currentTime)}</span>
-    <span>{format($duration)}</span>
+    {#each [$currentTime, $duration] as i}
+      <span class="text-xs">{format(i)}</span>
+    {/each}
   </div>
 </div>
-
-<style>
-  .progress span { @apply text-xs; }
-</style>

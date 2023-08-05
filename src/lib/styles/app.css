@@ -7,33 +7,20 @@
   --base-dark: #1f1f1f;
   --base-darker: #131313;
 }
-
 * {
   box-sizing: border-box;
   font-family: "CircularStd", sans-serif;
 }
-
 body {
   margin: 0;
   background-color: var(--bg);
   color: var(--fg);
 }
-
-main {
-  height: 100dvh;
-  max-height: 100dvh;
-  width: 100dvw;
-  @apply gap-2 overflow-hidden mx-0 my-auto;
-}
 .inner_container, .scrollable {
   scrollbar-width: thin;
   scrollbar-color: var(--scroll) transparent;
 }
-.hscroll {
-  @apply overflow-x-auto overflow-y-hidden whitespace-nowrap;
-  scrollbar-width: none;
-}
-h1.play { @apply m-0 lowercase text-right font-bold text-2xl xl:text-3xl; }
+.hscroll { scrollbar-width: none; }
 .inner_container::-webkit-scrollbar, .scrollable::-webkit-scrollbar { width: 0.2rem; }
 .inner_container::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background-color: var(--scroll); } 
 .hscroll::-webkit-scrollbar { display: none; }

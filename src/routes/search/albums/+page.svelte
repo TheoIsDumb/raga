@@ -33,10 +33,6 @@
 </div>
 
 <style>
-  div.album {
-    background-color: var(--base-dark);
-  }
-  div.album:hover {
-    background-color: var(--base);
-  }
+  div.album { background-color: var(--base-dark); }
+  div.album:hover { background-color: var(--base); }
 </style>

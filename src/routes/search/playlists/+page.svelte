@@ -8,11 +8,7 @@
     <p>No results.</p>
   {:else}
     {#each data.results as playlist}
-      <PlaylistCard
-        id={playlist.id}
-        title={playlist.title}
-        image={playlist.image}
-      />
+      <PlaylistCard type="playlist" id={playlist.id} title={playlist.title} image={playlist.image} />
     {/each}
   {/if}
 </div>

@@ -1,14 +1,12 @@
 <script>
   export let data;
-  import "$lib/styles/playlistheader.css"
-  import SongCardHoriz from "$lib/components/cards/SongCardHoriz.svelte";
   import HorizCard from "$lib/components/cards/HorizCard.svelte";
 </script>
 
 <div class="inner flex flex-col">
-  <div class="header flex items-center">
-    <img loading="lazy" src={data.image} alt={data.name} />
-    <div class="info flex flex-col">
+  <div class="header flex items-center justify-between">
+    <img class="h-[150px] w-[150px] rounded" loading="lazy" src={data.image} alt={data.name} />
+    <div class="info flex flex-col text-right">
       <span class="font-bold">{data.name}</span>
       <span class="text-sm">{data.subtitle}</span>
       <span class="text-sm">Followers: {data.follower_count}</span>
@@ -16,21 +14,11 @@
   </div>
 
   {#if data.topSongs.length !== 0}
-    <div class="scroll_container">
-      <h1 class="play">Top Songs</h1>
-      <div class="hscroll">
-          <SongCardHoriz list={data.topSongs} />
-      </div>
-    </div>
+    <HorizCard type="song" name="Top Songs" array={data.topSongs} />
   {/if}
 
   {#if data.singles.length !== 0}
-    <div class="scroll_container">
-      <h1 class="play">Singles</h1>
-      <div class="hscroll">
-        <SongCardHoriz list={data.singles}/>
-      </div>
-    </div>
+    <HorizCard type="song" name="Singles" array={data.singles} />
   {/if}
 
   {#if data.topAlbums.length !== 0}

@@ -1,3 +1,0 @@
-.playcard { @apply w-full gap-4 cursor-pointer transition duration-300 rounded px-2; }
-.playcard img { @apply rounded h-14; }
-.playcard .title { @apply font-bold; }

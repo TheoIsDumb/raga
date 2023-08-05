@@ -18,8 +18,8 @@
   }
 </script>
 
-<div class="topheader flex items-center gap-2 h-12">
-  <a class="home flex items-center" href="/"> <Logo2 /> </a>
+<div class="topheader flex items-center gap-2 h-12 px-2">
+  <a class="home flex items-center h-8 w-8" href="/"><Logo2/></a>
 
     <input
       class="bg-transparent border-2 border-solid border-gray-500 focus:border-gray-400
@@ -32,12 +32,8 @@
     />
 
     <a href="https://github.com/theoisdumb/raga"
-      class="github flex items-center"
+      class="github flex items-center h-8 w-8"
       target="_blank" rel="noreferrer">
       <Github />
     </a>
 </div>
-
-<style>
-  :global(.topheader svg) { @apply h-8 w-8; }
-</style>

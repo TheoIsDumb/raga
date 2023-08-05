@@ -49,7 +49,7 @@
   ]}  
   />
 
-<main class="flex items-center flex-col">
+<main class="flex items-center flex-col gap-2 overflow-hidden mx-0 my-auto w-[100dvw] max-w-[100dvw] h-[100dvh]">
   <div class="container flex justify-center flex-col">
     <Header />
 
@@ -60,8 +60,8 @@
 
   {#key data}
     <div
-      class="inner_container w-full h-full overflow-auto px-2"
-      class:padding-bottom={Object.keys($active).length !== 0}
+      class="inner_container w-full h-full overflow-auto px-2 lg:px-4"
+      class:pb-20={Object.keys($active).length !== 0}
       in:fade={{ delay: 500 }} out:fade>
       {#if $navigating}
         <Spinner />
@@ -79,7 +79,3 @@
 {#if $BiggerPlayerVisible}
   <BiggerPlayer/>
 {/if}
-
-<style>
-  .padding-bottom { @apply pb-20; }
-</style>

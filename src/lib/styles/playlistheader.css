@@ -1,3 +1,0 @@
-.header { @apply justify-between; }
-.header img { @apply h-[150px] w-[150px] rounded; }
-.header .info { @apply text-right; }

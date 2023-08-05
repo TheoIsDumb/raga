@@ -54,9 +54,9 @@
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="imgparent flex gap-2 w-4/6 lg:w-auto">
       <img class="image h-12 rounded" src={$active.image} alt={$active.title}/>
-      <div class="title flex flex-col justify-center text-sm truncate" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
-          <span class="font-bold text-base">{@html $active.title}</span>
-          <span>{@html $active.subtitle.split("-")[0]}</span>
+      <div class="title flex flex-col justify-center text-sm truncate w-full" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
+          <span class="font-bold text-base truncate">{@html $active.title}</span>
+          <span class="truncate">{@html $active.subtitle.split("-")[0]}</span>
       </div>
     </div>
 
@@ -111,6 +111,4 @@
     width: calc(100 * var(--progress));
     background-color: var(--fg);
   }
-  :global(.player .buttons svg) { @apply h-5 w-5 cursor-pointer; }
-  .title span { @apply truncate; }
 </style>

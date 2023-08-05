@@ -23,9 +23,9 @@
   let shown = CurrentPlaylist;
 </script>
 
-<div class="biggerplayer flex items-center justify-center flex-col fixed top-0 left-0 gap-4 backdrop-blur-md"
+<div class="biggerplayer flex items-center justify-center flex-col fixed top-0 left-0 gap-4 backdrop-blur-md h-[100dvh] w-[100dvw]"
   transition:fade>
-  <div class="player_container w-11/12 max-w-[1800px] flex py-6 gap-4 flex-col xl:flex-row xl:gap-0">
+  <div class="player_container h-[100dvh] w-11/12 max-w-[1800px] flex py-6 gap-4 flex-col xl:flex-row xl:gap-0">
     <div class="player flex items-center justify-center flex-col gap-4 h-2/5 xl:h-auto xl:w-1/2">
       <img class="rounded h-1/2 xl:h-auto xl:w-1/2"
         src={$active.image.replace("150x150", "500x500")}
@@ -87,21 +87,11 @@
 <svelte:window on:keydown={close} />
 
 <style>
-  div.biggerplayer {
-    height: 100dvh;
-    width: 100dvw;
-    background-color: #0000008e;
-  }
-  div.player_container {
-    height: 100dvh;
-  }
-  .lyrplaybtns button {
-    color: var(--fg);
-  }
+  div.biggerplayer { background-color: #0000008e; }
+  .lyrplaybtns button { color: var(--fg); }
   .colorful {
     background-image: linear-gradient(to right, #5d26c1, #a17fe0, #59c173);
     background-clip: text;
-    -webkit-background-clip: text;
     color: transparent !important;
   }
 </style>
