@@ -60,7 +60,7 @@
 
   {#key data}
     <div
-      class="inner_container w-full h-full overflow-auto xl:px-2"
+      class="inner_container w-full h-full overflow-auto px-2"
       class:padding-bottom={Object.keys($active).length !== 0}
       in:fade={{ delay: 500 }} out:fade>
       {#if $navigating}

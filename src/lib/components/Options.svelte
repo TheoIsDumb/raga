@@ -1,6 +1,7 @@
 <script>
     import { fade } from 'svelte/transition'
     import { currentPlaylist, index } from '$lib/store'
+    import { page } from '$app/stores'; 
     import PlayNext from '$lib/icons/PlayNext.svelte'
 
     export let OptionsVisible;
@@ -11,7 +12,7 @@
 
     let copy = async () => {
 		try {
-      await navigator.clipboard.writeText(`https://raga.vkdbois.xyz/song/${item.id}`);
+      await navigator.clipboard.writeText(`${$page.url.origin}/song/${item.id}`);
 			copyButtonText = "✓ Copied!"
 			setTimeout(() => copyButtonText = "Copy", 1500)
         } catch (err) {
@@ -30,8 +31,6 @@
             setTimeout(() => playNextButtonText = "Play Next", 1500)
         }
     }
-
-    $: console.log($currentPlaylist)
 </script>
 
 <div class="fullscreen fixed top-0 left-0 flex justify-center items-center"
