@@ -13,7 +13,7 @@
   <div class="hscroll">
     {#each array as item}
       <div
-        class="webkititem"
+        class="item"
         on:click={() => {
           if (type === "album") {
             goto(`/album/${item.id}`);
