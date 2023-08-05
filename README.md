@@ -35,6 +35,7 @@ PRs and suggestions are welcome! 😄
 - [Svelte](https://svelte.dev)
 - [SvelteKit](https://kit.svelte.dev)
 - [Vite](https://vitejs.dev)
+- [Tailwind CSS](https://tailwindcss.com)
 - [svelte-meta-tags](https://github.com/oekazuma/svelte-meta-tags)
 - [Forge](https://github.com/digitalbazaar/forge)
 - [Inter Tight](https://rsms.me/inter/)
