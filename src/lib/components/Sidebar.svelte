@@ -8,12 +8,12 @@
   $: pathname = $page.url.pathname;
 </script>
 
-<div class="bg-[#131313] w-0 xl:w-1/4 h-full fixed p-4 flex-col justify-between hidden xl:flex shadow-inner">
-    <a href="/" class="block h-8 w-8"><Logo2/></a>
+<div class="bg-[#131313] w-0 xl:w-1/4 h-full fixed p-4 flex-col gap-4 hidden xl:flex shadow-inner">
+    <a href="/" class="block h-8 w-8 mb-8"><Logo2/></a>
 
     {#if $page.url.pathname.includes("search")}
       <div class="flex flex-col items-start gap">
-        <span class="text-orange-400 underline mb-2">Search For</span>
+        <span class="text-orange-400 font-bold tracking-wider">SEARCH FOR</span>
         {#each buttonsArray as btn}
           <button
             class="{pathname.includes(btn.name.toLowerCase()) ? 'text-orange-500' : '' }"
@@ -29,8 +29,15 @@
       </div>
     {/if}
 
+    <div class="flex flex-col items-start gap">
+      <span class="text-orange-400 font-bold tracking-wider">EXPLORE</span>
+
+      <a class:text-orange-400={pathname.includes('newReleases')} href="/newReleases">New Releases</a>
+      <a class:text-orange-400={pathname.includes('topCharts')} href="/topCharts">Top Charts</a>
+    </div>
+
     <a href="https://github.com/theoisdumb/raga"
-      class="block h-8 w-8"
+      class="block h-8 w-8 mt-auto"
       target="_blank" rel="noreferrer">
       <Github />
     </a>

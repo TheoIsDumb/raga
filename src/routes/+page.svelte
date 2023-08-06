@@ -11,7 +11,7 @@
     <h1 class="m-0 text-base font-bold">raga.</h1>
   </div>
 
-  <HorizCard type="playlist" array={data.charts} name="Charts" />
-  <HorizCard type="playlist" array={data.top_playlists} name="Top Playlists" />
-  <HorizCard type="album" array={data.new_albums} name="New Albums" />
+  <HorizCard array={data.charts} name="Charts" />
+  <HorizCard array={data.top_playlists} name="Top Playlists" />
+  <HorizCard array={data.new_albums} name="New Releases" />
 </div>

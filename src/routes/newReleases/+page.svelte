@@ -1,17 +1,15 @@
 <script>
-  import { goto } from "$app/navigation";
-
-  export let array;
-  export let name;
+  export let data
+  let results = data.data
+  import { goto } from '$app/navigation';
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="scroll_container">
-  <h1 class="play m-0 lowercase text-right font-bold text-2xl xl:text-3xl">{name}</h1>
-  <div class="hscroll overflow-x-auto overflow-y-hidden whitespace-nowrap">
-    {#each array as item}
+<h1 class="font-bold text-3xl">new releases</h1>
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mt-2 gap-2">
+    {#each results as item}
       <div
-        class="item inline-block mr-2 rounded"
+        class="item"
         on:click={() => {
           if (item.type === "album") {
             goto(`/album/${item.id}`);
@@ -22,9 +20,9 @@
           }
         }}
       >
-        <div class="iteminner flex flex-col hover gap-2 w-32 xl:w-40">
+        <div class="iteminner flex flex-col hover gap-2">
           <img
-            class="rounded aspect-square object-cover h-32 xl:h-40"
+            class="rounded aspect-square object-cover"
             loading="lazy"
             src={item.image.replace("150x150", "500x500")}
             alt={item.title}
@@ -33,5 +31,4 @@
         </div>
       </div>
     {/each}
-  </div>
 </div>

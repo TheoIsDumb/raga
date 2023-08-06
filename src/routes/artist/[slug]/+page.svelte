@@ -14,14 +14,14 @@
   </div>
 
   {#if data.topSongs.length !== 0}
-    <HorizCard type="song" name="Top Songs" array={data.topSongs} />
+    <HorizCard name="Top Songs" array={data.topSongs} />
   {/if}
 
   {#if data.singles.length !== 0}
-    <HorizCard type="song" name="Singles" array={data.singles} />
+    <HorizCard name="Singles" array={data.singles} />
   {/if}
 
   {#if data.topAlbums.length !== 0}
-    <HorizCard type="album" name="Top Albums" array={data.topAlbums} />
+    <HorizCard name="Top Albums" array={data.topAlbums} />
   {/if}
 </div>
