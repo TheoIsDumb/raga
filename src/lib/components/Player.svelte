@@ -39,10 +39,10 @@
   }
 </script>
 
-<div class="player flex flex-col p-1 cursor-pointer gap-3 rounded fixed bottom-3 w-[96%] backdrop-blur"
+<div class="player flex flex-col border-t-2 border-orange-500 p-1 pt-2 cursor-pointer gap-3 fixed bottom-0 w-full xl:w-[calc(100dvw-25%)] xl:right-0 backdrop-blur"
   in:fly={{ y: 50, duration: 800 }}>
   <div class="base w-full rounded h-1">
-    <div class="bar h-1 rounded" style="--progress: {$currentTime / $duration}%" />
+    <div class="bar h-1 bg-orange-500 rounded" style="--progress: {$currentTime / $duration}%" />
   </div>
 
   <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <div class="buttons flex gap-3 mb-3 mr-3">
+    <div class="buttons flex gap-3 xl:gap-4 h-8 mr-2">
       <button class="empty" on:click={back}><Prev/></button>
 
       {#if $paused}
@@ -102,13 +102,10 @@
 <svelte:window on:keydown={pause} />
 
 <style>
-  div.player {
-    background: rgba(0, 0, 0, 0.471);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.472);
-  }
-  .bar {
-    width: calc(100 * var(--progress));
-    background-color: var(--fg);
+  .bar { width: calc(100 * var(--progress)); }
+  :global(.buttons svg) {
+    height: 1.3rem;
+    width: 1.3rem;
+    cursor: pointer;
   }
 </style>

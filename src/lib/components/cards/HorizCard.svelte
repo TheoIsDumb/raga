@@ -12,7 +12,7 @@
   <div class="hscroll overflow-x-auto overflow-y-hidden whitespace-nowrap">
     {#each array as item}
       <div
-        class="item inline-block ml-2 rounded"
+        class="item inline-block mr-2 rounded"
         on:click={() => {
           if (type === "album") {
             goto(`/album/${item.id}`);

@@ -18,12 +18,12 @@
   }
 </script>
 
-<div class="topheader flex items-center gap-2 h-12 px-2">
-  <a class="home flex items-center h-8 w-8" href="/"><Logo2/></a>
+<div class="topheader flex items-center gap-2 h-12">
+  <a class="home flex items-center h-8 w-8 xl:hidden" href="/"><Logo2/></a>
 
     <input
-      class="bg-transparent border-2 border-solid border-gray-500 focus:border-gray-400
-        text-center rounded w-full outline-none transition duration-300 text-gainsboro"
+      class="bg-transparent border-2 border-solid border-orange-400 focus:border-[var(--fg)]
+        text-center rounded w-full xl:w-2/3 mx-auto xl:h-8 xl:p-2 outline-none transition duration-300"
       type="text"
       bind:value={$query}
       placeholder="Search..."
@@ -32,7 +32,7 @@
     />
 
     <a href="https://github.com/theoisdumb/raga"
-      class="github flex items-center h-8 w-8"
+      class="github flex items-center h-8 w-8 xl:hidden"
       target="_blank" rel="noreferrer">
       <Github />
     </a>

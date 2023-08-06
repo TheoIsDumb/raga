@@ -4,13 +4,14 @@
   import Spinner from "$lib/icons/Spinner.svelte";
   import BelowHeader from "$lib/components/BelowHeader.svelte";
   import BiggerPlayer from "$lib/components/BiggerPlayer.svelte";
+  import Sidebar from "$lib/components/Sidebar.svelte";
   import "$lib/styles/app.css";
   import "$lib/styles/tailwind.css";
 
   import { active, BiggerPlayerVisible } from "$lib/store";
   import { navigating } from "$app/stores";
-  import { fade } from "svelte/transition";
   import { page } from "$app/stores";
+  import { fade } from 'svelte/transition'
 
   import "@vetixy/circular-std"
   import { MetaTags } from "svelte-meta-tags";
@@ -50,24 +51,28 @@
   />
 
 <main class="flex items-center flex-col gap-2 overflow-hidden mx-0 my-auto w-[100dvw] max-w-[100dvw] h-[100dvh]">
-  <div class="container flex justify-center flex-col">
-    <Header />
-
-    {#if $page.url.pathname.includes("search")}
-      <BelowHeader />
-    {/if}
-  </div>
-
   {#key data}
     <div
-      class="inner_container w-full h-full overflow-auto px-2 lg:px-4"
-      class:pb-20={Object.keys($active).length !== 0}
-      in:fade={{ delay: 500 }} out:fade>
-      {#if $navigating}
-        <Spinner />
-      {:else}
-        <slot />
-      {/if}
+      class="inner_container w-full h-full overflow-auto flex"
+      class:mb-20={Object.keys($active).length !== 0}>
+      <Sidebar />
+        <div class="w-full xl:w-3/4 xl:ml-[25%] px-2 xl:px-4">
+          <div class="w-full flex justify-center flex-col">
+            <Header />
+
+            {#if $page.url.pathname.includes("search")}
+              <BelowHeader />
+            {/if}
+          </div>
+
+          {#if $navigating}
+            <Spinner />
+          {:else}
+            <div in:fade={{ delay: 300 }} out:fade>
+                <slot />
+            </div>
+          {/if}
+        </div>
     </div>
   {/key}
 

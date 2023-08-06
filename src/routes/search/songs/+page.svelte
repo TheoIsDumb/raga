@@ -28,7 +28,7 @@
   };
 </script>
 
-<div class="inner flex flex-col" on:scroll={scrollHandler}>
+<div class="inner flex flex-col mb-4" on:scroll={scrollHandler}>
   <SongCard type="song" list={results} />
 
   <button class="flex justify-center" on:click={loadMore}>
