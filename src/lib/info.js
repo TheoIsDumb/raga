@@ -15,5 +15,8 @@ export const sub = Object.freeze({
   playlistDetails: "__call=playlist.getDetails&listid=",
   lyrics: "__call=lyrics.getLyrics&lyrics_id=",
   reco: "__call=reco.getreco&language=english&pid=",
+  newReleases: "__call=content.getAlbums&p=1&n=50",
+  topCharts: "__call=content.getCharts",
+  topPlaylists: "__call=content.getFeaturedPlaylists&p=1&n=50",
   index: "p="
 });
