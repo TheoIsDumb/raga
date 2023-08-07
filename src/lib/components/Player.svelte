@@ -1,7 +1,7 @@
 <script>
   import { fly } from "svelte/transition";
   import { decrypt } from "$lib/utils";
-  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused, repeat, audioElement } from "$lib/store";
+  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused, repeat, audioElement, historyEnabled } from "$lib/store";
   import { back, next, playToggle } from '$lib/utils'
 
   import Pause from "$lib/icons/Pause.svelte"
@@ -29,6 +29,22 @@
 
       navigator.mediaSession.setActionHandler('previoustrack', back);
       navigator.mediaSession.setActionHandler('nexttrack', next);
+    }
+
+    if ($historyEnabled === true) {
+      if (localStorage.getItem('history')) {
+        let array = JSON.parse(localStorage.getItem('history'))
+
+        if (array.some((i) => i.id === $active.id) === false) {
+          array.unshift($active)
+          localStorage.setItem('history', JSON.stringify(array))
+        }
+      } else {
+        localStorage.setItem('history', JSON.stringify([]))
+        let array = JSON.parse(localStorage.getItem('history'))
+        array.push($active)
+        localStorage.setItem('history', JSON.stringify(array))
+      }
     }
   }
 

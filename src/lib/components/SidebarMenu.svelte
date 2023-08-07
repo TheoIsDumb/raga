@@ -30,3 +30,17 @@
     <a class:text-orange-400={pathname.includes('newReleases')} href="/newReleases">New Releases</a>
     <a class:text-orange-400={pathname.includes('topCharts')} href="/topCharts">Top Charts</a>
 </div>
+
+<div class="flex flex-col items-start gap">
+    <span class="text-orange-400 font-bold tracking-wider">BROWSE</span>
+
+    <a class:text-orange-400={pathname.includes('history')} href="/history">History</a>
+</div>
+
+<div class="flex flex-col items-start gap">
+    <span class="text-orange-400 font-bold tracking-wider">MORE</span>
+
+    <a class:text-orange-400={pathname.includes('settings')} href="/settings">Settings</a>
+</div>
+
+
