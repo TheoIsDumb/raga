@@ -1,7 +1,8 @@
 ![banner](assets/banner2.webp)
 
 <h1 align="center">raga</h1>
-<h5 align="center">(formerly പാട്ട് (paattu))</h6>
+<h5 align="center">(formerly "Paattu")</h6>
+<h5 align="center">(thanks for the name, @V8V88V8V88!)</h6>
 
 A libre frontend which uses the JioSaavn API.
 
@@ -40,4 +41,3 @@ PRs and suggestions are welcome! 😄
 - [Forge](https://github.com/digitalbazaar/forge)
 - [Inter Tight](https://rsms.me/inter/)
 - [iconify.design](https://icon-sets.iconify.design)
-

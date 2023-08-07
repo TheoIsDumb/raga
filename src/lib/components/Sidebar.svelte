@@ -8,7 +8,7 @@
   $: pathname = $page.url.pathname;
 </script>
 
-<div class="bg-[#131313] w-0 xl:w-1/4 h-full fixed p-4 flex-col gap-4 hidden xl:flex shadow-inner">
+<div class="bg-[#131313] w-0 xl:w-80 h-full fixed p-4 flex-col gap-4 hidden xl:flex shadow-inner">
     <a href="/" class="block h-8 w-8 mb-8"><Logo2/></a>
 
     {#if $page.url.pathname.includes("search")}

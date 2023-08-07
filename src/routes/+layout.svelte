@@ -56,7 +56,7 @@
       class="inner_container w-full h-full overflow-auto flex"
       class:mb-20={Object.keys($active).length !== 0}>
       <Sidebar />
-        <div class="w-full xl:w-3/4 xl:ml-[25%] px-2 xl:px-4">
+        <div class="w-full xl:w-[calc(100dvw-20rem)] xl:ml-[20rem] px-2 xl:px-4">
           <div class="w-full flex justify-center flex-col">
             <Header />
 
