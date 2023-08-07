@@ -1,0 +1,32 @@
+<script>
+    import { buttonsArray } from '$lib/utils'
+    import { page } from '$app/stores'
+    import { query } from '$lib/store'
+
+    $: pathname = $page.url.pathname;
+</script>
+
+{#if $page.url.pathname.includes("search")}
+    <div class="flex flex-col items-start gap">
+    <span class="text-orange-400 font-bold tracking-wider">SEARCH FOR</span>
+    {#each buttonsArray as btn}
+        <button
+        class="{pathname.includes(btn.name.toLowerCase()) ? 'text-orange-500' : '' }"
+        on:click={() => {
+            if ($query !== "") {
+            btn.function()
+            }
+        }}
+        >
+        {btn.name}
+        </button>
+    {/each}
+    </div>
+{/if}
+
+<div class="flex flex-col items-start gap">
+    <span class="text-orange-400 font-bold tracking-wider">EXPLORE</span>
+
+    <a class:text-orange-400={pathname.includes('newReleases')} href="/newReleases">New Releases</a>
+    <a class:text-orange-400={pathname.includes('topCharts')} href="/topCharts">Top Charts</a>
+</div>
