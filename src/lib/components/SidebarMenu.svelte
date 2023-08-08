@@ -1,7 +1,7 @@
 <script>
     import { buttonsArray } from '$lib/utils'
     import { page } from '$app/stores'
-    import { query } from '$lib/store'
+    import { query, accentColor } from '$lib/store'
 
     $: pathname = $page.url.pathname;
 
@@ -23,10 +23,10 @@
 
 {#if $page.url.pathname.includes("search")}
     <div class="flex flex-col items-start gap">
-    <span class="text-orange-400 font-bold tracking-wider">SEARCH FOR</span>
+    <span class="text-{$accentColor} font-bold tracking-wider">SEARCH FOR</span>
     {#each buttonsArray as btn}
         <button
-        class="{pathname.includes(btn.name.toLowerCase()) ? 'text-orange-500' : '' }"
+        class="{pathname.includes(btn.name.toLowerCase()) ? 'text-{$accentColor}' : '' }"
         on:click={() => {
             if ($query !== "") {
             btn.function()
@@ -41,10 +41,10 @@
 
 {#each items as i}
 <div class="flex flex-col items-start gap">
-    <span class="text-orange-400 font-bold tracking-wider">{i.id}</span>
+    <span class="text-{$accentColor} font-bold tracking-wider">{i.id}</span>
 
     {#each i.pages as d}
-        <a class:text-orange-400={pathname.includes(d.toLowerCase().replace(' ', ''))}
+        <a class={pathname.includes(d.toLowerCase().replace(' ', '')) ? `text-${$accentColor}` : ''}
         href={"/" + d.toLowerCase().replace(' ', '')}>{d}</a>
     {/each}
 </div>

@@ -16,3 +16,4 @@ export let repeat = writable(false);
 export let audioElement = writable();
 
 export let historyEnabled = writable(true);
+export let accentColor = writable('rose-500')

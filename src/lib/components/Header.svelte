@@ -1,7 +1,7 @@
 <script>
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
-  import { query } from "$lib/store";
+  import { query, accentColor } from "$lib/store";
 
   import Logo2 from "$lib/icons/Logo2.svelte";
   import Github from "$lib/icons/Github.svelte";
@@ -22,7 +22,7 @@
   <a class="home flex items-center h-8 w-8 xl:hidden" href="/"><Logo2/></a>
 
     <input
-      class="bg-transparent border-2 border-solid border-orange-400 focus:border-[gainsboro]
+      class="bg-transparent border-2 border-solid border-{$accentColor} focus:border-[gainsboro]
         text-center rounded w-full xl:w-2/3 mx-auto xl:h-8 xl:p-2 outline-none transition duration-300"
       type="text"
       bind:value={$query}
