@@ -20,7 +20,7 @@
     }
 </script>
 
-<div class="h-[calc(100dvh-5rem)] w-full flex justify-center items-center flex-col lg:flex-row gap-4">
+<div class="h-[calc(100dvh-8rem)] w-full flex justify-center items-center flex-col lg:flex-row gap-4">
   <img class="rounded-lg" src={song.image.replace('150x150', '500x500')} alt={song.title}/>
 
   <div class="info w-full lg:w-[500px] flex justify-between lg:items-start lg:flex-col gap-2">
