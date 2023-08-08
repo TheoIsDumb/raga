@@ -18,7 +18,7 @@
           } else if (item.type === "playlist") {
             goto(`/playlist/${item.id}`);
           } else if (item.type === "song") {
-            goto(`song/${item.id}`)
+            goto(`/song/${item.id}`)
           }
         }}
       >

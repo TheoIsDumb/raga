@@ -48,38 +48,36 @@
       href: '/img/favicon.png'
     }
   ]}  
-  />
+/>
 
-<main class="flex items-center flex-col gap-2 overflow-hidden mx-0 my-auto w-[100dvw] max-w-[100dvw] h-[100dvh]">
-  {#key data}
-    <div
-      class="inner_container w-full h-full overflow-auto flex"
-      class:mb-20={Object.keys($active).length !== 0}>
-      <Sidebar />
-        <div class="w-full xl:w-[calc(100dvw-20rem)] xl:ml-[20rem] px-2 xl:px-4">
-          <div class="w-full flex justify-center flex-col">
-            <Header />
+<main class="overflow-auto w-[100dvw] h-[100dvh]">
+  <div class="w-full xl:w-[calc(100dvw-20rem)] xl:ml-[20rem] px-2 xl:px-4"
+  class:mb-20={Object.keys($active).length !== 0}>
+    <div class="flex justify-center flex-col">
+      <Header />
 
-            {#if $page.url.pathname.includes("search")}
-              <BelowHeader />
-            {/if}
-          </div>
-
-          {#if $navigating}
-            <Spinner />
-          {:else}
-            <div in:fade={{ delay: 300 }} out:fade>
-                <slot />
-            </div>
-          {/if}
-        </div>
+      {#if $page.url.pathname.includes("search")}
+        <BelowHeader />
+      {/if}
     </div>
-  {/key}
 
-  {#if Object.keys($active).length !== 0}
-    <Player />
-  {/if}
+    {#key data}
+      {#if $navigating}
+        <Spinner />
+      {:else}
+        <div in:fade={{ delay: 300 }} out:fade>
+            <slot />
+        </div>
+      {/if}
+    {/key}
+  </div>
 </main>
+
+{#if Object.keys($active).length !== 0}
+  <Player />
+{/if}
+
+<Sidebar />
 
 {#if $BiggerPlayerVisible}
   <BiggerPlayer/>

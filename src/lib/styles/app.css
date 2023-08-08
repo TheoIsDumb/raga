@@ -16,13 +16,13 @@ body {
   background-color: var(--bg);
   color: var(--fg);
 }
-.inner_container, .scrollable {
+main, .scrollable {
   scrollbar-width: thin;
   scrollbar-color: var(--scroll) transparent;
 }
 .hscroll { scrollbar-width: none; }
-.inner_container::-webkit-scrollbar, .scrollable::-webkit-scrollbar { width: 0.2rem; }
-.inner_container::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background-color: var(--scroll); } 
+main::-webkit-scrollbar, .scrollable::-webkit-scrollbar { width: 0.2rem; }
+main::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background-color: var(--scroll); } 
 .hscroll::-webkit-scrollbar { display: none; }
 .inner { @apply gap-4; }
 .glow, .hover { @apply transition duration-300; }

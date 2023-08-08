@@ -55,10 +55,10 @@
   }
 </script>
 
-<div class="player flex flex-col border-t-2 border-orange-500 p-1 pt-2 cursor-pointer gap-3 fixed bottom-0 w-full xl:w-[calc(100dvw-20rem)] xl:right-0 backdrop-blur"
+<div class="player flex flex-col p-1 pt-2 cursor-pointer gap-3 fixed bottom-0 w-full xl:w-[calc(100dvw-20rem)] xl:right-0 backdrop-blur-md bg-[#00000080]"
   in:fly={{ y: 50, duration: 800 }}>
   <div class="base w-full rounded h-1">
-    <div class="bar h-1 bg-orange-500 rounded" style="--progress: {$currentTime / $duration}%" />
+    <div class="bar h-1 bg-white rounded" style="--progress: {$currentTime / $duration}%" />
   </div>
 
   <!-- svelte-ignore a11y-click-events-have-key-events -->
