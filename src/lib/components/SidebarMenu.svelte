@@ -4,6 +4,21 @@
     import { query } from '$lib/store'
 
     $: pathname = $page.url.pathname;
+
+    let items = [
+        {
+            id: "EXPLORE",
+            pages: ["New Releases", "Top Charts"]
+        },
+        {
+            id: "BROWSE",
+            pages: ["History"]
+        },
+        {
+            id: "MORE",
+            pages: ["Settings"]
+        }
+    ]
 </script>
 
 {#if $page.url.pathname.includes("search")}
@@ -24,23 +39,13 @@
     </div>
 {/if}
 
+{#each items as i}
 <div class="flex flex-col items-start gap">
-    <span class="text-orange-400 font-bold tracking-wider">EXPLORE</span>
+    <span class="text-orange-400 font-bold tracking-wider">{i.id}</span>
 
-    <a class:text-orange-400={pathname.includes('newReleases')} href="/newReleases">New Releases</a>
-    <a class:text-orange-400={pathname.includes('topCharts')} href="/topCharts">Top Charts</a>
+    {#each i.pages as d}
+        <a class:text-orange-400={pathname.includes(d.toLowerCase().replace(' ', ''))}
+        href={"/" + d.toLowerCase().replace(' ', '')}>{d}</a>
+    {/each}
 </div>
-
-<div class="flex flex-col items-start gap">
-    <span class="text-orange-400 font-bold tracking-wider">BROWSE</span>
-
-    <a class:text-orange-400={pathname.includes('history')} href="/history">History</a>
-</div>
-
-<div class="flex flex-col items-start gap">
-    <span class="text-orange-400 font-bold tracking-wider">MORE</span>
-
-    <a class:text-orange-400={pathname.includes('settings')} href="/settings">Settings</a>
-</div>
-
-
+{/each}

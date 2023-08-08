@@ -1,31 +1,18 @@
-:root {
-  color-scheme: dark;
-  --bg: #070707;
-  --fg: gainsboro;
-  --scroll: #ffffff57;
-  --base: #2a2a2a;
-  --base-dark: #1f1f1f;
-  --base-darker: #131313;
-}
+:root { color-scheme: dark; }
 * {
   box-sizing: border-box;
   font-family: "CircularStd", sans-serif;
 }
-body {
-  margin: 0;
-  background-color: var(--bg);
-  color: var(--fg);
-}
 main, .scrollable {
   scrollbar-width: thin;
-  scrollbar-color: var(--scroll) transparent;
+  scrollbar-color: #ffffff57 transparent;
 }
 .hscroll { scrollbar-width: none; }
 main::-webkit-scrollbar, .scrollable::-webkit-scrollbar { width: 0.2rem; }
-main::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background-color: var(--scroll); } 
+main::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background-color: #ffffff57; } 
 .hscroll::-webkit-scrollbar { display: none; }
 .inner { @apply gap-4; }
 .glow, .hover { @apply transition duration-300; }
-.hover:hover { background-color: var(--base) !important; }
-.glow:hover { filter: drop-shadow(0 0 0.7rem var(--fg)); }
+.hover:hover { background-color: #2a2a2a !important; }
+.glow:hover { filter: drop-shadow(0 0 0.7rem gainsboro); }
 .empty { all: unset; display: flex; }

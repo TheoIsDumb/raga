@@ -22,7 +22,7 @@
   <a class="home flex items-center h-8 w-8 xl:hidden" href="/"><Logo2/></a>
 
     <input
-      class="bg-transparent border-2 border-solid border-orange-400 focus:border-[var(--fg)]
+      class="bg-transparent border-2 border-solid border-orange-400 focus:border-[gainsboro]
         text-center rounded w-full xl:w-2/3 mx-auto xl:h-8 xl:p-2 outline-none transition duration-300"
       type="text"
       bind:value={$query}

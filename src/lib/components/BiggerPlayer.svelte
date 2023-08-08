@@ -88,7 +88,6 @@
 
 <style>
   div.biggerplayer { background-color: #0000008e; }
-  .lyrplaybtns button { color: var(--fg); }
   .colorful {
     background-image: linear-gradient(to right, #5d26c1, #a17fe0, #59c173);
     background-clip: text;

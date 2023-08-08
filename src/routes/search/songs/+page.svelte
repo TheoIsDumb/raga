@@ -18,17 +18,9 @@
     });
     results = results;
   };
-
-  const scrollHandler = async (e) => {
-    if (index !== 10) {
-      if (e.target.scrollTop + e.target.clientHeight >= e.target.scrollHeight) {
-        loadMore();
-      }
-    }
-  };
 </script>
 
-<div class="inner flex flex-col pb-4" on:scroll={scrollHandler}>
+<div class="inner flex flex-col pb-4">
   <SongCard type="song" list={results} />
 
   <button class="flex justify-center" on:click={loadMore}>
