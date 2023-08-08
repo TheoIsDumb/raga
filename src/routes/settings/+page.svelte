@@ -11,11 +11,11 @@
         <input class="ml-4 w-5 h-5" type="checkbox" bind:checked={$historyEnabled} name="history" id="history">
     </label>
 
-    <div class="flex items-center">
-        <span class="text-xl mr-4">accent color</span>
+    <div class="flex items-center gap-8">
+        <span class="text-xl">accent color</span>
 
         <div class="colors flex gap-2">
-            {#each ["orange-500", "blue-500", "rose-500"] as i}
+            {#each ["rose-500", "blue-500", "orange-500"] as i}
                 <button class="h-8 w-8 rounded-full bg-{i}"
                 on:click={() => $accentColor = i}/>
             {/each}
