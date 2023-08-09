@@ -1,11 +1,15 @@
 <script>
+  import { SidebarVisible } from '$lib/store'
   import SidebarMenu from './SidebarMenu.svelte';
   import Logo2 from '$lib/icons/Logo2.svelte'
   import Github from '$lib/icons/Github.svelte'
 </script>
 
-<div class="sidebar bg-zinc-900 w-0 h-[100dvh] xl:w-80 fixed top-0 left-0 p-4 flex-col gap-4 hidden xl:flex shadow-inner">
-    <a href="/" class="block h-8 w-8 mb-8"><Logo2/></a>
+<div class="sidebar bg-zinc-900 w-full xl:w-80 h-full {$SidebarVisible ? 'flex' : 'hidden' } xl:flex fixed top-0 left-0 p-4 flex-col gap-4">
+    <div class="flex justify-between items-center mb-4">
+      <a href="/" class="block h-8 w-8"><Logo2/></a>
+      <button class="h-8 w-8 text-2xl xl:hidden" on:click={() => $SidebarVisible = !$SidebarVisible}>✕</button>
+    </div>
 
     <SidebarMenu />
 

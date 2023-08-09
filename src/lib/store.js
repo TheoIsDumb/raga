@@ -7,6 +7,7 @@ export const index = writable(0);
 export let query = writable("");
 
 export let BiggerPlayerVisible = writable(false);
+export let SidebarVisible = writable(false);
 
 export let currentTime = writable(0);
 export let duration = writable(0);
