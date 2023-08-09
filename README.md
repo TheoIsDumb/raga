@@ -2,11 +2,12 @@
 
 <h1 align="center">raga</h1>
 <h5 align="center">(formerly "Paattu")</h6>
-<h5 align="center">(thanks for the name, @V8V88V8V88!)</h6>
 
 A libre frontend which uses the JioSaavn API.
 
 Powered by SvelteKit. ⚡
+
+PS: Thanks for the name, [v8v88v8v88](https://github.com/v8v88v8v88)!
 
 ## Screenshots
 
