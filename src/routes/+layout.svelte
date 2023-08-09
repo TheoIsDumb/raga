@@ -29,7 +29,7 @@
     description: 'A libre frontend for JioSaavn.',
     images: [
       {
-        url: 'https://raga.vkdbois.xyz/img/og.png',
+        url: 'https://raga.vkdbois.xyz/img/og.jpg',
         width: 1200,
         height: 630,
         alt: "Raga - A libre music frontend."
@@ -40,7 +40,7 @@
     cardType: 'summary_large_image',
     title: "Raga.",
     description: 'A libre frontend for JioSaavn.',
-    image: 'https://raga.vkdbois.xyz/img/og.png',
+    image: 'https://raga.vkdbois.xyz/img/og.jpg',
   }}
   additionalLinkTags={[
     {
