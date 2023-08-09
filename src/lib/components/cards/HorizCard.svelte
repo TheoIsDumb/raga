@@ -7,7 +7,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="scroll_container">
-  <h1 class="play m-0 lowercase text-right font-bold text-2xl xl:text-3xl">{name}</h1>
+  <h1 class="play m-0 lowercase font-bold text-2xl xl:text-3xl">{name}</h1>
   <div class="hscroll overflow-x-auto overflow-y-hidden whitespace-nowrap">
     {#each array as item}
       <div
