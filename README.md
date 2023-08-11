@@ -1,13 +1,15 @@
-![banner](assets/banner2.webp)
+![banner](assets/banner.webp)
 
 <h1 align="center">raga</h1>
 <h5 align="center">(formerly "Paattu")</h6>
 
-A libre frontend which uses the JioSaavn API.
+A libre frontend which uses the JioSaavn API (now [proxied](https://codeberg.org/aryak/paattu-proxy), thanks to [Arya](https://aryak.me)!).
 
 Powered by SvelteKit. ⚡
 
 PS: Thanks for the name, [v8v88v8v88](https://github.com/v8v88v8v88)!
+
+### **Consider starring the repo!** 🌟
 
 ## Screenshots
 
@@ -37,8 +39,11 @@ PRs and suggestions are welcome! 😄
 - [Svelte](https://svelte.dev)
 - [SvelteKit](https://kit.svelte.dev)
 - [Vite](https://vitejs.dev)
+- [paattu-proxy](https://codeberg.org/aryak/paattu-proxy)
 - [Tailwind CSS](https://tailwindcss.com)
 - [svelte-meta-tags](https://github.com/oekazuma/svelte-meta-tags)
 - [Forge](https://github.com/digitalbazaar/forge)
-- [Inter Tight](https://rsms.me/inter/)
+
+## Resources
+
 - [iconify.design](https://icon-sets.iconify.design)
