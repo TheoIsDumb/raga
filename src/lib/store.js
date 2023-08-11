@@ -18,3 +18,4 @@ export let audioElement = writable();
 
 export let historyEnabled = writable(true);
 export let accentColor = writable('rose')
+export let quality = writable("_96");

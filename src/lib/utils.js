@@ -1,6 +1,6 @@
 import { get } from 'svelte/store'
 import { goto } from '$app/navigation'
-import { currentTime, index, currentPlaylist, paused, repeat, query } from '$lib/store'
+import { currentTime, index, currentPlaylist, paused, repeat, query, quality } from '$lib/store'
 
 import pkg from 'node-forge';
 const { util, cipher } = pkg;
@@ -16,7 +16,7 @@ export const decrypt = (enc, kbps320) => {
   decipher.update(util.createBuffer(encrypted))
   decipher.finish()
 
-  const dec = decipher.output.getBytes().replace('aac.saavncdn.com', 'proxy.raga.vkdbois.xyz/aac');
+  const dec = decipher.output.getBytes().replace('aac.saavncdn.com', 'proxy.raga.vkdbois.xyz/aac').replace("_96", get(quality));
   // const finalURL = kbps320 === "true" ? dec.replace('_96', '_320') : dec.replace('_96', '_160');
   return dec;
 }
