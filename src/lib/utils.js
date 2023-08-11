@@ -16,7 +16,7 @@ export const decrypt = (enc, kbps320) => {
   decipher.update(util.createBuffer(encrypted))
   decipher.finish()
 
-  const dec = decipher.output.getBytes();
+  const dec = decipher.output.getBytes().replace('aac.saavncdn.com', 'proxy.raga.vkdbois.xyz/aac');
   // const finalURL = kbps320 === "true" ? dec.replace('_96', '_320') : dec.replace('_96', '_160');
   return dec;
 }

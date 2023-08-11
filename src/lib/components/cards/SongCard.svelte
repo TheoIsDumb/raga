@@ -46,7 +46,7 @@
         playSongFromAlbum(item, i);
       }
       }}>
-    <img class="rounded h-14" src={item.image} alt={item.title}/>
+    <img class="rounded h-14" src={item.image.replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')} alt={item.title}/>
 
     <div class="info flex flex-col w-full overflow-hidden">
       <div class="font-bold truncate">{@html item.title}</div>
@@ -60,7 +60,7 @@
       OptionsVisible = true
       selectedOption = item
     }}
-    class="options empty hover w-8 rounded justify-center items-center">
+    class="options empty hover w-8 rounded flex justify-center items-center">
       <OptionsIcon />
     </button>
   {/if}

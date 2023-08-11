@@ -72,7 +72,7 @@
                     <PauseIndicator/>
                 {/if}
                 <img class="rounded"
-                    src={item.image} alt={item.title}
+                    src={item.image.replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')} alt={item.title}
                     style={i === $index ? "filter: brightness(50%);" : ""}
                 />
             </div>

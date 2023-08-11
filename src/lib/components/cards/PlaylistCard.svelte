@@ -17,6 +17,6 @@
       goto(`/playlist/${id}`) 
     }
   }} >
-  <img class="rounded-[50%] h-14" loading="lazy" src={image.replace('50x50', '150x150')} alt={title} />
+  <img class="rounded-[50%] h-14" loading="lazy" src={image.replace('50x50', '150x150').replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')} alt={title} />
   <div class="font-bold">{@html title}</div>
 </div>

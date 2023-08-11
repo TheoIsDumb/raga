@@ -18,7 +18,7 @@
         <img
           class="w-full aspect-square rounded object-cover"
           loading="lazy"
-          src={album.image.replace("150x150", "500x500")}
+          src={album.image.replace("150x150", "500x500").replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')}
           alt={album.title}
         />
 

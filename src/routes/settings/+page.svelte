@@ -1,7 +1,5 @@
 <script>
     import { historyEnabled, accentColor } from '$lib/store'
-
-    $: console.log($accentColor)
 </script>
 
 <div class="flex flex-col gap-2">

@@ -16,7 +16,7 @@
           <img
             class="rounded aspect-video object-cover"
             loading="lazy"
-            src={item.image.replace("150x150", "500x500")}
+            src={item.image.replace("150x150", "500x500").replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')}
             alt={item.title}
           />
           <span class="truncate text-xs font-bold">{@html item.title}</span>

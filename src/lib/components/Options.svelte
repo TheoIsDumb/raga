@@ -44,7 +44,7 @@
     transition:fade>
     <div class="options rounded p-2 flex flex-col gap-2 w-11/12 max-w-screen-md">
         <div class="flex justify-between items-center">
-            <img src={item.image} alt={item.title}/>
+            <img src={item.image.replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')} alt={item.title}/>
 
             <div class="text-right">
                 <div class="font-bold">{@html item.title}</div>

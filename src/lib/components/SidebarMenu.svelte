@@ -26,7 +26,7 @@
     <span class="text-{$accentColor} font-bold tracking-wider">SEARCH FOR</span>
     {#each buttonsArray as btn}
         <button
-        class="{pathname.includes(btn.name.toLowerCase()) ? 'text-{$accentColor}' : '' }"
+        class="{pathname.includes(btn.name.toLowerCase()) ? `text-${$accentColor}` : '' }"
         on:click={() => {
             if ($query !== "") {
             btn.function()

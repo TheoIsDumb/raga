@@ -28,7 +28,7 @@
   <div class="player_container h-[100dvh] w-11/12 max-w-[1800px] flex py-6 gap-4 flex-col xl:flex-row xl:gap-0">
     <div class="player flex items-center justify-center flex-col gap-4 h-2/5 xl:h-auto xl:w-1/2">
       <img class="rounded h-1/2 xl:h-auto xl:w-1/2"
-        src={$active.image.replace("150x150", "500x500")}
+        src={$active.image.replace("150x150", "500x500").replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')}
         alt={$active.title}
         loading="lazy"
       />
