@@ -1,4 +1,7 @@
 <script>
+    import { slide } from 'svelte/transition'
+    import { goto } from '$app/navigation'
+    import { SidebarVisible } from '$lib/store'
     import { buttonsArray } from '$lib/utils'
     import { page } from '$app/stores'
     import { query, accentColor } from '$lib/store'
@@ -21,21 +24,22 @@
     ]
 </script>
 
-{#if $page.url.pathname.includes("search")}
-    <div class="flex flex-col items-start gap">
-    <span class="text-{$accentColor} font-bold tracking-wider">SEARCH FOR</span>
-    {#each buttonsArray as btn}
-        <button
-        class="{pathname.includes(btn.name.toLowerCase()) ? `text-${$accentColor}` : '' }"
-        on:click={() => {
-            if ($query !== "") {
-            btn.function()
-            }
-        }}
-        >
-        {btn.name}
-        </button>
-    {/each}
+{#if $query !== ""}
+    <div transition:slide class="flex flex-col items-start gap">
+        <span class="text-{$accentColor} font-bold tracking-wider">SEARCH FOR</span>
+        {#each buttonsArray as btn}
+            <button
+            class="{pathname.includes(btn.name.toLowerCase()) ? `text-${$accentColor}` : '' }"
+            on:click={() => {
+                if ($query !== "") {
+                btn.function()
+                }
+                $SidebarVisible = false
+            }}
+            >
+            {btn.name}
+            </button>
+        {/each}
     </div>
 {/if}
 
@@ -44,8 +48,13 @@
     <span class="text-{$accentColor} font-bold tracking-wider">{i.id}</span>
 
     {#each i.pages as d}
-        <a class={pathname.includes(d.toLowerCase().replace(' ', '')) ? `text-${$accentColor}` : ''}
-        href={"/" + d.toLowerCase().replace(' ', '')}>{d}</a>
+        <button class={pathname.includes(d.toLowerCase().replace(' ', '')) ? `text-${$accentColor}` : ''}
+        on:click={() => {
+            goto("/" + d.toLowerCase().replace(' ', ''))
+            $SidebarVisible = false
+        }}>
+            {d}
+            </button>
     {/each}
 </div>
 {/each}

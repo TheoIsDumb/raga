@@ -18,7 +18,7 @@
   }
 </script>
 
-<div class="topheader flex flex-col items-center gap-4 xl:gap-0 w-full py-4">
+<div class="topheader flex flex-col items-center gap-4 xl:gap-0 w-full pt-4 pb-2">
   <div class="icons flex w-full justify-between">
     <button class="xl:hidden" on:click={() => $SidebarVisible = !$SidebarVisible}>
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5"/></svg>
