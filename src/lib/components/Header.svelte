@@ -38,7 +38,7 @@
 
     <input
       class="bg-transparent border-2 border-solid border-{$accentColor} focus:border-[gainsboro]
-        text-center rounded w-full xl:w-1/2 xl:h-8 p-1 xl:p-2 outline-none transition duration-300"
+        text-center xl:rounded w-full xl:w-1/2 xl:h-8 p-1 xl:p-2 outline-none transition duration-300"
       type="text"
       bind:value={$query}
       placeholder="Search..."
