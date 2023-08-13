@@ -1,6 +1,6 @@
 <script>
   export let data
-  let results = data.data
+  let results = data.results
   import { goto } from '$app/navigation'
 </script>
 
@@ -16,7 +16,7 @@
           <img
             class="rounded aspect-video object-cover"
             loading="lazy"
-            src={item.image.replace("150x150", "500x500").replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')}
+            src={item.image}
             alt={item.title}
           />
           <span class="truncate text-xs font-bold">{@html item.title}</span>

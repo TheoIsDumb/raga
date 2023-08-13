@@ -1,5 +1,5 @@
-import { baseURL, sub } from '$lib/info.js'
-import { json } from '@sveltejs/kit';
+import { baseURL, sub } from '$lib/info'
+import { json } from '@sveltejs/kit'
 
 export async function GET({ url }) {
     const id = url.searchParams.get('songid');

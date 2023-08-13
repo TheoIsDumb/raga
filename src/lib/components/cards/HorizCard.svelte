@@ -8,7 +8,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="scroll_container">
   <h1 class="play m-0 lowercase font-bold text-2xl xl:text-3xl">{name}</h1>
-  <div class="hscroll overflow-x-auto overflow-y-hidden whitespace-nowrap">
+  <div class="hscroll overflow-x-auto overflow-y-hidden whitespace-nowrap h-40 xl:h-[12rem]">
     {#each array as item}
       <div
         class="item inline-block mr-2 rounded"
@@ -24,9 +24,9 @@
       >
         <div class="iteminner flex flex-col hover gap-2 w-32 xl:w-40">
           <img
-            class="rounded aspect-square object-cover h-32 xl:h-40"
+            class="rounded aspect-square object-cover w-32 xl:w-40"
             loading="lazy"
-            src={item.image.replace("150x150", "500x500").replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')}
+            src={item.image}
             alt={item.title}
           />
           <span class="truncate text-xs font-bold">{@html item.title}</span>

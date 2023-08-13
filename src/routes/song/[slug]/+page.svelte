@@ -30,7 +30,7 @@
 </script>
 
 <div class="h-[calc(100dvh-8rem)] w-full flex justify-center items-center flex-col lg:flex-row gap-4">
-  <img class="rounded-lg" src={song.image.replace('150x150', '500x500').replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')} alt={song.title}/>
+  <img class="rounded-lg" src={song.image} alt={song.title}/>
 
   <div class="info w-full lg:w-[500px] flex flex-col gap-2">
     <div class="truncate">

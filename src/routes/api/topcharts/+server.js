@@ -1,5 +1,6 @@
-import { baseURL, sub } from '$lib/info.js'
-import { json } from '@sveltejs/kit';
+import { baseURL, sub } from '$lib/info'
+import { proxify } from '$lib/utils'
+import { json } from '@sveltejs/kit'
 
 export async function GET({ url }) {
     const resp = await fetch(baseURL + sub.topCharts, {
@@ -10,5 +11,11 @@ export async function GET({ url }) {
     });
     const data = await resp.json();
 
-    return json(data);
+    await data.forEach((res) => {
+		res.image = proxify(res.image, "media")
+	})
+
+    return json({
+        "results": data
+    });
 }

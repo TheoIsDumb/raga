@@ -1,5 +1,5 @@
 <script>
-  import { active, currentPlaylist, index } from "$lib/store";
+  import { active, currentPlaylist, index } from "$lib/store"
 
   import OptionsIcon from '$lib/icons/OptionsIcon.svelte'
   import Options from '$lib/components/Options.svelte'
@@ -46,7 +46,7 @@
         playSongFromAlbum(item, i);
       }
       }}>
-    <img class="rounded h-14" src={item.image.replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')} alt={item.title}/>
+    <img class="rounded h-14" src={item.image} alt={item.title}/>
 
     <div class="info flex flex-col w-full overflow-hidden">
       <div class="font-bold truncate">{@html item.title}</div>

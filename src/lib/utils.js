@@ -1,6 +1,7 @@
 import { get } from 'svelte/store'
 import { goto } from '$app/navigation'
 import { currentTime, index, currentPlaylist, paused, repeat, query, quality } from '$lib/store'
+import { proxyURL } from '$lib/info'
 
 import pkg from 'node-forge';
 const { util, cipher } = pkg;
@@ -16,9 +17,9 @@ export const decrypt = (enc, kbps320) => {
   decipher.update(util.createBuffer(encrypted))
   decipher.finish()
 
-  const dec = decipher.output.getBytes().replace('aac.saavncdn.com', 'proxy.raga.vkdbois.xyz/aac').replace("_96", get(quality));
+  const dec = decipher.output.getBytes().replace("_96", get(quality));
   // const finalURL = kbps320 === "true" ? dec.replace('_96', '_320') : dec.replace('_96', '_160');
-  return dec;
+  return proxify(dec, 'aac');
 }
 
 //////////////////////////////////////////////////////////////////
@@ -58,3 +59,17 @@ export let buttonsArray = [
   {name: "Artists", function: searchArtists},
   {name: "Playlists", function: searchPlaylists},
 ]
+
+export const proxify = (url, param, sizeOfImage) => {
+  if (param === "media") {
+    if (sizeOfImage === 150) {
+      return url.replace('c.saavncdn.com', `${proxyURL}/${param}`).replace('150x150', '500x500')
+    } else if (sizeOfImage === 50) {
+      return url.replace('c.saavncdn.com', `${proxyURL}/${param}`).replace('50x50', '150x150')
+    } else {
+      return url.replace('c.saavncdn.com', `${proxyURL}/${param}`)
+    }
+  } else {
+    return url.replace(`${param}.saavncdn.com`, `${proxyURL}/${param}`)
+  }
+} 

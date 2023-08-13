@@ -6,8 +6,6 @@
         { id: "Medium", q: "_160" },
         { id: "High", q: "_320" },
     ]
-
-    $: console.log($quality)
 </script>
 
 <div class="flex flex-col gap-4">

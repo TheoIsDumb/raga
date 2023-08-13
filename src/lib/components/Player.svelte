@@ -18,9 +18,9 @@
         artist: $active.subtitle.split("-")[0],
         album: $active.more_info.album,
         artwork: [
-          { src: $active.image.replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media'), sizes: "150x150", type: "image/jpeg" },
+          { src: $active.image, sizes: "150x150", type: "image/jpeg" },
           {
-            src: $active.image.replace("150x150", "500x500").replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media'),
+            src: $active.image.replace("150x150", "500x500"),
             sizes: "500x500",
             type: "image/jpeg",
           },
@@ -69,7 +69,7 @@
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="imgparent flex gap-2 w-4/6 lg:w-auto">
-      <img class="image h-12 rounded" src={$active.image.replace('c.saavncdn.com', 'proxy.raga.vkdbois.xyz/media')} alt={$active.title}/>
+      <img class="image h-12 rounded" src={$active.image} alt={$active.title}/>
       <div class="title flex flex-col justify-center text-sm truncate w-full" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
           <span class="font-bold text-base truncate">{@html $active.title}</span>
           <span class="truncate">{@html $active.subtitle.split("-")[0]}</span>
