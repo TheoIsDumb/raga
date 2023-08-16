@@ -13,8 +13,8 @@ export let currentTime = writable(0)
 export let duration = writable(0)
 export let paused = writable(true)
 export let repeat = writable(false)
-
-export let audioElement = writable()
+export let audioVolume = writable(0.8)
+export let audioMuted = writable(false)
 
 export let historyEnabled = writable(true)
 export let accentColor = writable('rose')
