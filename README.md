@@ -31,7 +31,11 @@ PRs and suggestions are welcome! 😄
 
 **Build**
 
+**If for Vercel** (zero-config build and deploy (uses adapter-auto behind the scenes)):
 `npm run build`
+
+**For node app** (uses adapter-node behind the scenes):
+`DEPLOY_TARGET=node npm run build`
 
 ## Dependencies
 
