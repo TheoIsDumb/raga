@@ -63,13 +63,26 @@ export let buttonsArray = [
 export const proxify = (url, param, sizeOfImage) => {
   if (param === "media") {
     if (sizeOfImage === 150) {
-      return url.replace('c.saavncdn.com', `${proxyURL}/${param}`).replace('150x150', '500x500')
+      return url.replace('150x150', '500x500')
     } else if (sizeOfImage === 50) {
-      return url.replace('c.saavncdn.com', `${proxyURL}/${param}`).replace('50x50', '150x150')
+      return url.replace('50x50', '150x150')
     } else {
-      return url.replace('c.saavncdn.com', `${proxyURL}/${param}`)
+      return url
     }
   } else {
-    return url.replace(`${param}.saavncdn.com`, `${proxyURL}/${param}`)
+    return url
   }
-} 
+
+  // export const proxify = (url, param, sizeOfImage) => {
+  //   if (param === "media") {
+  //     if (sizeOfImage === 150) {
+  //       return url.replace('c.saavncdn.com', `${proxyURL}/${param}`).replace('150x150', '500x500')
+  //     } else if (sizeOfImage === 50) {
+  //       return url.replace('c.saavncdn.com', `${proxyURL}/${param}`).replace('50x50', '150x150')
+  //     } else {
+  //       return url.replace('c.saavncdn.com', `${proxyURL}/${param}`)
+  //     }
+  //   } else {
+  //     return url.replace(`${param}.saavncdn.com`, `${proxyURL}/${param}`)
+  //   }
+}  

@@ -36,7 +36,7 @@
     <div class="truncate">
       <div class="font-bold">{@html song.title}</div>
       <div>{@html song.subtitle.split('-')[0]}</div>
-      <div><a class="font-bold" href="/album/{song.more_info.album_id}" alt={song.more_info.album}>{song.more_info.album}</a></div>
+      <div><a class="font-bold" href="/album/{song.more_info.album_id}" alt={song.more_info.album}>{@html song.more_info.album}</a></div>
       <div>{@html song.year}</div>
     </div>
 
