@@ -2,11 +2,13 @@
 
 <h1 align="center">raga</h1>
 
-A libre frontend which uses the JioSaavn API. (now [proxied](https://codeberg.org/aryak/raga-proxy), thanks to [Arya](aryak.me)!)
+A libre frontend which uses the JioSaavn API.
 
 Powered by SvelteKit. ⚡
 
 PS: Thanks for the name, [v8v88v8v88](https://github.com/v8v88v8v88)!
+
+> NB: Proxy is disabled in the [main instance](https://raga.vkdbois.xyz) for now, due to server issues.
 
 ### **Consider starring the repo!** 🌟
 
@@ -30,6 +32,12 @@ PRs and suggestions are welcome! 😄
 `npm run dev`
 
 **Build**
+
+> NB: As proxy is disabled in the [main instance](https://raga.vkdbois.xyz), manual intervention is required to turn proxy on if you intend to self-host. (MUST BE DONE BEFORE BUILD)
+> 
+> To turn on proxy:
+> - Change proxyURL to the URL in which you have hosted the proxy ([raga-proxy link](https://codeberg.org/aryak/raga-proxy)) in `src/lib/info.js`
+> - Change proxyEnabled to true in `src/lib/info.js`
 
 ```
 # If for Vercel (zero-config build and deploy (uses adapter-auto behind the scenes))
