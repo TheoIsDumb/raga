@@ -1,5 +1,6 @@
 export const baseURL = "https://www.jiosaavn.com/api.php?_format=json&_marker=0&api_version=4&ctx=web6dot0&"
 export const proxyURL = "proxy.raga.vkdbois.xyz"
+export const proxyEnabled = false
 
 export const sub = Object.freeze({
   search: {

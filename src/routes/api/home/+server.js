@@ -1,5 +1,5 @@
 import { baseURL, sub } from '$lib/info'
-import { proxify } from '$lib/utils'
+import { proxifyImage } from '$lib/utils'
 import { json } from '@sveltejs/kit'
 
 export async function GET({ url }) {
@@ -12,15 +12,15 @@ export async function GET({ url }) {
     const data = await resp.json();
 
     await data.charts.forEach((res) => {
-        res.image = proxify(res.image, "media")
+        res.image = proxifyImage(res.image)
 	})
 
     await data.top_playlists.forEach((res) => {
-        res.image = proxify(res.image, "media")
+        res.image = proxifyImage(res.image)
 	})
 
     await data.new_albums.forEach((res) => {
-        res.image = proxify(res.image, "media", 150)
+        res.image = proxifyImage(res.image, 150)
 	})
 
     return json(data);

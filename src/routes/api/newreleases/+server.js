@@ -1,5 +1,5 @@
 import { baseURL, sub } from '$lib/info'
-import { proxify } from '$lib/utils'
+import { proxifyImage } from '$lib/utils'
 import { json } from '@sveltejs/kit'
 
 export async function GET({ url }) {
@@ -13,7 +13,7 @@ export async function GET({ url }) {
     const results = data.data
 
     await results.forEach((res) => {
-        res.image = proxify(res.image, "media", 150)
+        res.image = proxifyImage(res.image, 150)
 	})
 
     return json(results);
