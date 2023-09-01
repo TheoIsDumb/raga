@@ -11,7 +11,7 @@
 
 <div class="flex flex-col gap-2">
 {#if array.length === 0}
-    <p>History is empty.</p>
+    <p class="font-semibold">History is empty.</p>
 {:else}
     <SongCard type="album" list={array}/>
 {/if}
