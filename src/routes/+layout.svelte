@@ -51,7 +51,7 @@
 />
 
 <main class="overflow-auto w-[100dvw] h-[100dvh]">
-  <div class="w-full xl:w-[calc(100dvw-20rem)] xl:ml-[20rem] px-2 xl:px-4"
+  <div class="w-full xl:w-[calc(100dvw-20.5rem)] xl:ml-[20rem] px-2 xl:px-4"
   class:mb-20={Object.keys($active).length !== 0}>
     <div class="flex justify-center flex-col">
       <Header />
