@@ -53,6 +53,8 @@
       $paused = !$paused;
     }
   }
+
+  $: loop = $repeat ? 'loop' : ''
 </script>
 
 <div class="player flex flex-col p-1 pt-2 cursor-pointer gap-3 fixed bottom-0 w-full xl:w-[calc(100dvw-20rem)] xl:right-0 backdrop-blur-md bg-[#00000080]"
@@ -98,13 +100,11 @@
       bind:currentTime={$currentTime}
       bind:paused={$paused}
       bind:duration={$duration}
+      {loop}
       autoplay
       on:play={playhandle}
       on:ended={() => {
-        if ($repeat === true) {
-          $currentTime = 0;
-          $paused = !$paused;
-        } else {
+        if ($repeat === false) {
           if ($index === $currentPlaylist.length - 1) {
             $index = 0;
           } else {
