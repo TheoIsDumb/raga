@@ -1,16 +1,15 @@
 <script>
   import { active, currentPlaylist, index } from "$lib/store"
 
+  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte'
+  import { page } from '$app/stores'
+
   import OptionsIcon from '$lib/icons/OptionsIcon.svelte'
-  import Options from '$lib/components/Options.svelte'
 
-  let OptionsVisible;
-  let selectedOption;
-  
-  let selected;
-
-  export let list = [];
-  export let type;
+  export let list = []
+  export let type
+  let copyButtonText = "Copy Link"
+  let playNextButtonText = "Play Next"
 
   async function playSong(item) {
       $currentPlaylist = [item];
@@ -35,6 +34,28 @@
       $index = i
       $active = $currentPlaylist[$index]
   }
+
+  async function copy(id) {
+    try {
+      await navigator.clipboard.writeText(`${$page.url.origin}/song/${id}`);
+      copyButtonText = "✓ Copied!"
+      setTimeout(() => copyButtonText = "Copy", 1500)
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+
+  async function playNext(item) {
+    if ($currentPlaylist.some((i) => i.id === item.id) === false) {
+        $currentPlaylist.splice($index+1, 0, item)
+
+        playNextButtonText = "✓ Up Next!"
+        setTimeout(() => playNextButtonText = "Play Next", 1500)
+    } else {
+        playNextButtonText = "🗙 Song already in list."
+        setTimeout(() => playNextButtonText = "Play Next", 1500)
+    }
+  }
 </script>
 
 {#each list as item, i}
@@ -54,19 +75,10 @@
     </div>
   </div>
 
-  {#if type === "song" || type === "album"}
-    <button
-    on:click={() => {
-      OptionsVisible = true
-      selectedOption = item
-    }}
-    class="options empty hover w-8 rounded flex justify-center items-center">
-      <OptionsIcon />
-    </button>
-  {/if}
+  <Button class="outline-0"><OptionsIcon/></Button>
+  <Dropdown class="bg-zinc-900 text-white w-40" placement="left">
+    <DropdownItem class="hover:bg-indigo-950" on:click={() => copy(item.id)}>{copyButtonText}</DropdownItem>
+    <DropdownItem class="hover:bg-indigo-950" on:click={() => playNext(item)}>{playNextButtonText}</DropdownItem>
+  </Dropdown>
 </div>
 {/each}
-
-{#if OptionsVisible}
-  <Options bind:OptionsVisible item={selectedOption}/>
-{/if}

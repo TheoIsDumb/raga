@@ -16,7 +16,7 @@
     } else if (type === "playlist") {
       goto(`/playlist/${id}`) 
     }
-  }} >
+  }}>
   <img class="rounded-[50%] h-14" loading="lazy" src={image} alt={title} />
   <div class="font-bold">{@html title}</div>
 </div>
