@@ -8,13 +8,13 @@ export async function GET({ url }) {
         headers: {
             cookie: 'L=english; gdpr_acceptance=true; DL=english'
         }
-    });
-    const data = await resp.json();
+    })
+    const data = await resp.json()
     const results = data.data
 
     await results.forEach((res) => {
         res.image = proxifyImage(res.image, 150)
 	})
 
-    return json(results);
+    return json(results)
 }

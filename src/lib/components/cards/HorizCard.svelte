@@ -1,8 +1,8 @@
 <script>
-  import { goto } from "$app/navigation";
+  import { goto } from "$app/navigation"
 
-  export let array;
-  export let name;
+  export let array
+  export let name
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -14,9 +14,9 @@
         class="item inline-block mr-2 rounded"
         on:click={() => {
           if (item.type === "album") {
-            goto(`/album/${item.id}`);
+            goto(`/album/${item.id}`)
           } else if (item.type === "playlist") {
-            goto(`/playlist/${item.id}`);
+            goto(`/playlist/${item.id}`)
           } else if (item.type === "song") {
             goto(`/song/${item.id}`)
           }

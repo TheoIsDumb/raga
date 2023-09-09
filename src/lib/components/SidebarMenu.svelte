@@ -6,7 +6,7 @@
     import { page } from '$app/stores'
     import { query, accentColor } from '$lib/store'
 
-    $: pathname = $page.url.pathname;
+    $: pathname = $page.url.pathname
 
     let items = [
         {

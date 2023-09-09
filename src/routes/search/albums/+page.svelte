@@ -1,9 +1,9 @@
 <script>
-  import { goto } from "$app/navigation";
-  export let data;
+  import { goto } from "$app/navigation"
+  export let data
 
   function gotoalbum(albumid) {
-    goto(`/album/${albumid}`);
+    goto(`/album/${albumid}`)
   }
 </script>
 

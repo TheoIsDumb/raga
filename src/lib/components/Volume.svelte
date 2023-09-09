@@ -1,14 +1,15 @@
 <script>
 	import { audioVolume, audioMuted } from '$lib/store'
-    import Speaker from '$lib/icons/Speaker.svelte';
-    import Muted from '$lib/icons/Muted.svelte';
+    import Speaker from '$lib/icons/Speaker.svelte'
+    import Muted from '$lib/icons/Muted.svelte'
 
-	$: percentage = ($audioVolume/1) * 100;
+	$: percentage = ($audioVolume/1) * 100
 
     function mutetoggle() {
         $audioMuted = !$audioMuted
     }
 </script>
+
 <div class="volume flex justify-center items-center gap-1 w-1/3">
     <button class="empty" on:click={mutetoggle}>
         {#if !$audioMuted}

@@ -1,20 +1,20 @@
 <script>
-  import { goto } from "$app/navigation";
-  import { page } from "$app/stores";
-  import { query, accentColor, SidebarVisible } from "$lib/store";
+  import { goto } from "$app/navigation"
+  import { page } from "$app/stores"
+  import { query, accentColor, SidebarVisible } from "$lib/store"
 
-  import Logo2 from "$lib/icons/Logo2.svelte";
-  import Github from "$lib/icons/Github.svelte";
+  import Logo2 from "$lib/icons/Logo2.svelte"
+  import Github from "$lib/icons/Github.svelte"
 
   const handleInput = (e) => {
     if (e.key === "Enter" && $query !== "") {
-      let q = encodeURI($query);
-      goto(`/search/songs?q=${q}`);
+      let q = encodeURI($query)
+      goto(`/search/songs?q=${q}`)
     }
-  };
+  }
 
   if ($query === "") {
-    $query = $page.url.searchParams.get("q") || "";
+    $query = $page.url.searchParams.get("q") || ""
   }
 </script>
 

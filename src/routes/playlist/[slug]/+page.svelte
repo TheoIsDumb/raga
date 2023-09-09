@@ -1,7 +1,7 @@
 <script>
-  export let data;
-  import SongCard from "$lib/components/cards/SongCard.svelte";
-  import Enqueue from "$lib/components/Enqueue.svelte";
+  export let data
+  import SongCard from "$lib/components/cards/SongCard.svelte"
+  import Enqueue from "$lib/components/Enqueue.svelte"
 </script>
 
 <div class="inner flex flex-col">

@@ -1,7 +1,7 @@
 <script>
   export let data
   let results = data.data
-  import { goto } from '$app/navigation';
+  import { goto } from '$app/navigation'
 </script>
 
 <h1 class="font-bold text-3xl">new releases</h1>
@@ -12,9 +12,9 @@
         class="item"
         on:click={() => {
           if (item.type === "album") {
-            goto(`/album/${item.id}`);
+            goto(`/album/${item.id}`)
           } else if (item.type === "playlist") {
-            goto(`/playlist/${item.id}`);
+            goto(`/playlist/${item.id}`)
           } else if (item.type === "song") {
             goto(`song/${item.id}`)
           }

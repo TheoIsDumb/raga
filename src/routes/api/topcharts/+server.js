@@ -8,8 +8,8 @@ export async function GET({ url }) {
         headers: {
             cookie: 'L=english; gdpr_acceptance=true; DL=english'
         }
-    });
-    const data = await resp.json();
+    })
+    const data = await resp.json()
 
     await data.forEach((res) => {
 		res.image = proxifyImage(res.image)
@@ -17,5 +17,5 @@ export async function GET({ url }) {
 
     return json({
         "results": data
-    });
+    })
 }

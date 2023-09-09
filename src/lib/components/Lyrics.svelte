@@ -1,18 +1,18 @@
 <script>
-    import { active } from "$lib/store";
-    import Spinner from "$lib/icons/Spinner.svelte";
+    import { active } from "$lib/store"
+    import Spinner from "$lib/icons/Spinner.svelte"
 
     async function showLyrics() {
         if ($active.more_info.has_lyrics === "false") {
-            return "No lyrics found.";
+            return "No lyrics found."
         } else {
-            const res = await fetch(`/api/lyrics?songid=${$active.id}`);
-            const data = await res.json();
+            const res = await fetch(`/api/lyrics?songid=${$active.id}`)
+            const data = await res.json()
 
             if (res.ok) {
-                return data.lyrics;
+                return data.lyrics
             } else {
-                throw new Error(data);
+                throw new Error(data)
             }
         }
     }

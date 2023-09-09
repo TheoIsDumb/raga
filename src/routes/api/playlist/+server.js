@@ -1,11 +1,11 @@
 import { baseURL, sub } from '$lib/info'
 import { proxifyImage } from '$lib/utils'
-import { json } from '@sveltejs/kit';
+import { json } from '@sveltejs/kit'
 
 export async function GET({ url }) {
-    const id = url.searchParams.get('id');
-    const resp = await fetch(baseURL + sub.playlistDetails + id);
-    const data = await resp.json();
+    const id = url.searchParams.get('id')
+    const resp = await fetch(baseURL + sub.playlistDetails + id)
+    const data = await resp.json()
 
     data.image = proxifyImage(data.image, 150)
 
@@ -13,5 +13,5 @@ export async function GET({ url }) {
         res.image = proxifyImage(res.image)
     })
 
-    return json(data);
+    return json(data)
 }

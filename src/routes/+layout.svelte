@@ -1,22 +1,22 @@
 <script>
-  import Header from "$lib/components/Header.svelte";
-  import Player from "$lib/components/Player.svelte";
-  import Spinner from "$lib/icons/Spinner.svelte";
-  import BelowHeader from "$lib/components/BelowHeader.svelte";
-  import BiggerPlayer from "$lib/components/BiggerPlayer.svelte";
-  import Sidebar from "$lib/components/Sidebar.svelte";
-  import "$lib/styles/app.css";
-  import "$lib/styles/tailwind.css";
+  import Header from "$lib/components/Header.svelte"
+  import Player from "$lib/components/Player.svelte"
+  import Spinner from "$lib/icons/Spinner.svelte"
+  import BelowHeader from "$lib/components/BelowHeader.svelte"
+  import BiggerPlayer from "$lib/components/BiggerPlayer.svelte"
+  import Sidebar from "$lib/components/Sidebar.svelte"
+  import "$lib/styles/app.css"
+  import "$lib/styles/tailwind.css"
 
-  import { active, BiggerPlayerVisible } from "$lib/store";
-  import { navigating } from "$app/stores";
-  import { page } from "$app/stores";
+  import { active, BiggerPlayerVisible } from "$lib/store"
+  import { navigating } from "$app/stores"
+  import { page } from "$app/stores"
   import { fade } from 'svelte/transition'
 
   import "@vetixy/circular-std"
-  import { MetaTags } from "svelte-meta-tags";
+  import { MetaTags } from "svelte-meta-tags"
 
-  export let data;
+  export let data
 </script>
 
 <MetaTags

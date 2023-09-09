@@ -1,26 +1,26 @@
 <script>
-  import { fade } from "svelte/transition";
-  import { BiggerPlayerVisible, active, paused, repeat } from "$lib/store";
+  import { fade } from "svelte/transition"
+  import { BiggerPlayerVisible, active, paused, repeat } from "$lib/store"
   import { playToggle, repeatToggle, back, next } from '$lib/utils'
 
-  import Seekbar2 from "./Seekbar2.svelte";
-  import Play from "$lib/icons/Play.svelte";
-  import Pause from "$lib/icons/Pause.svelte";
-  import Prev from "$lib/icons/Prev.svelte";
-  import Next from "$lib/icons/Next.svelte";
-  import Lyrics from "./Lyrics.svelte";
-  import CurrentPlaylist from "./CurrentPlaylist.svelte";
+  import Seekbar2 from "./Seekbar2.svelte"
+  import Play from "$lib/icons/Play.svelte"
+  import Pause from "$lib/icons/Pause.svelte"
+  import Prev from "$lib/icons/Prev.svelte"
+  import Next from "$lib/icons/Next.svelte"
+  import Lyrics from "./Lyrics.svelte"
+  import CurrentPlaylist from "./CurrentPlaylist.svelte"
   import Repeat from '$lib/icons/Repeat.svelte'
   import Shuffle from '$lib/icons/Shuffle.svelte'
   import Volume from '$lib/components/Volume.svelte'
 
   function close(e) {
     if (e.key === "Escape") {
-      $BiggerPlayerVisible = false;
+      $BiggerPlayerVisible = false
     }
   }
 
-  let shown = CurrentPlaylist;
+  let shown = CurrentPlaylist
 </script>
 
 <div class="biggerplayer flex items-center justify-center flex-col fixed top-0 left-0 gap-4 backdrop-blur-md h-[100dvh] w-[100dvw]"

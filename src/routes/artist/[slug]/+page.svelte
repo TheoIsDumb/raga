@@ -1,6 +1,6 @@
 <script>
-  export let data;
-  import HorizCard from "$lib/components/cards/HorizCard.svelte";
+  export let data
+  import HorizCard from "$lib/components/cards/HorizCard.svelte"
 </script>
 
 <div class="inner flex flex-col">

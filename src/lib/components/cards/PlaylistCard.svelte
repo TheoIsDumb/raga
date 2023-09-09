@@ -1,10 +1,10 @@
 <script>
   import { goto } from "$app/navigation"
 
-  export let id;
-  export let title;
-  export let image;
-  export let type;
+  export let id
+  export let title
+  export let image
+  export let type
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

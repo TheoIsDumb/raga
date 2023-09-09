@@ -3,8 +3,8 @@ import { goto } from '$app/navigation'
 import { currentTime, index, currentPlaylist, paused, repeat, query, quality } from '$lib/store'
 import { proxyURL, proxyEnabled } from '$lib/info'
 
-import pkg from 'node-forge';
-const { util, cipher } = pkg;
+import pkg from 'node-forge'
+const { util, cipher } = pkg
 
 const key = '38346591'
 const iv = '00000000'
@@ -17,30 +17,30 @@ export const decrypt = (enc, kbps320) => {
   decipher.update(util.createBuffer(encrypted))
   decipher.finish()
 
-  const dec = decipher.output.getBytes().replace("_96", get(quality));
-  // const finalURL = kbps320 === "true" ? dec.replace('_96', '_320') : dec.replace('_96', '_160');
-  return proxifyAudio(dec);
+  const dec = decipher.output.getBytes().replace("_96", get(quality))
+  // const finalURL = kbps320 === "true" ? dec.replace('_96', '_320') : dec.replace('_96', '_160')
+  return proxifyAudio(dec)
 }
 
 //////////////////////////////////////////////////////////////////
 
-export function playToggle() { paused.update((p) => p = !p); }
-export function repeatToggle() { repeat.update((r) => r = !r); }
+export function playToggle() { paused.update((p) => p = !p) }
+export function repeatToggle() { repeat.update((r) => r = !r) }
 
 export function back() {
-  currentTime.set(0);
+  currentTime.set(0)
 
   if (get(index) !== 0) {
-      index.update((n) => n - 1);
+      index.update((n) => n - 1)
   } else {
       index.set(get(currentPlaylist).length - 1)
   }
 }
 
 export function next() {
-  currentTime.set(0);
+  currentTime.set(0)
   if (get(index) !== get(currentPlaylist).length - 1) {
-      index.update((n) => n + 1);
+      index.update((n) => n + 1)
   } else {
       index.set(0)
   }
@@ -48,10 +48,10 @@ export function next() {
 
 //////////////////////////////////////////////////////////////////
 
-export function searchSongs() { goto(`/search/songs?q=${get(query)}`); }
-export function searchAlbums() { goto(`/search/albums?q=${get(query)}&index=1`); }
-export function searchArtists() { goto(`/search/artists?q=${get(query)}`); }
-export function searchPlaylists() { goto(`/search/playlists?q=${get(query)}`); }
+export function searchSongs() { goto(`/search/songs?q=${get(query)}`) }
+export function searchAlbums() { goto(`/search/albums?q=${get(query)}&index=1`) }
+export function searchArtists() { goto(`/search/artists?q=${get(query)}`) }
+export function searchPlaylists() { goto(`/search/playlists?q=${get(query)}`) }
 
 export let buttonsArray = [
   {name: "Songs", function: searchSongs},

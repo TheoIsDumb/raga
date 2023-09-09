@@ -1,48 +1,48 @@
 <script>
-    let currentId;
-    let time;
-    let dragDisabled = true;
+    let currentId
+    let time
+    let dragDisabled = true
 
-    import { currentPlaylist, currentTime, index, paused, active, } from "$lib/store";
-    import { SOURCES, TRIGGERS, dndzone } from "svelte-dnd-action";
-    import { flip } from "svelte/animate";
+    import { currentPlaylist, currentTime, index, paused, active, } from "$lib/store"
+    import { SOURCES, TRIGGERS, dndzone } from "svelte-dnd-action"
+    import { flip } from "svelte/animate"
 
-    import PlayIndicator from "$lib/icons/playIndicator.svelte";
-    import PauseIndicator from "$lib/icons/pauseIndicator.svelte";
-    import DragHandle from "$lib/icons/dragHandle.svelte";
+    import PlayIndicator from "$lib/icons/playIndicator.svelte"
+    import PauseIndicator from "$lib/icons/pauseIndicator.svelte"
+    import DragHandle from "$lib/icons/dragHandle.svelte"
 
     async function handleDndConsider(e) {
-        currentId = $active.title;
-        time = $currentTime;
-        $currentPlaylist = e.detail.items;
+        currentId = $active.title
+        time = $currentTime
+        $currentPlaylist = e.detail.items
 
         let {
             info: { source, trigger },
-        } = e.detail;
+        } = e.detail
         if (trigger === TRIGGERS.DRAG_STOPPED) {
-            dragDisabled = true;
+            dragDisabled = true
         }
     }
     async function handleDndFinalize(e) {
-        $currentPlaylist = e.detail.items;
-        $currentTime = time;
-        $index = $currentPlaylist.findIndex((item) => item.title === currentId);
+        $currentPlaylist = e.detail.items
+        $currentTime = time
+        $index = $currentPlaylist.findIndex((item) => item.title === currentId)
 
         let {
             info: { source },
-        } = e.detail;
+        } = e.detail
         if (source === SOURCES.POINTER) {
-            dragDisabled = true;
+            dragDisabled = true
         }
     }
 
     function startDrag(e) {
-        e.preventDefault();
-        dragDisabled = false;
+        e.preventDefault()
+        dragDisabled = false
     }
 
     function playSongFromCurrentPlaylist(i) {
-        $index = i;
+        $index = i
     }
 </script>
 
@@ -73,7 +73,7 @@
                 {/if}
                 <img class="rounded"
                     src={item.image} alt={item.title}
-                    style={i === $index ? "filter: brightness(50%);" : ""}
+                    style={i === $index ? "filter: brightness(50%)" : ""}
                 />
             </div>
 

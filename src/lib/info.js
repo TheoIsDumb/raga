@@ -21,4 +21,4 @@ export const sub = Object.freeze({
   topCharts: "__call=content.getCharts",
   topPlaylists: "__call=content.getFeaturedPlaylists&p=1&n=50",
   index: "p="
-});
+})

@@ -1,7 +1,7 @@
 <script>
-  import { fly } from "svelte/transition";
-  import { decrypt } from "$lib/utils";
-  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused, repeat, historyEnabled, audioVolume, audioMuted } from "$lib/store";
+  import { fly } from "svelte/transition"
+  import { decrypt } from "$lib/utils"
+  import { active, currentPlaylist, index, BiggerPlayerVisible, currentTime, duration, paused, repeat, historyEnabled, audioVolume, audioMuted } from "$lib/store"
   import { back, next, playToggle } from '$lib/utils'
 
   import Pause from "$lib/icons/Pause.svelte"
@@ -9,7 +9,7 @@
   import Prev from "$lib/icons/Prev.svelte"
   import Next from "$lib/icons/Next.svelte"
 
-  $: $active = $currentPlaylist[$index];
+  $: $active = $currentPlaylist[$index]
 
   function playhandle() {
     if ("mediaSession" in navigator) {
@@ -25,10 +25,10 @@
             type: "image/jpeg",
           },
         ],
-      });
+      })
 
-      navigator.mediaSession.setActionHandler('previoustrack', back);
-      navigator.mediaSession.setActionHandler('nexttrack', next);
+      navigator.mediaSession.setActionHandler('previoustrack', back)
+      navigator.mediaSession.setActionHandler('nexttrack', next)
     }
 
     if ($historyEnabled === true) {
@@ -50,7 +50,7 @@
 
   function pause(e) {
     if (e.code === "Space" && e.target.tagName !== "INPUT") {
-      $paused = !$paused;
+      $paused = !$paused
     }
   }
 
@@ -106,9 +106,9 @@
       on:ended={() => {
         if ($repeat === false) {
           if ($index === $currentPlaylist.length - 1) {
-            $index = 0;
+            $index = 0
           } else {
-            $index++;
+            $index++
           }
         }
       }}

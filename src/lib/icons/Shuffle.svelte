@@ -2,15 +2,15 @@
     import { currentPlaylist, index } from '$lib/store'
 
     function shuffle() {
-        const first = $currentPlaylist.splice($index, 1)[0];
+        const first = $currentPlaylist.splice($index, 1)[0]
 
         for (let i = $currentPlaylist.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [$currentPlaylist[i], $currentPlaylist[j]] = [$currentPlaylist[j], $currentPlaylist[i]];
+            const j = Math.floor(Math.random() * (i + 1))
+            [$currentPlaylist[i], $currentPlaylist[j]] = [$currentPlaylist[j], $currentPlaylist[i]]
         }
 
-        $currentPlaylist.unshift(first);
-        $index = 0;
+        $currentPlaylist.unshift(first)
+        $index = 0
     }
 </script>
 

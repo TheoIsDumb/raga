@@ -1,6 +1,6 @@
 <script>
   import { SidebarVisible } from '$lib/store'
-  import SidebarMenu from './SidebarMenu.svelte';
+  import SidebarMenu from './SidebarMenu.svelte'
   import Logo2 from '$lib/icons/Logo2.svelte'
   import Github from '$lib/icons/Github.svelte'
 </script>

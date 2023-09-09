@@ -1,7 +1,7 @@
 <script>
   import { currentPlaylist, active } from '$lib/store'
-  import EnqueueIcon from '$lib/icons/EnqueueIcon.svelte';
-  export let list = [];
+  import EnqueueIcon from '$lib/icons/EnqueueIcon.svelte'
+  export let list = []
 
   function enqueue() {
     if ($currentPlaylist.length === 0) {

@@ -1,23 +1,23 @@
 <script>
-  export let data;
-  import SongCard from "$lib/components/cards/SongCard.svelte";
-  import { query } from "$lib/store.js";
+  export let data
+  import SongCard from "$lib/components/cards/SongCard.svelte"
+  import { query } from "$lib/store.js"
 
-  let index = 1;
-  let results = data.results;
+  let index = 1
+  let results = data.results
 
   const loadMore = async (e) => {
-    index++;
+    index++
 
-    const resp = await fetch(`/api/search/songs?q=${$query}&index=${index}`);
+    const resp = await fetch(`/api/search/songs?q=${$query}&index=${index}`)
 
-    const addData = await resp.json();
+    const addData = await resp.json()
 
     addData.results.forEach((song) => {
-      results.push(song);
-    });
-    results = results;
-  };
+      results.push(song)
+    })
+    results = results
+  }
 </script>
 
 <div class="inner flex flex-col pb-4">

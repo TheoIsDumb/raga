@@ -12,23 +12,23 @@
   let playNextButtonText = "Play Next"
 
   async function playSong(item) {
-      $currentPlaylist = [item];
-      $index = 0;
-      $active = $currentPlaylist[$index];
+      $currentPlaylist = [item]
+      $index = 0
+      $active = $currentPlaylist[$index]
 
-      const resp = await fetch(`/api/reco?songid=${$active.id}`);
+      const resp = await fetch(`/api/reco?songid=${$active.id}`)
 
-      const addData = await resp.json();
+      const addData = await resp.json()
 
       addData.forEach((song) => {
-        $currentPlaylist.push(song);
-      });
-      $currentPlaylist = $currentPlaylist;
+        $currentPlaylist.push(song)
+      })
+      $currentPlaylist = $currentPlaylist
     }
 
   function playSongFromAlbum(item, i) {
       if (list.length !== 0) {
-        $currentPlaylist = list;
+        $currentPlaylist = list
       } 
 
       $index = i
@@ -37,11 +37,11 @@
 
   async function copy(id) {
     try {
-      await navigator.clipboard.writeText(`${$page.url.origin}/song/${id}`);
+      await navigator.clipboard.writeText(`${$page.url.origin}/song/${id}`)
       copyButtonText = "✓ Copied!"
       setTimeout(() => copyButtonText = "Copy", 1500)
     } catch (err) {
-      console.error('Failed to copy: ', err);
+      console.error('Failed to copy: ', err)
     }
   }
 
@@ -62,9 +62,9 @@
   <div class="song_container cursor-pointer flex">
     <div class="song flex hover items-center w-full overflow-hidden gap-2 rounded" on:click={() => {
       if (type === "song") {
-        playSong(item);
+        playSong(item)
       } else if (type === "album") {
-        playSongFromAlbum(item, i);
+        playSongFromAlbum(item, i)
       }
       }}>
     <img class="rounded h-14" src={item.image} alt={item.title}/>

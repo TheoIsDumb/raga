@@ -1,25 +1,25 @@
 <script>
   export let data
-  import { active, currentPlaylist, index } from "$lib/store";
+  import { active, currentPlaylist, index } from "$lib/store"
 
-  import Play from "$lib/icons/Play.svelte";
-  import PlayNext from "$lib/icons/PlayNext.svelte";
+  import Play from "$lib/icons/Play.svelte"
+  import PlayNext from "$lib/icons/PlayNext.svelte"
 
   let song = data.songs[0]
 
   async function playSong() {
-      $currentPlaylist = [song];
-      $index = 0;
-      $active = $currentPlaylist[$index];
+      $currentPlaylist = [song]
+      $index = 0
+      $active = $currentPlaylist[$index]
 
-      const resp = await fetch(`/api/reco?songid=${$active.id}`);
+      const resp = await fetch(`/api/reco?songid=${$active.id}`)
 
-      const addData = await resp.json();
+      const addData = await resp.json()
 
       addData.forEach((song) => {
-        $currentPlaylist.push(song);
-      });
-      $currentPlaylist = $currentPlaylist;
+        $currentPlaylist.push(song)
+      })
+      $currentPlaylist = $currentPlaylist
     }
 
     let playNext = () => {

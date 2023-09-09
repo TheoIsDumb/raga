@@ -1,5 +1,5 @@
 <script>
-    import SongCard from "$lib/components/cards/SongCard.svelte";
+    import SongCard from "$lib/components/cards/SongCard.svelte"
     import { onMount } from 'svelte'
 
     let array = []
