@@ -19,7 +19,7 @@
         <span class="text-xl">accent color</span>
 
         <div class="colors flex gap-2">
-            {#each ["rose", "blue", "orange"] as i}
+            {#each ["rose-500", "blue-500", "orange-500"] as i}
                 <button class="h-8 w-8 rounded-full bg-{i}"
                 on:click={() => $accentColor = i}/>
             {/each}

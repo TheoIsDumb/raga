@@ -15,13 +15,3 @@ main::-webkit-scrollbar-thumb, .scrollable::-webkit-scrollbar-thumb { background
 .glow, .hover { @apply transition duration-300; }
 .hover:hover { background-color: #2a2a2a !important; }
 .glow:hover { filter: drop-shadow(0 0 0.7rem gainsboro); }
-
-.border-rose { @apply border-rose-500 }
-.bg-rose { @apply bg-rose-500 }
-.text-rose { @apply text-rose-500 }
-.border-orange { @apply border-orange-500 }
-.bg-orange { @apply bg-orange-500 }
-.text-orange { @apply text-orange-500 }
-.border-blue { @apply border-blue-500 }
-.bg-blue { @apply bg-blue-500 }
-.text-blue { @apply text-blue-500 }
