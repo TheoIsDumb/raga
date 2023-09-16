@@ -32,5 +32,19 @@
             "type": "image/png",
             "purpose": "maskable"
         }
+    ],
+    "screenshots" : [
+        {
+            "src": "assets/1.webp",
+            "type": "image/webp"
+        },
+        {
+            "src": "assets/2.webp",
+            "type": "image/webp"
+        },
+        {
+            "src": "assets/3.webp",
+            "type": "image/webp"
+        }
     ]
 }

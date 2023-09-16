@@ -1,4 +1,4 @@
-![banner](assets/banner.webp)
+![banner](static/assets/banner.webp)
 
 <h1 align="center">raga</h1>
 
@@ -14,9 +14,9 @@ PS: Thanks for the name, [v8v88v8v88](https://github.com/v8v88v8v88)!
 
 ## Screenshots
 
-![one](assets/1.webp)
-![two](assets/2.webp)
-![three](assets/3.webp)
+![one](static/assets/1.webp)
+![two](static/assets/2.webp)
+![three](static/assets/3.webp)
 
 ## Disclaimer
 
