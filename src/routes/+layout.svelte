@@ -13,7 +13,7 @@
   import { page } from "$app/stores"
   import { fade } from 'svelte/transition'
 
-  import "@vetixy/circular-std"
+  import '@vetixy/circular-std'
   import { MetaTags } from "svelte-meta-tags"
 
   export let data
