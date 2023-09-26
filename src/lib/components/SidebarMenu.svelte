@@ -6,6 +6,17 @@
     import { page } from '$app/stores'
     import { query, accentColor } from '$lib/store'
 
+    import { onMount } from 'svelte'
+
+    let hide
+    onMount(() => {
+        hide = () => {
+            if (window.innerWidth < 1280) {
+                $SidebarVisible = !$SidebarVisible
+            }
+        }
+    })
+
     $: pathname = $page.url.pathname
 
     let items = [
@@ -34,7 +45,7 @@
                 if ($query !== "") {
                 btn.function()
                 }
-                $SidebarVisible = false
+                hide()
             }}
             >
             {btn.name}
@@ -51,7 +62,7 @@
         <button class={pathname.includes(d.toLowerCase().replace(' ', '')) ? `text-${$accentColor}` : ''}
         on:click={() => {
             goto("/" + d.toLowerCase().replace(' ', ''))
-            $SidebarVisible = false
+            hide()
         }}>
             {d}
             </button>
