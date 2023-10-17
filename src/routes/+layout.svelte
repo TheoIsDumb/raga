@@ -20,7 +20,7 @@
 </script>
 
 <MetaTags
-  title={Object.keys($active).length !== 0 ? $active.title : ''}
+  title={Object.keys($active).length !== 0 ? document.createRange().createContextualFragment($active.title).textContent : ''}
   titleTemplate={Object.keys($active).length !== 0 ? '%s | raga.' : 'raga.'}
   description="A libre frontend for JioSaavn."
   openGraph={{

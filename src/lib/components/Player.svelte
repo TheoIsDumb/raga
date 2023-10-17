@@ -14,7 +14,7 @@
   function playhandle() {
     if ("mediaSession" in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
-        title: $active.title,
+        title: document.createRange().createContextualFragment($active.title).textContent,
         artist: $active.subtitle.split("-")[0],
         album: $active.more_info.album,
         artwork: [
