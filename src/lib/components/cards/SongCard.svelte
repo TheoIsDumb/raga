@@ -59,7 +59,7 @@
 </script>
 
 {#each list as item, i}
-  <div class="song_container cursor-pointer flex">
+  <div class="songcard cursor-pointer flex">
     <div class="song flex hover items-center w-full overflow-hidden gap-2 rounded" on:click={() => {
       if (type === "song") {
         playSong(item)
