@@ -19,36 +19,24 @@
   export let data
 </script>
 
-<MetaTags
-  title={Object.keys($active).length !== 0 ? document.createRange().createContextualFragment($active.title).textContent : ''}
-  titleTemplate={Object.keys($active).length !== 0 ? '%s | raga.' : 'raga.'}
-  description="A libre frontend for JioSaavn."
-  openGraph={{
-    url: 'https://raga.vkdbois.xyz',
-    title: 'Raga',
-    description: 'A libre frontend for JioSaavn.',
-    images: [
-      {
-        url: 'https://raga.vkdbois.xyz/img/og.jpg',
-        width: 1200,
-        height: 630,
-        alt: "Raga - A libre music frontend."
-      },
-    ],
-  }}
-  twitter={{
-    cardType: 'summary_large_image',
-    title: "Raga.",
-    description: 'A libre frontend for JioSaavn.',
-    image: 'https://raga.vkdbois.xyz/img/og.jpg',
-  }}
-  additionalLinkTags={[
-    {
-      rel: 'icon',
-      href: '/img/favicon.png'
-    }
-  ]}  
-/>
+<svelte:head>
+  <title>{Object.keys($active).length !== 0 ? document.createRange().createContextualFragment($active.title).textContent + ' | raga.' : 'raga.'}</title>
+  <meta name="description" content="A libre frontend for JioSaavn.">
+  <link rel="icon" href="https://raga.vkdbois.xyz/img/favicon.png">
+
+  <meta property="og:title" content="Raga.">
+  <meta property="og:url" content="https://raga.vkdbois.xyz">
+  <meta property="og:description" content="A libre frontend for JioSaavn.">
+  <meta property="og:image" content="https://raga.vkdbois.xyz/img/og.jpg">
+  <meta property="og:image:alt" content="Raga - A libre music frontend.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Raga.">
+  <meta name="twitter:description" content="A libre frontend for JioSaavn.">
+  <meta name="twitter:image" content="https://raga.vkdbois.xyz/img/og.jpg"> 
+</svelte:head>
 
 <main class="overflow-auto w-[100dvw] h-[100dvh]">
   <div class="w-full xl:w-[calc(100dvw-20.5rem)] xl:ml-[20rem] px-2 xl:px-4"
