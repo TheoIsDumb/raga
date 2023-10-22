@@ -4,7 +4,10 @@
 
 	$: percentage = ($currentTime/$duration) * 100
 
-  function format(time) {
+</script>
+
+<script context="module">
+  export function format(time) {
     if (isNaN(time)) return "..."
 
     const minutes = Math.floor(time / 60)
