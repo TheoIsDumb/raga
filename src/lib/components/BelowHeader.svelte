@@ -7,7 +7,7 @@
   $: pathname = $page.url.pathname
 </script>
 
-<div class="belowheader flex xl:hidden w-full border-2 border-{$accentColor} mb-2">
+<div class="belowheader flex xl:hidden w-full border-2 border-{$accentColor} mb-2 rounded-md">
   {#each btns as btn}
     <a href={"/search/" + btn.toLowerCase() + '?q=' + $query}
         class="{pathname.includes(btn.toLowerCase()) ? `bg-${$accentColor} text-white` : 'bg-transparent' }
