@@ -57,7 +57,7 @@
   $: loop = $repeat ? 'loop' : ''
 </script>
 
-<div class="player flex flex-col p-1 pt-2 cursor-pointer gap-3 fixed bottom-0 w-full xl:w-[calc(100dvw-20rem)] xl:right-0 backdrop-blur-md bg-[#00000080]"
+<div class="player flex flex-col p-1 pt-2 cursor-pointer gap-3 fixed bottom-0 w-[calc(100dvw-3.5rem)] right-0 backdrop-blur-md bg-[#00000080]"
   in:fly={{ y: 50, duration: 800 }}>
   <div class="base w-full rounded h-1">
     <div class="bar h-1 bg-white rounded" style="--progress: {$currentTime / $duration}%" />
@@ -70,16 +70,16 @@
   >
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="imgparent flex gap-2 w-4/6 lg:w-auto">
+    <div class="imgparent flex gap-1 xl:gap-2 w-4/6 lg:w-auto">
       <img class="image h-12 rounded" src={$active.image} alt={$active.title}/>
       <div class="title flex flex-col justify-center text-sm truncate w-full" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>
-          <span class="font-bold text-base truncate">{@html $active.title}</span>
-          <span class="truncate">{@html $active.subtitle.split("-")[0]}</span>
+          <span class="font-bold text-sm truncate">{@html $active.title}</span>
+          <span class="truncate text-xs">{@html $active.subtitle.split("-")[0]}</span>
       </div>
     </div>
 
     <div class="buttons flex gap-3 xl:gap-4 h-8 mr-2">
-      <button class="empty" on:click={back}><Prev/></button>
+      <button class="empty hidden xl:block" on:click={back}><Prev/></button>
 
       {#if $paused}
         <button class="empty" on:click={playToggle}><Play/></button>
@@ -87,7 +87,7 @@
         <button class="empty" on:click={playToggle}><Pause/></button>
       {/if}
 
-      <button class="empty" on:click={next}><Next/></button>
+      <button class="empty hidden xl:block" on:click={next}><Next/></button>
     </div>
 
     <audio

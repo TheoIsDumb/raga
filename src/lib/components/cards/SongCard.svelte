@@ -43,7 +43,7 @@
     <img class="rounded h-14" src={item.image} alt={item.title}/>
 
     <div class="info flex flex-col w-full overflow-hidden">
-      <div class="font-bold truncate">{@html item.title}</div>
+      <div class="font-bold truncate text-sm">{@html item.title}</div>
       <div class="truncate text-gray-400 text-xs">{@html item.subtitle}</div>
     </div>
   </div>
