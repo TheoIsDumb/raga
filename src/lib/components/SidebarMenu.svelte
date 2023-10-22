@@ -27,8 +27,8 @@
     ]
 
     let exploreBtns = [
-        {id: "New", comp: New},
-        {id: "Charts", comp: TopCharts},
+        {id: "New", link: "newreleases", comp: New},
+        {id: "Charts", link: "topcharts", comp: TopCharts},
     ]
 
     let moreBtns = [
@@ -61,7 +61,7 @@
     <hr class="bg-white w-5/6" />
 
     {#each exploreBtns as btn}
-        <a href={"/" + btn.id.toLowerCase().replace(' ', '')}
+        <a href={"/" + btn.link}
             class="{pathname.includes(btn.id.toLowerCase()) ? `text-${$accentColor}` : '' } flex flex-col items-center">
             <svelte:component this={btn.comp}/>
             <span class="text-xs text-center">{btn.id}</span>
