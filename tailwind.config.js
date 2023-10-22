@@ -4,7 +4,7 @@ export default {
   // plugins: [require('flowbite/plugin')],
   safelist: [
     {
-      pattern: /(bg|text|border)-(rose|blue|orange)-500/,
+      pattern: /(bg|text|border)-blue-500/,
     },
   ],
   darkMode: 'class',

@@ -47,7 +47,7 @@
 
     {#each searchBtns as btn}
         <a href={"/search/" + btn.id.toLowerCase() + '?q=' + $query}
-            class="{pathname.includes(btn.id.toLowerCase()) ? `text-${$accentColor}` : '' }
+            class="{pathname.includes(btn.id.toLowerCase()) ? `text-${accentColor}` : '' }
             {$query === "" ? 'pointer-events-none text-gray-500' : ''}
             flex flex-col items-center transition duration-300">
             <svelte:component this={btn.comp}/>
@@ -64,7 +64,7 @@
 
     {#each exploreBtns as btn}
         <a href={"/" + btn.link}
-            class="{pathname.includes(btn.id.toLowerCase()) ? `text-${$accentColor}` : '' } flex flex-col items-center">
+            class="{pathname.includes(btn.id.toLowerCase()) ? `text-${accentColor}` : '' } flex flex-col items-center">
             <svelte:component this={btn.comp}/>
             <span class="text-xs text-center">{btn.id}</span>
         </a>
@@ -79,7 +79,7 @@
 
     {#each moreBtns as btn}
         <a href={"/" + btn.id.toLowerCase().replace(' ', '')}
-            class="{pathname.includes(btn.id.toLowerCase()) ? `text-${$accentColor}` : '' } flex flex-col items-center">
+            class="{pathname.includes(btn.id.toLowerCase()) ? `text-${accentColor}` : '' } flex flex-col items-center">
             <svelte:component this={btn.comp}/>
             <span class="text-xs text-center">{btn.id}</span>
         </a>

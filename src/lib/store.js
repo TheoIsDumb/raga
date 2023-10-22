@@ -16,5 +16,5 @@ export let audioVolume = writable(0.8)
 export let audioMuted = writable(false)
 
 export let historyEnabled = writable(true)
-export let accentColor = writable('rose-500')
+export let accentColor = 'blue-500'
 export let quality = writable('_96')

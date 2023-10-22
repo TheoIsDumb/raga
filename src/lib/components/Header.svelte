@@ -18,7 +18,7 @@
     <h1 class="hidden xl:inline text-2xl font-bold">raga.</h1>
 
     <input
-      class="bg-transparent border-2 border-{$accentColor} focus:border-[gainsboro]
+      class="bg-transparent border-2 border-{accentColor} focus:border-[gainsboro]
         text-center rounded-md xl:rounded w-full xl:w-1/2 xl:h-8 p-1 xl:p-2 outline-none transition duration-300"
       type="text"
       bind:value={$query}
