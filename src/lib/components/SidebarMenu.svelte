@@ -5,45 +5,81 @@
 
     $: pathname = $page.url.pathname
 
-    let btns = ["Songs", "Albums", "Artists", "Playlists"]
+    import Search from '$lib/icons/sidebar/search/Search.svelte'
+    import Songs from '$lib/icons/sidebar/search/Songs.svelte'
+    import Albums from '$lib/icons/sidebar/search/Albums.svelte'
+    import Artists from '$lib/icons/sidebar/search/Artists.svelte'
+    import Playlists from '$lib/icons/sidebar/search/Playlists.svelte'
 
-    let items = [
-        {
-            id: "EXPLORE",
-            pages: ["New Releases", "Top Charts"]
-        },
-        {
-            id: "BROWSE",
-            pages: ["History"]
-        },
-        {
-            id: "MORE",
-            pages: ["Settings"]
-        }
+    import Explore from '$lib/icons/sidebar/Explore.svelte'
+    import New from '$lib/icons/sidebar/New.svelte'
+    import TopCharts from '$lib/icons/sidebar/TopCharts.svelte'
+
+    import More from '$lib/icons/sidebar/More.svelte'
+    import History from '$lib/icons/sidebar/History.svelte'
+    import Settings from '$lib/icons/sidebar/Settings.svelte'
+
+    let searchBtns = [
+        {id: "Songs", comp: Songs},
+        {id: "Albums", comp: Albums},
+        {id: "Artists", comp: Artists},
+        {id: "Playlists", comp: Playlists},
+    ]
+
+    let exploreBtns = [
+        {id: "New", comp: New},
+        {id: "Charts", comp: TopCharts},
+    ]
+
+    let moreBtns = [
+        {id: "History", comp: History},
+        {id: "Settings", comp: Settings},
     ]
 </script>
 
+<!-- SEARCH -->
 {#if $query !== ""}
-    <div transition:slide class="flex flex-col items-start gap">
-        <span class="text-{$accentColor} font-bold tracking-wider">SEARCH FOR</span>
-        {#each btns as btn}
-            <a href={"/search/" + btn.toLowerCase() + '?q=' + $query}
-                class="{pathname.includes(btn.toLowerCase()) ? `text-${$accentColor}` : '' }">
-            {btn}
-        </a>
+    <div transition:slide class="min-w-full flex flex-col items-center justify-center border-white border rounded p-1 gap-2">
+        <Search/>
+
+        <hr class="bg-white w-5/6" />
+
+        {#each searchBtns as btn}
+            <a href={"/search/" + btn.id.toLowerCase() + '?q=' + $query}
+                class="{pathname.includes(btn.id.toLowerCase()) ? `text-${$accentColor}` : '' } flex flex-col items-center">
+                <svelte:component this={btn.comp}/>
+                <span class="text-xs">{btn.id}</span>
+            </a>
         {/each}
     </div>
 {/if}
 
-{#each items as i}
-    <div class="flex flex-col items-start gap">
-        <span class="text-{$accentColor} font-bold tracking-wider">{i.id}</span>
+<!-- EXPLORE -->
+<div class="min-w-full flex flex-col items-center justify-center border-white border rounded p-1 gap-2">
+    <Explore/>
 
-        {#each i.pages as d}
-            <a class={pathname.includes(d.toLowerCase().replace(' ', '')) ? `text-${$accentColor}` : ''}
-            href={"/" + d.toLowerCase().replace(' ', '')}>
-                {d}
-            </a>
-        {/each}
-    </div>
-{/each}
+    <hr class="bg-white w-5/6" />
+
+    {#each exploreBtns as btn}
+        <a href={"/" + btn.id.toLowerCase().replace(' ', '')}
+            class="{pathname.includes(btn.id.toLowerCase()) ? `text-${$accentColor}` : '' } flex flex-col items-center">
+            <svelte:component this={btn.comp}/>
+            <span class="text-xs text-center">{btn.id}</span>
+        </a>
+    {/each}
+</div>
+
+<!-- MORE -->
+<div class="min-w-full flex flex-col items-center justify-center border-white border rounded p-1 gap-2">
+    <More />
+
+    <hr class="bg-white w-5/6" />
+
+    {#each moreBtns as btn}
+        <a href={"/" + btn.id.toLowerCase().replace(' ', '')}
+            class="{pathname.includes(btn.id.toLowerCase()) ? `text-${$accentColor}` : '' } flex flex-col items-center">
+            <svelte:component this={btn.comp}/>
+            <span class="text-xs text-center">{btn.id}</span>
+        </a>
+    {/each}
+</div>
