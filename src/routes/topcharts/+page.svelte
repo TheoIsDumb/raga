@@ -1,17 +1,13 @@
 <script>
   export let data
   let results = data.results
-  import { goto } from '$app/navigation'
 </script>
 
 <h1 class="font-bold text-3xl">top charts</h1>
 
 <div class="grid grid-cols-2 md:grid-cols-3 mt-2 gap-2 md:gap-4">
     {#each results as item}
-      <div
-        class="item"
-        on:click={() => goto(`/playlist/${item.id}`)} 
-      >
+      <a class="item" href="/playlist/{item.id}">
         <div class="iteminner flex flex-col hover gap-2">
           <img
             class="rounded aspect-video object-cover"
@@ -21,6 +17,6 @@
           />
           <span class="truncate text-xs font-bold">{@html item.title}</span>
         </div>
-      </div>
+      </a>
     {/each}
 </div>
