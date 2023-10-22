@@ -1,26 +1,25 @@
 <script>
-  import { goto } from "$app/navigation"
-
   export let array
   export let name
+
+  const produceLink = (type, id) => {
+    if (type === "album") {
+      return `/album/${id}`
+    } else if (type === "playlist") {
+      return `/playlist/${id}`
+    } else if (type === "song") {
+      return `/song/${id}`
+    }
+  }
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="scroll_container">
   <h1 class="play m-0 lowercase font-bold text-2xl xl:text-3xl">{name}</h1>
   <div class="hscroll overflow-x-auto overflow-y-hidden whitespace-nowrap h-40 xl:h-[12rem]">
     {#each array as item}
-      <div
+      <a
         class="item inline-block mr-2 rounded"
-        on:click={() => {
-          if (item.type === "album") {
-            goto(`/album/${item.id}`)
-          } else if (item.type === "playlist") {
-            goto(`/playlist/${item.id}`)
-          } else if (item.type === "song") {
-            goto(`/song/${item.id}`)
-          }
-        }}
+        href={produceLink(item.type, item.id)}
       >
         <div class="iteminner flex flex-col hover gap-2 w-32 xl:w-40">
           <img
@@ -31,7 +30,7 @@
           />
           <span class="truncate text-xs font-bold">{@html item.title}</span>
         </div>
-      </div>
+      </a>
     {/each}
   </div>
 </div>

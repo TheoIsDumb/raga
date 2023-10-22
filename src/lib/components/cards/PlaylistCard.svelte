@@ -1,22 +1,13 @@
 <script>
-  import { goto } from "$app/navigation"
-
   export let id
   export let title
   export let image
   export let type
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<div
+<a
   class="flex w-full gap-4 cursor-pointer transition duration-300 rounded p-2 hover"
-  on:click={() => {
-    if (type === "artist") {
-      goto(`/artist/${id}`) 
-    } else if (type === "playlist") {
-      goto(`/playlist/${id}`) 
-    }
-  }}>
+  href={type === "artist" ? `/artist/${id}` : `/playlist/${id}`}>
   <img class="rounded-[50%] h-14" loading="lazy" src={image} alt={title} />
   <div class="font-bold">{@html title}</div>
-</div>
+</a>
