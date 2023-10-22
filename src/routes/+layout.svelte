@@ -2,7 +2,6 @@
   import Header from "$lib/components/Header.svelte"
   import Player from "$lib/components/Player.svelte"
   import Spinner from "$lib/icons/Spinner.svelte"
-  import BelowHeader from "$lib/components/BelowHeader.svelte"
   import BiggerPlayer from "$lib/components/BiggerPlayer.svelte"
   import Sidebar from "$lib/components/Sidebar.svelte"
   import "$lib/styles/app.css"
@@ -10,7 +9,6 @@
 
   import { active, BiggerPlayerVisible } from "$lib/store"
   import { navigating } from "$app/stores"
-  import { page } from "$app/stores"
   import { fade } from 'svelte/transition'
 
   import '@vetixy/circular-std'
@@ -40,13 +38,7 @@
 <main class="overflow-auto w-[100dvw] h-[100dvh]">
   <div class="w-[calc(100dvw-3.5rem)] ml-14 px-1 xl:px-4"
   class:mb-20={Object.keys($active).length !== 0}>
-    <div class="flex justify-center flex-col">
-      <Header />
-
-      {#if $page.url.pathname.includes("search")}
-        <BelowHeader />
-      {/if}
-    </div>
+    <Header />
 
     {#key data}
       {#if $navigating}
