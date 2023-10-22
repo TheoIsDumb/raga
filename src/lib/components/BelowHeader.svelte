@@ -11,7 +11,7 @@
   {#each btns as btn}
     <a href={"/search/" + btn.toLowerCase() + '?q=' + $query}
         class="{pathname.includes(btn.toLowerCase()) ? `bg-${$accentColor} text-white` : 'bg-transparent' }
-        text-sm flex-1 flex justify-center items-center border-0 p-1 cursor-pointer transition duration-300">
+        text-xs xl:text-sm flex-1 flex justify-center items-center border-0 p-1 cursor-pointer transition duration-300">
         {btn}
     </a>
   {/each}

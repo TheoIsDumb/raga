@@ -35,11 +35,13 @@
         {id: "History", comp: History},
         {id: "Settings", comp: Settings},
     ]
+
+    let cardClass = "min-w-full flex flex-col items-center justify-center bg-[#ffffff10] border-[#ffffff40] border border-r-0 rounded-s p-1 gap-2"
 </script>
 
 <!-- SEARCH -->
 {#if $query !== ""}
-    <div transition:slide class="min-w-full flex flex-col items-center justify-center border-white border rounded p-1 gap-2">
+    <div transition:slide class={cardClass}>
         <Search/>
 
         <hr class="bg-white w-5/6" />
@@ -55,7 +57,7 @@
 {/if}
 
 <!-- EXPLORE -->
-<div class="min-w-full flex flex-col items-center justify-center border-white border rounded p-1 gap-2">
+<div class={cardClass}>
     <Explore/>
 
     <hr class="bg-white w-5/6" />
@@ -70,7 +72,7 @@
 </div>
 
 <!-- MORE -->
-<div class="min-w-full flex flex-col items-center justify-center border-white border rounded p-1 gap-2">
+<div class={cardClass}>
     <More />
 
     <hr class="bg-white w-5/6" />

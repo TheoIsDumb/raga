@@ -5,7 +5,7 @@
   import Github from '$lib/icons/Github.svelte'
 </script>
 
-<div class="sidebar w-14 h-full flex py-4 pl-1 fixed top-0 left-0 flex-col items-center gap-4">
+<div class="sidebar w-14 h-full flex py-4 pl-1 border-r border-[#252525] fixed top-0 left-0 flex-col items-center gap-4">
     <a href="/" class="block h-8 w-8"><Logo2/></a>
 
     <SidebarMenu />

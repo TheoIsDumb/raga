@@ -38,7 +38,7 @@
 </svelte:head>
 
 <main class="overflow-auto w-[100dvw] h-[100dvh]">
-  <div class="w-[calc(100dvw-3.5rem)] ml-14 px-2 xl:px-4"
+  <div class="w-[calc(100dvw-3.5rem)] ml-14 px-1 xl:px-4"
   class:mb-20={Object.keys($active).length !== 0}>
     <div class="flex justify-center flex-col">
       <Header />
