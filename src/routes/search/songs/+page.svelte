@@ -9,7 +9,7 @@
   let results = data.results
   let loading = false
 
-  const loadMore = async (e) => {
+  const loadMore = async () => {
     if (index <= 15) {
       loading = true
       index++

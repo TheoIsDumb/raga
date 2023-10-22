@@ -14,7 +14,6 @@
   import { fade } from 'svelte/transition'
 
   import '@vetixy/circular-std'
-  import { MetaTags } from "svelte-meta-tags"
 
   export let data
 </script>
