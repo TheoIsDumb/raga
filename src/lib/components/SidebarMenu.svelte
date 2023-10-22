@@ -1,12 +1,11 @@
 <script>
     import { slide } from 'svelte/transition'
     import { page } from '$app/stores'
-    import { get } from 'svelte/store'
     import { query, accentColor } from '$lib/store'
 
     $: pathname = $page.url.pathname
 
-    export let btns = ["Songs", "Albums", "Artists", "Playlists"]
+    let btns = ["Songs", "Albums", "Artists", "Playlists"]
 
     let items = [
         {

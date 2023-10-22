@@ -1,5 +1,4 @@
 import { get } from 'svelte/store'
-import { goto } from '$app/navigation'
 import { currentTime, index, currentPlaylist, paused, repeat, query, quality } from '$lib/store'
 import { proxyURL, proxyEnabled } from '$lib/info'
 
@@ -47,18 +46,6 @@ export function next() {
 }
 
 //////////////////////////////////////////////////////////////////
-
-export function searchSongs() { goto(`/search/songs?q=${get(query)}`) }
-export function searchAlbums() { goto(`/search/albums?q=${get(query)}&index=1`) }
-export function searchArtists() { goto(`/search/artists?q=${get(query)}`) }
-export function searchPlaylists() { goto(`/search/playlists?q=${get(query)}`) }
-
-export let buttonsArray = [
-  {name: "Songs", function: searchSongs},
-  {name: "Albums", function: searchAlbums},
-  {name: "Artists", function: searchArtists},
-  {name: "Playlists", function: searchPlaylists},
-]
 
 export const proxifyImage = (url, sizeOfImage) => {
   if (proxyEnabled) {
