@@ -40,21 +40,21 @@
 </script>
 
 <!-- SEARCH -->
-{#if $query !== ""}
-    <div transition:slide class={cardClass}>
-        <Search/>
+<div transition:slide class={cardClass}>
+    <Search/>
 
-        <hr class="bg-white w-5/6" />
+    <hr class="bg-white w-5/6" />
 
-        {#each searchBtns as btn}
-            <a href={"/search/" + btn.id.toLowerCase() + '?q=' + $query}
-                class="{pathname.includes(btn.id.toLowerCase()) ? `text-${$accentColor}` : '' } flex flex-col items-center">
-                <svelte:component this={btn.comp}/>
-                <span class="text-xs">{btn.id}</span>
-            </a>
-        {/each}
-    </div>
-{/if}
+    {#each searchBtns as btn}
+        <a href={"/search/" + btn.id.toLowerCase() + '?q=' + $query}
+            class="{pathname.includes(btn.id.toLowerCase()) ? `text-${$accentColor}` : '' }
+            {$query === "" ? 'pointer-events-none text-gray-500' : ''}
+            flex flex-col items-center transition duration-300">
+            <svelte:component this={btn.comp}/>
+            <span class="text-xs">{btn.id}</span>
+        </a>
+    {/each}
+</div>
 
 <!-- EXPLORE -->
 <div class={cardClass}>
