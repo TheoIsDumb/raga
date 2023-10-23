@@ -51,7 +51,7 @@
             {$query === "" ? 'pointer-events-none text-gray-500' : ''}
             flex flex-col items-center transition duration-300">
             <svelte:component this={btn.comp}/>
-            <span class="text-xs">{btn.id}</span>
+            <span class="text-[12px] lg:text-[14px]">{btn.id}</span>
         </a>
     {/each}
 </div>
@@ -66,7 +66,7 @@
         <a href={"/" + btn.link}
             class="{pathname.includes(btn.id.toLowerCase()) ? `text-${accentColor}` : '' } flex flex-col items-center">
             <svelte:component this={btn.comp}/>
-            <span class="text-xs text-center">{btn.id}</span>
+            <span class="text-[12px] lg:text-[14px] text-center">{btn.id}</span>
         </a>
     {/each}
 </div>
@@ -81,7 +81,7 @@
         <a href={"/" + btn.id.toLowerCase().replace(' ', '')}
             class="{pathname.includes(btn.id.toLowerCase()) ? `text-${accentColor}` : '' } flex flex-col items-center">
             <svelte:component this={btn.comp}/>
-            <span class="text-xs text-center">{btn.id}</span>
+            <span class="text-[12px] lg:text-[14px] text-center">{btn.id}</span>
         </a>
     {/each}
 </div>
