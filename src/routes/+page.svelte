@@ -14,7 +14,7 @@
     } else {
       index++
     }
-  }, 1000)
+  }, 2000)
 </script>
 
 <div class="inner flex flex-col">

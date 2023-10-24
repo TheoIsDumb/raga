@@ -68,8 +68,6 @@
   <div class="imginfo flex items-center justify-between"
       on:click|self={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}
   >
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="imgparent flex gap-1 xl:gap-2 w-4/6 lg:w-auto">
       <img class="image h-12 rounded" src={$active.image} alt={$active.title}/>
       <div class="title flex flex-col justify-center text-sm truncate w-full" on:click={() => $BiggerPlayerVisible = !$BiggerPlayerVisible}>

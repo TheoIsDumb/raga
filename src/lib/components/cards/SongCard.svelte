@@ -37,38 +37,36 @@
 
 {#each list as item, i}
   <div class="songcard cursor-pointer flex">
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="song flex hover items-center w-full overflow-hidden gap-2 rounded"
+    <button class="song flex hover items-center w-full overflow-hidden gap-2 rounded"
     on:click|self={() => playHigherOrderFunc(item, i)}>
-    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-    <img class="rounded h-14" src={item.image} alt={item.title}
-    on:click|self={() => playHigherOrderFunc(item, i)} />
+    <button on:click={() => playHigherOrderFunc(item, i)}>
+      <img class="rounded h-14" src={item.image} alt={item.title} />
+      </button>
 
-    <div class="info flex w-full overflow-hidden justify-between items-center xl:pr-2"
-    on:click|self={() => playHigherOrderFunc(item, i)}>
-      <div class="flex flex-col leading-3 text-gray-300 text-xs">
-        <div class="font-bold truncate text-sm" on:click|self={() => playHigherOrderFunc(item, i)}>
-          {@html item.title}</div>
-        <div>
-          {#each item.more_info.artistMap.primary_artists as artist, i}
-            {@const artists = item.more_info.artistMap.primary_artists}
-            <a class="truncate hover:underline hover:underline-offset-1" href="/artist/{artist.id}">
-              {@html i !== artists.length - 1 ? artist.name + ', ' : artist.name}
+      <button class="info flex w-full overflow-hidden justify-between items-center xl:pr-2"
+      on:click|self={() => playHigherOrderFunc(item, i)}>
+        <div class="flex flex-col leading-3 items-start text-gray-300 text-xs">
+          <button class="font-bold truncate text-sm text-left" on:click|self={() => playHigherOrderFunc(item, i)}>
+            {@html item.title}</button>
+          <span>
+            {#each item.more_info.artistMap.primary_artists as artist, i}
+              {@const artists = item.more_info.artistMap.primary_artists}
+              <a class="truncate hover:underline hover:underline-offset-1" href="/artist/{artist.id}">
+                {@html i !== artists.length - 1 ? artist.name + ', ' : artist.name}
+              </a>
+            {/each}
+
+            <span>-</span>
+
+            <a class="truncate hover:underline hover:underline-offset-1" href="/album/{item.more_info.album_id}">
+              {@html item.subtitle.split('- ')[1]}
             </a>
-          {/each}
+          </span>
 
-          <span>-</span>
-
-          <a class="truncate hover:underline hover:underline-offset-1" href="/album/{item.more_info.album_id}">
-            {@html item.subtitle.split('- ')[1]}
-          </a>
         </div>
-
-      </div>
         <span class="text-xs hidden lg:inline">{format(item.more_info.duration)}</span>
-    </div>
-  </div>
+      </button>
+  </button>
 
   <Options {item}/>
 </div>
