@@ -2,7 +2,7 @@
 
 <h1 align="center">raga</h1>
 
-A libre frontend which uses the JioSaavn API.
+A libre frontend for JioSaavn.
 
 Powered by SvelteKit. ⚡
 
@@ -18,6 +18,12 @@ PS: Thanks for the name, [v8v88v8v88](https://github.com/v8v88v8v88)!
 ![two](static/assets/2.webp)
 ![three](static/assets/3.webp)
 
+## Old Screenshots
+
+![one](static/assets/1.old.webp)
+![two](static/assets/2.old.webp)
+![three](static/assets/3.old.webp)
+
 ## Disclaimer
 
 Raga is not yet complete and is experimental.  
@@ -29,7 +35,7 @@ PRs and suggestions are welcome! 😄
 
 **Local**
 
-`npm run dev`
+`bun run dev`
 
 **Build**
 
@@ -41,10 +47,10 @@ PRs and suggestions are welcome! 😄
 
 ```
 # If for Vercel (zero-config build and deploy (uses adapter-auto behind the scenes))
-npm run build
+bun run build
 
 # For node app (uses adapter-node behind the scenes)
-DEPLOY_TARGET=node npm run build
+DEPLOY_TARGET=node bun run build
 ```
 
 ## Dependencies
@@ -54,7 +60,6 @@ DEPLOY_TARGET=node npm run build
 - [Vite](https://vitejs.dev)
 - [raga-proxy](https://codeberg.org/aryak/raga-proxy)
 - [Tailwind CSS](https://tailwindcss.com)
-- [svelte-meta-tags](https://github.com/oekazuma/svelte-meta-tags)
 - [Forge](https://github.com/digitalbazaar/forge)
 
 ## Resources
