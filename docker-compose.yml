@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  raga:
+    container_name: raga
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - raga-network
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  raga-network:
+    driver: bridge
